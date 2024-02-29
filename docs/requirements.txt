@@ -1,0 +1,9 @@
+doc8
+docutils
+GitPython
+setuptools
+sphinx_rtd_theme
+sphinx-tabs
+sphinx
+sphinxcontrib-imagehelper
+sphinxcontrib.spelling

@@ -1,17 +1,10 @@
-# Entrada y salida
+# Bucles [C++]
 
-- [Entrada y salida](#entrada-y-salida)
-  - [While](#while)
-    - [Castings implícitos](#castings-implícitos)
-    - [Do while](#do-while)
-  - [Bucle for](#bucle-for)
-    - [Por índice](#por-índice)
-    - [Por elemento](#por-elemento)
-  - [Palabras clave](#palabras-clave)
-    - [break](#break)
-    - [continue](#continue)
-    - [return](#return)
-  - [Ejemplo](#ejemplo)
+```{contents}
+:local:
+:depth: 2
+```
+
 
 ## While
 
@@ -135,12 +128,12 @@ while (true) {
 
 Pongamos un problema que recibe un entero `n` y suma los números impares menores o igual que `n`.
 
-``` txt
+``` none
 Input:
 7
 ```
 
-``` txt
+``` none
 Output:
 16
 ```

@@ -1,20 +1,10 @@
-# Entrada y salida
+# Bucles [Python]
 
-- [Entrada y salida](#entrada-y-salida)
-  - [While](#while)
-    - [Castings implícitos](#castings-implícitos)
-  - [Bucle for](#bucle-for)
-    - [range](#range)
-    - [Container](#container)
-      - [list](#list)
-      - [set](#set)
-      - [dict](#dict)
-    - [enumerate](#enumerate)
-  - [Palabras clave](#palabras-clave)
-    - [break](#break)
-    - [continue](#continue)
-    - [return](#return)
-  - [Ejemplo](#ejemplo)
+```{contents}
+:local:
+:depth: 2
+```
+
 
 ## While
 
@@ -161,12 +151,12 @@ while (True):
 
 Pongamos un problema que recibe un entero `n` y suma los números impares menores o igual que `n`.
 
-``` txt
+``` none
 Input:
 7
 ```
 
-``` txt
+``` none
 Output:
 16
 ```
