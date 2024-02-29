@@ -1,0 +1,42 @@
+name: Build and Test Documentation
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+
+  test-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+
+        # Add this step to install aspell and the Spanish dictionary
+        apt update && apt install -y aspell aspell-es
+
+        python -m pip install --upgrade pip
+        pip install -r docs/requirements.txt
+
+    - name: Build documentation
+      run: |
+        sphinx-build -b html docs/ docs/_build/html
+
+    # TODO: when known how to use 2 dictionaries, Spanish and English, uncomment this
+    # - name: Documentation tests
+    #   run: |
+    #     sphinx-build -W --keep-going -b spelling docs/ docs/_build/spelling

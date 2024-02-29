@@ -2,5 +2,5 @@
 # Nivel intermedio
 
 ```{todo}
-Work In Progress
+`Work In Progress`
 ```

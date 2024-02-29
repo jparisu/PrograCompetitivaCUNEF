@@ -24,8 +24,8 @@ Cuidado porque C++ realiza castings implícitos a bool, pero pueden no ser siemp
 - **char** es **false** si es el carácter nulo `'\0'`, y **true** en cualquier otro caso.
 - **float** es **false** si es 0.0, y **true** en cualquier otro caso.
 - **punteros** son **false** si son `nullptr`, y **true** en cualquier otro caso.
-- **string** no se castea implícitamente a **bool**.
-- **vector** no se castea implícitamente a **bool**.
+- **string** no se convierte implícitamente a **bool**.
+- **vector** no se convierte implícitamente a **bool**.
 
 ### Do while
 

@@ -19,6 +19,8 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # The spelling list filename.
+language = 'es'
+spelling_lang = 'es_ES'
 spelling_word_list_filename=['spelling/spelling_wordlist.txt']
 
 # Change tab title

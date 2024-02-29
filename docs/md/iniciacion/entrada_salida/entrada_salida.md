@@ -46,5 +46,5 @@ entrada_salida_py
 ## Ejercicios
 
 ```{todo}
-Work In Progress
+`Work In Progress`
 ```
