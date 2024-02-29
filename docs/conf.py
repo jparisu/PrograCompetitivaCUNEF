@@ -29,3 +29,6 @@ html_title = f"{project} {release} Documentation"
 
 # Include to-do items
 todo_include_todos = True
+
+# Exclude patterns
+exclude_patterns = ['_build', 'resources']
