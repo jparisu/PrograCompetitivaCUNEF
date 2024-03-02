@@ -8,6 +8,5 @@ como algoritmia, estructuras de datos, matemáticas, etc.
 :maxdepth: 1
 :caption: Temario
 
-entrada_salida/entrada_salida
-bucles/bucles
+fenwick/fenwick
 ```
