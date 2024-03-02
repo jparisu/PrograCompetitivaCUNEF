@@ -1,7 +1,7 @@
 
 # Nivel intermedio
 
-Este nivel enseña conceptos avanzados de programación y Programación competitiva
+Este nivel enseña conceptos intermedios de programación y Programación competitiva
 como algoritmia, estructuras de datos, matemáticas, etc.
 
 ```{toctree}
