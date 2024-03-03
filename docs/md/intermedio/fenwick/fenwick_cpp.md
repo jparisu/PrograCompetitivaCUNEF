@@ -1,10 +1,4 @@
-# Bucles [C++]
-
-```{contents}
-:local:
-:depth: 2
-```
-
+# Fenwick [C++]
 
 ```cpp
 #include <iostream>
@@ -21,11 +15,11 @@ struct FenwickTree {
     {}
 
     // O(logN)
-    // Add value to the element at index (index starts on 0)
-    void update(int index, int value) {
+    // Add delta to the element at index (index starts on 0)
+    void update(int index, int delta) {
         index++;
         while (index <= n) {
-            tree[index - 1] += value;
+            tree[index - 1] += delta;
             index += index & -index;
         }
     }
@@ -54,9 +48,9 @@ struct FenwickTree {
     }
 
     // O(logN)
-    // Return the sum from a to b (both included)
-    int biquery(int a, int b) {
-        return query_includes(b) - query(a);
+    // Return the sum from start to end (both included) (index starts on 0)
+    int query_range(int start, int end) {
+        return query_includes(end) - query(start);
     }
 
     vector<int> tree;
