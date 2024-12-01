@@ -17,6 +17,7 @@ Este proyecto cuenta con muchos ejemplos de código que se pueden utilizar como 
 - [Francisco Criado](mailto:francisco.criado@cunef.edu)
 - [Javier París](mailto:javier.paris@cunef.edu)
 - [María Espinosa](mailto:msoledad.espinosa@cunef.edu)
+- [Jacobo](mailto:jacobo.bascon@cunef.edu)
 
 
 ```{toctree}
