@@ -2,6 +2,11 @@
 
 This guide provides keyboard shortcuts for fast programming. The main environment covered is VSCode, but we also include Visual Studio and Ubuntu system shortcuts.
 
+```{contents}
+:local:
+:depth: 2
+```
+
 
 ## VSCode
 

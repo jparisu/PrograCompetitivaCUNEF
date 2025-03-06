@@ -10,4 +10,5 @@ Este nivel enseña los conceptos básicos de programación y de Programación co
 
 entrada_salida/entrada_salida
 bucles/bucles
+shortcuts/shortcuts
 ```
