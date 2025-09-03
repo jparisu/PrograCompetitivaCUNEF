@@ -11,12 +11,12 @@ This guide provides keyboard shortcuts for fast programming. The main environmen
 ## VSCode
 
 ### General Editing
-- **Copy**: `Ctrl + C`
+- Copy: `Ctrl + C`
 - Cut: `Ctrl + X`
-- **Paste**: `Ctrl + V`
-- **Undo**: `Ctrl + Z`
-- **Redo**: `Ctrl + Y`
-- **Move Line Up/Down**: `Alt + Up/Down`
+- Paste: `Ctrl + V`
+- Undo: `Ctrl + Z`
+- Redo: `Ctrl + Y`
+- Move Line Up/Down: `Alt + Up/Down`
 - Delete Line: `Ctrl + Shift + K`
 
 ### Autocomplete
@@ -34,6 +34,7 @@ This guide provides keyboard shortcuts for fast programming. The main environmen
 ### Selection
 - Select Word: `Ctrl + Shift + Left/Right`
 - Select Line: `Shift + Home/End`
+- **Select repetitions from word selected**: `Ctrl + D`
 - **Select All**: `Ctrl + A`
 - **Select in Square (Column Mode)**: `Shift + Alt + Drag` (mouse)
 
