@@ -1,0 +1,31 @@
+name: Kattis standings
+
+# Scrapes the CUNEF Kattis affiliation page on a schedule and commits the
+# updated standings JSON (which keeps historical snapshots). The docs Ranking
+# page reads that JSON client-side.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # every Monday at 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r tools/requirements.txt
+      # Kattis scraping is best-effort: if the site/markup changes, keep the
+      # previous data rather than failing the whole job.
+      - run: python tools/scrape_kattis.py -v || echo "scrape failed; keeping previous standings"
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "data: update Kattis standings [bot]"
+          file_pattern: "docs/assets/data/standings.json"

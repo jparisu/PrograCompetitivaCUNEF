@@ -1,0 +1,35 @@
+name: Cheatsheet
+
+# Builds the default cheatsheet (LaTeX + PDF) from the whole algorithm set and
+# commits it into docs/cheatsheet/ so the Cheatsheet page can link to it.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/algorithms/**"
+      - "templates/cheatsheet*"
+      - "tools/cheatsheet.py"
+      - "tools/common.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r tools/requirements.txt
+      - name: Install LaTeX
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-latex-recommended texlive-latex-extra
+      - run: python tools/cheatsheet.py --config templates/cheatsheet.example.yaml --out docs/cheatsheet/cheatsheet --pdf
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: rebuild cheatsheet [bot]"
+          file_pattern: "docs/cheatsheet/cheatsheet.*"

@@ -1,0 +1,239 @@
+/*
+ * overview-table.css — styling for the interactive "Resumen" table.
+ *
+ * Theme-aware: it relies on Material's CSS custom properties (--md-*) and adds a
+ * couple of local variables that are overridden for the dark scheme via the
+ * [data-md-color-scheme="slate"] selector. Nothing hardcodes a single
+ * background, so it reads well in both light and dark modes.
+ */
+
+:root {
+  --ov-border: var(--md-default-fg-color--lighter, rgba(0, 0, 0, 0.12));
+  --ov-row-alt: var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.04));
+  --ov-header-bg: var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.05));
+  --ov-hover: var(--md-accent-fg-color--transparent, rgba(83, 109, 254, 0.1));
+  --ov-chip-bg: var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.06));
+  --ov-control-bg: var(--md-default-bg-color, #fff);
+}
+
+[data-md-color-scheme="slate"] {
+  --ov-border: rgba(255, 255, 255, 0.14);
+  --ov-row-alt: rgba(255, 255, 255, 0.04);
+  --ov-header-bg: rgba(255, 255, 255, 0.06);
+  --ov-hover: rgba(129, 156, 255, 0.16);
+  --ov-chip-bg: rgba(255, 255, 255, 0.09);
+}
+
+/* --------------------------------------------------------------- controls */
+.ov-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem 1rem;
+  margin: 1rem 0 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--ov-border);
+  border-radius: 0.4rem;
+  background: var(--ov-header-bg);
+}
+
+.ov-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--md-default-fg-color--light);
+}
+
+.ov-input,
+.ov-select {
+  font-size: 0.8rem;
+  padding: 0.4rem 0.55rem;
+  color: var(--md-default-fg-color);
+  background: var(--ov-control-bg);
+  border: 1px solid var(--ov-border);
+  border-radius: 0.3rem;
+}
+
+.ov-input {
+  min-width: 15rem;
+  flex: 1 1 15rem;
+}
+
+.ov-input:focus,
+.ov-select:focus {
+  outline: 2px solid var(--md-accent-fg-color, #536dfe);
+  outline-offset: 1px;
+}
+
+.ov-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  margin: 0;
+  padding: 0.4rem 0.7rem 0.55rem;
+  border: 1px solid var(--ov-border);
+  border-radius: 0.3rem;
+}
+
+.ov-columns legend {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0 0.35rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.ov-col-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------- table */
+.ov-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ov-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.ov-table th,
+.ov-table td {
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  border-bottom: 1px solid var(--ov-border);
+  vertical-align: top;
+}
+
+.ov-th {
+  position: relative;
+  background: var(--ov-header-bg);
+  cursor: grab;
+  white-space: nowrap;
+  user-select: none;
+  font-weight: 700;
+}
+
+.ov-th:active {
+  cursor: grabbing;
+}
+
+.ov-th-label {
+  cursor: pointer;
+}
+
+.ov-th-label:hover {
+  color: var(--md-accent-fg-color, #536dfe);
+}
+
+.ov-sort-ind {
+  display: inline-block;
+  width: 1em;
+  margin-left: 0.25rem;
+  font-size: 0.75em;
+  color: var(--md-accent-fg-color, #536dfe);
+}
+
+.ov-th.ov-sorted {
+  color: var(--md-accent-fg-color, #536dfe);
+}
+
+.ov-th.ov-dragging {
+  opacity: 0.5;
+}
+
+.ov-th.ov-drop-target {
+  box-shadow: inset 3px 0 0 0 var(--md-accent-fg-color, #536dfe);
+}
+
+.ov-table tbody tr:nth-child(even) {
+  background: var(--ov-row-alt);
+}
+
+.ov-table tbody tr:hover {
+  background: var(--ov-hover);
+}
+
+.ov-td--difficulty {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ov-td code,
+.ov-table code {
+  font-size: 0.85em;
+}
+
+/* --------------------------------------------------------------- chips & badges */
+.ov-chip,
+.ov-lang {
+  display: inline-block;
+  margin: 0.1rem 0.2rem 0.1rem 0;
+  padding: 0.08rem 0.45rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  border-radius: 0.8rem;
+  background: var(--ov-chip-bg);
+  white-space: nowrap;
+}
+
+.ov-chip--tag {
+  font-style: italic;
+}
+
+.ov-lang {
+  font-weight: 600;
+}
+
+.ov-badge {
+  display: inline-block;
+  padding: 0.08rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.ov-badge--base { background: #2e7d32; }
+.ov-badge--beginner { background: #0277bd; }
+.ov-badge--intermediate { background: #f9a825; color: #222; }
+.ov-badge--advanced { background: #e65100; }
+.ov-badge--expert { background: #c62828; }
+.ov-badge--unknown { background: var(--md-default-fg-color--light); }
+
+/* --------------------------------------------------------------- misc */
+.ov-count {
+  margin: 0.6rem 0 0;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.ov-empty,
+.ov-loading,
+.ov-error {
+  padding: 1rem;
+  color: var(--md-default-fg-color--light);
+  font-style: italic;
+}
+
+.ov-error {
+  color: var(--md-typeset-color, inherit);
+  border: 1px solid var(--ov-border);
+  border-radius: 0.3rem;
+  background: var(--ov-header-bg);
+}
+
+@media (max-width: 45rem) {
+  .ov-input { min-width: 100%; }
+}
