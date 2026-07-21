@@ -1,0 +1,58 @@
+{
+  "sample": true,
+  "affiliation": "cunef.edu",
+  "url": "https://open.kattis.com/affiliations/cunef.edu",
+  "updated": "2026-07-21T10:30:00+00:00",
+  "snapshots": [
+    {
+      "date": "2025-07-22",
+      "members": [
+        { "rank": 1, "name": "Ada Beltrán",  "handle": "adabel",   "score": 80.0, "solved": 55 },
+        { "rank": 2, "name": "Grace Montoya", "handle": "gmontoya", "score": 72.0, "solved": 50 },
+        { "rank": 3, "name": "Alan Sáez",     "handle": "asaez",    "score": 60.0, "solved": 44 },
+        { "rank": 4, "name": "Lucía Navarro",  "handle": "lnavarro", "score": 45.0, "solved": 33 },
+        { "rank": 5, "name": "Diego Ferrer",   "handle": "dferrer",  "score": 30.0, "solved": 22 },
+        { "rank": 6, "name": "Nuria Cano",     "handle": "ncano",    "score": 15.0, "solved": 12 }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "members": [
+        { "rank": 1, "name": "Alan Sáez",     "handle": "asaez",    "score": 150.0, "solved": 101 },
+        { "rank": 2, "name": "Ada Beltrán",   "handle": "adabel",   "score": 140.0, "solved": 96 },
+        { "rank": 3, "name": "Grace Montoya",  "handle": "gmontoya", "score": 138.0, "solved": 95 },
+        { "rank": 4, "name": "Lucía Navarro",  "handle": "lnavarro", "score": 120.0, "solved": 82 },
+        { "rank": 5, "name": "Diego Ferrer",   "handle": "dferrer",  "score": 95.0,  "solved": 66 },
+        { "rank": 6, "name": "Nuria Cano",     "handle": "ncano",    "score": 88.0,  "solved": 60 },
+        { "rank": 7, "name": "Elena Ruiz",     "handle": "eruiz",    "score": 70.0,  "solved": 48 },
+        { "rank": 8, "name": "Nacho Ortega",   "handle": "nortega",  "score": 40.0,  "solved": 28 }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "members": [
+        { "rank": 1, "name": "Ada Beltrán",   "handle": "adabel",   "score": 152.0, "solved": 103 },
+        { "rank": 2, "name": "Alan Sáez",     "handle": "asaez",    "score": 151.0, "solved": 102 },
+        { "rank": 3, "name": "Grace Montoya",  "handle": "gmontoya", "score": 145.0, "solved": 99 },
+        { "rank": 4, "name": "Lucía Navarro",  "handle": "lnavarro", "score": 128.0, "solved": 87 },
+        { "rank": 5, "name": "Diego Ferrer",   "handle": "dferrer",  "score": 110.0, "solved": 75 },
+        { "rank": 6, "name": "Nuria Cano",     "handle": "ncano",    "score": 90.0,  "solved": 61 },
+        { "rank": 7, "name": "Elena Ruiz",     "handle": "eruiz",    "score": 78.0,  "solved": 53 },
+        { "rank": 8, "name": "Nacho Ortega",   "handle": "nortega",  "score": 55.0,  "solved": 37 }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "members": [
+        { "rank": 1, "name": "Ada Beltrán",   "handle": "adabel",   "score": 155.0, "solved": 105 },
+        { "rank": 2, "name": "Alan Sáez",     "handle": "asaez",    "score": 151.0, "solved": 102 },
+        { "rank": 3, "name": "Grace Montoya",  "handle": "gmontoya", "score": 148.0, "solved": 101 },
+        { "rank": 4, "name": "Lucía Navarro",  "handle": "lnavarro", "score": 140.0, "solved": 95 },
+        { "rank": 5, "name": "Nuria Cano",     "handle": "ncano",    "score": 115.0, "solved": 78 },
+        { "rank": 6, "name": "Diego Ferrer",   "handle": "dferrer",  "score": 112.0, "solved": 76 },
+        { "rank": 7, "name": "Elena Ruiz",     "handle": "eruiz",    "score": 96.0,  "solved": 64 },
+        { "rank": 8, "name": "Nacho Ortega",   "handle": "nortega",  "score": 58.0,  "solved": 39 }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+% =====================================================================
+% cheatsheet.tex — KACTL-style multi-column competitive-programming
+% cheatsheet template.
+%
+% This file is a TEMPLATE consumed by tools/cheatsheet.py. The script
+% replaces three placeholder tokens (each written as two percent signs,
+% a NAME, then two percent signs) before compiling:
+%
+%   TITLE       -> the cheatsheet title (LaTeX-escaped)
+%   NUMCOLUMNS  -> number of multicol columns (integer)
+%   BODY        -> the generated body (one block per algorithm)
+%
+% The tokens themselves appear only in the title/multicols area below.
+% It compiles with a plain `pdflatex` and only common packages:
+% article + geometry + multicol + listings + xcolor.
+% =====================================================================
+\documentclass[8pt,a4paper,landscape]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,landscape,margin=1cm]{geometry}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{listings}
+
+% Tighten everything up for a dense reference sheet.
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1.2em}
+\setlength{\columnseprule}{0.2pt}
+\pagestyle{empty}
+
+% --- Colours -----------------------------------------------------------
+\definecolor{cs@rule}{gray}{0.55}
+\definecolor{cs@kw}{RGB}{0,0,153}
+\definecolor{cs@cmt}{RGB}{0,128,0}
+\definecolor{cs@str}{RGB}{163,21,21}
+\definecolor{cs@bg}{gray}{0.97}
+
+% --- Listings: small, tight, monospaced --------------------------------
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{cs@kw}\bfseries,
+  commentstyle=\color{cs@cmt}\itshape,
+  stringstyle=\color{cs@str},
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  tabsize=2,
+  aboveskip=2pt,
+  belowskip=2pt,
+  lineskip=-1pt,
+  xleftmargin=0pt,
+  frame=none,
+  backgroundcolor=\color{cs@bg},
+  % `listings` is byte-oriented, so multi-byte UTF-8 chars that show up in
+  % comments must be mapped explicitly or inputenc rejects them.
+  extendedchars=true,
+  literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1 {ç}{{\c c}}1
+    {—}{{---}}1 {–}{{--}}1 {…}{{\ldots}}1
+    {¿}{{?`}}1 {¡}{{!`}}1 {«}{{<<}}1 {»}{{>>}}1
+    {→}{{$\rightarrow$}}1 {←}{{$\leftarrow$}}1
+    {≤}{{$\leq$}}1 {≥}{{$\geq$}}1 {≠}{{$\neq$}}1
+    {×}{{$\times$}}1 {·}{{$\cdot$}}1 {∞}{{$\infty$}}1 {°}{{$^\circ$}}1,
+}
+
+% Section heading for one algorithm.
+\newcommand{\csalgo}[1]{%
+  \vspace{0.4ex}%
+  {\bfseries\small #1}\par
+  \vspace{-0.6ex}{\color{cs@rule}\hrule height 0.4pt}\vspace{0.4ex}%
+}
+% Stats line (complexity / use case) under an algorithm heading.
+\newcommand{\csstats}[1]{{\scriptsize\itshape #1\par\vspace{0.3ex}}}
+
+\begin{document}
+
+% --- Title -------------------------------------------------------------
+\begin{center}
+  {\Large\bfseries %%TITLE%%}
+\end{center}
+\vspace{0.5ex}
+{\color{cs@rule}\hrule height 0.6pt}
+\vspace{0.8ex}
+
+\begin{multicols}{%%NUMCOLUMNS%%}
+%%BODY%%
+\end{multicols}
+
+\end{document}

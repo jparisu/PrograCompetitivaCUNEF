@@ -1,0 +1,5 @@
+# Dependencies for the tools/ scripts (separate from the docs build).
+# Install with: pip install -r tools/requirements.txt
+pyyaml>=6.0
+requests>=2.31        # scrape_kattis.py
+beautifulsoup4>=4.12  # scrape_kattis.py

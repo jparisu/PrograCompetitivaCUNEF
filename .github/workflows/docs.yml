@@ -28,6 +28,13 @@ jobs:
           cache: pip
 
       - run: pip install -r requirements.txt
+      - run: pip install -r tools/requirements.txt
+
+      # PR gate: fail if derived files (clean/contest code, test fixtures,
+      # overview data) weren't regenerated. Fix locally with `python tools/gen.py generate`.
+      - name: Check generated files are up to date
+        if: github.event.action != 'closed'
+        run: python tools/gen.py status
 
       # Build (also the PR gate: --strict fails on broken links / missing nav).
       # Skipped when a PR is closed — nothing to build, we only clean up below.

@@ -64,12 +64,23 @@ plugins:
 # Keep legacy Sphinx files and non-page assets out of the build (they stay on disk).
 exclude_docs: |
   **/code/**
+  **/test/**
   **/*.yaml
   md/
   conf.py
   requirements.txt
   spelling/
   resources/cheatsheet.md
+
+extra_css:
+  - assets/css/ranklist.css
+  - assets/css/overview-table.css
+  - assets/css/cheatsheet-builder.css
+
+extra_javascript:
+  - assets/js/ranklist.js
+  - assets/js/overview-table.js
+  - assets/js/cheatsheet-builder.js
 
 nav:
   - Inicio: index.md
@@ -83,6 +94,13 @@ nav:
       - "Intermedio · Árbol de Fenwick": algorithms/data-structures/fenwick-tree/index.md
       - "Avanzado · DP con máscaras (TSP)": algorithms/dynamic-programming/bitmask-tsp/index.md
       - "Experto · Envolvente convexa": algorithms/geometry/convex-hull/index.md
+  - Ranking: ranklist/index.md
+  - Chuletario: cheatsheet/index.md
   - Resumen:
       - Tabla de algoritmos: overview/index.md
       - Grafo de dependencias: overview/graph.md
+  - Contribuir:
+      - Cómo contribuir: contributing/index.md
+      - Git y GitHub: contributing/git-github.md
+      - Añadir un algoritmo: contributing/add-algorithm.md
+      - Scripts del proyecto: contributing/scripts.md

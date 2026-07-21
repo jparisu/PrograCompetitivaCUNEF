@@ -1,0 +1,43 @@
+# =====================================================================
+# cheatsheet.example.yaml — example configuration for tools/cheatsheet.py
+#
+# This file selects WHAT goes into the cheatsheet and HOW it is rendered.
+# Build it with:
+#
+#     python tools/cheatsheet.py --config templates/cheatsheet.example.yaml \
+#         --out build/cheatsheet --pdf
+#
+# Field reference
+# ---------------
+#   title:          str                  Title printed at the top of the sheet.
+#   language:       cpp | py             Global default language for the code.
+#   style:          full | clean | contest
+#                                        Global default code style.
+#   include_stats:  bool                 If true, print a complexity / use-case
+#                                        line under each algorithm.
+#   columns:        int                  Number of multicol columns.
+#   algorithms:     list                 What to include, IN ORDER. Each item is
+#                                        either a bare algorithm id (string) or a
+#                                        mapping that overrides the globals:
+#                                          - fenwick-tree
+#                                          - id: bitmask-tsp
+#                                            version: v1     # default: current_version
+#                                            style: clean    # default: global style
+#                                            language: cpp   # default: global language
+#
+# The `--all` flag ignores the `algorithms:` list below and includes every
+# algorithm in the repository using the global defaults.
+# =====================================================================
+
+title: "Chuletario ICPC CUNEF"
+language: cpp
+style: contest
+include_stats: true
+columns: 3
+
+algorithms:
+  - loops
+  - binary-search-array
+  - fenwick-tree
+  - bitmask-tsp
+  - convex-hull
