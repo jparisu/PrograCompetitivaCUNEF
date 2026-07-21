@@ -1,0 +1,34 @@
+id: bitmask-tsp
+topic: dynamic-programming
+name:
+  es: DP con máscaras de bits — TSP
+  en: Bitmask DP — TSP
+level: advanced
+difficulty: 6.0
+techniques: [dynamic-programming, bitmask]
+tags: [tsp, held-karp, hamiltonian]
+prerequisites: [dp-intro, bitmask]
+current_version: v1
+signature:
+  es: "tsp(dist) -> coste mínimo del ciclo hamiltoniano desde 0"
+  en: "tsp(dist) -> minimum Hamiltonian cycle cost from node 0"
+stats:
+  complexity:
+    time: "O(2^n * n^2)"
+    space: "O(2^n * n)"
+  use_case:
+    es: "Ruta mínima que visita todos los nodos una vez (n pequeño, n <= ~20)."
+    en: "Shortest route visiting all nodes once (small n, n <= ~20)."
+references:
+  - title: "CP-Algorithms: Bitmask DP"
+    url: "https://cp-algorithms.com/dynamic_programming/profile-dynamics.html"
+examples:
+  # 4 nodes on a unit square, edges are Euclidean rounded: optimal tour = 4.
+  - input: |
+      4
+      0 1 2 1
+      1 0 1 2
+      2 1 0 1
+      1 2 1 0
+    expected_output: |
+      4

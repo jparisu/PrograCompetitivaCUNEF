@@ -163,3 +163,4 @@ cython_debug/
 # Developers folder
 .test/
 .results/
+.devs/

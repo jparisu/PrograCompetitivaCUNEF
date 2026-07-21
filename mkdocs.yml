@@ -1,0 +1,88 @@
+site_name: Programación Competitiva CUNEF
+site_description: >-
+  Material de programación competitiva de CUNEF (C++ y Python) para concursos tipo ICPC.
+site_url: https://jparisu.github.io/PrograCompetitivaCUNEF/
+repo_url: https://github.com/jparisu/PrograCompetitivaCUNEF
+edit_uri: edit/main/docs/
+
+# NOTE (prototype): pages are hand-authored for now. In the next step they will be
+# generated from each algorithm's meta.yaml via mkdocs-macros; the auto-gen of
+# clean/contest code and the tests come after that.
+
+theme:
+  name: material
+  language: es
+  logo: resources/images/logo.jpg
+  favicon: resources/images/logo.jpg
+  features:
+    - content.code.copy      # copy button on every code block (req 6)
+    - content.tabs.link
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle: { icon: material/weather-night, name: Cambiar a modo oscuro }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle: { icon: material/weather-sunny, name: Cambiar a modo claro }
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc: { permalink: true }
+  - pymdownx.highlight: { anchor_linenums: true }
+  - pymdownx.inlinehilite
+  - pymdownx.snippets: { base_path: [docs], check_paths: true }   # embed real code files
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed: { alternate_style: true }                    # C++ / Python tabs
+
+plugins:
+  - search:
+      lang: [es, en]
+  - i18n:
+      docs_structure: suffix        # index.md (es, default) + index.en.md (en)
+      fallback_to_default: true     # missing translation -> Spanish
+      languages:
+        - locale: es
+          default: true
+          name: Español
+          build: true
+        - locale: en
+          name: English
+          build: true
+
+# Keep legacy Sphinx files and non-page assets out of the build (they stay on disk).
+exclude_docs: |
+  **/code/**
+  **/*.yaml
+  md/
+  conf.py
+  requirements.txt
+  spelling/
+  resources/cheatsheet.md
+
+nav:
+  - Inicio: index.md
+  - Empezar aquí: onboarding.md
+  - Técnicas:
+      - Búsqueda binaria: techniques/binary-search/index.md
+      - Programación dinámica: techniques/dynamic-programming/index.md
+  - Algoritmos:
+      - "Base · Bucles": algorithms/fundamentals/loops/index.md
+      - "Principiante · Búsqueda binaria": algorithms/searching/binary-search-array/index.md
+      - "Intermedio · Árbol de Fenwick": algorithms/data-structures/fenwick-tree/index.md
+      - "Avanzado · DP con máscaras (TSP)": algorithms/dynamic-programming/bitmask-tsp/index.md
+      - "Experto · Envolvente convexa": algorithms/geometry/convex-hull/index.md
+  - Resumen:
+      - Tabla de algoritmos: overview/index.md
+      - Grafo de dependencias: overview/graph.md
