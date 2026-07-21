@@ -1,0 +1,27 @@
+id: loops
+topic: fundamentals
+name:
+  es: Bucles
+  en: Loops
+level: base
+difficulty: 0.5
+techniques: []
+tags: [for, while, basics]
+prerequisites: []
+current_version: v1
+stats:
+  complexity:
+    time: "O(n)"
+    space: "O(1)"
+  use_case:
+    es: "Repetir instrucciones un número de veces o hasta una condición."
+    en: "Repeat instructions a number of times or until a condition holds."
+references:
+  - title: "cppreference: for loop"
+    url: "https://en.cppreference.com/w/cpp/language/for"
+examples:
+  - input: |
+      3
+      10 20 30
+    expected_output: |
+      60

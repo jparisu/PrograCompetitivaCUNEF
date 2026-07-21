@@ -1,0 +1,35 @@
+id: convex-hull
+topic: geometry
+name:
+  es: Envolvente convexa
+  en: Convex hull
+level: expert
+difficulty: 5.5
+techniques: [geometry]
+tags: [monotone-chain, andrew, geometry]
+prerequisites: [geometry-basics, sorting-builtin]
+current_version: v1
+signature:
+  es: "convex_hull(puntos) -> vértices de la envolvente (CCW)"
+  en: "convex_hull(points) -> hull vertices (CCW)"
+stats:
+  complexity:
+    time: "O(n log n)"
+    space: "O(n)"
+  use_case:
+    es: "El menor polígono convexo que contiene un conjunto de puntos."
+    en: "The smallest convex polygon containing a set of points."
+references:
+  - title: "CP-Algorithms: Convex Hull (Andrew)"
+    url: "https://cp-algorithms.com/geometry/convex-hull.html"
+examples:
+  # 5 points; the interior point (1,1) is not on the hull. Hull has 4 vertices.
+  - input: |
+      5
+      0 0
+      4 0
+      4 4
+      0 4
+      1 1
+    expected_output: |
+      4
