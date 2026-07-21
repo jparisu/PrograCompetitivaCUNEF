@@ -4,11 +4,10 @@ Guía rápida para dar tus primeros pasos en programación competitiva en CUNEF.
 
 ## 1. Elige un lenguaje
 
-- **C++** es el más usado en concursos: rápido y con la STL. Recomendado para la mayoría.
+- **C++** es el más usado en concursos: rápido y con la STL.
 - **Python** es más sencillo de escribir; suficiente para muchos problemas.
 
-En este sitio tienes **ambos** en cada algoritmo, así que puedes empezar por el que
-prefieras.
+En este sitio tienes **ambos** en cada algoritmo, así que puedes empezar por el que prefieras.
 
 ## 2. Prepara tu entorno
 
