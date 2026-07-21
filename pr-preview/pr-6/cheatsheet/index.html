@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -10,35 +10,35 @@
       
       
       
-        <link rel="canonical" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/searching/binary-search-array/">
+        <link rel="canonical" href="https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/">
       
       
-        <link rel="prev" href="../../fundamentals/loops/">
+        <link rel="prev" href="../ranklist/">
       
       
-        <link rel="next" href="../../data-structures/fenwick-tree/">
+        <link rel="next" href="../overview/">
       
       
         
-          <link rel="alternate" href="../../../../algorithms/searching/binary-search-array/" hreflang="es">
+          <link rel="alternate" href="./" hreflang="es">
         
-          <link rel="alternate" href="./" hreflang="en">
+          <link rel="alternate" href="../en/cheatsheet/" hreflang="en">
         
       
       
-      <link rel="icon" href="../../../../resources/images/logo.jpg">
+      <link rel="icon" href="../resources/images/logo.jpg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Principiante · Búsqueda binaria - Programación Competitiva CUNEF</title>
+        <title>Chuletario - Programación Competitiva CUNEF</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,13 +57,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/css/ranklist.css">
+      <link rel="stylesheet" href="../assets/css/ranklist.css">
     
-      <link rel="stylesheet" href="../../../../assets/css/overview-table.css">
+      <link rel="stylesheet" href="../assets/css/overview-table.css">
     
-      <link rel="stylesheet" href="../../../../assets/css/cheatsheet-builder.css">
+      <link rel="stylesheet" href="../assets/css/cheatsheet-builder.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -88,8 +88,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#busqueda-binaria-en-un-array" class="md-skip">
-          Skip to content
+        <a href="#chuletario" class="md-skip">
+          Saltar a contenido
         </a>
       
     </div>
@@ -103,10 +103,10 @@
   
 
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../" title="Programación Competitiva CUNEF" class="md-header__button md-logo" aria-label="Programación Competitiva CUNEF" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Programación Competitiva CUNEF" class="md-header__button md-logo" aria-label="Programación Competitiva CUNEF" data-md-component="logo">
       
-  <img src="../../../../resources/images/logo.jpg" alt="logo">
+  <img src="../resources/images/logo.jpg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Principiante · Búsqueda binaria
+              Chuletario
             
           </span>
         </div>
@@ -163,20 +163,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Select language">
+    <button class="md-header__button md-icon" aria-label="Seleccionar idioma">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../../../algorithms/searching/binary-search-array/" hreflang="es" class="md-select__link">
+            <a href="./" hreflang="es" class="md-select__link">
               Español
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="./" hreflang="en" class="md-select__link">
+            <a href="../en/cheatsheet/" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -197,16 +197,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Buscar">
         
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -219,7 +219,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            Inicializando búsqueda
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -231,7 +231,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/jparisu/PrograCompetitivaCUNEF" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/jparisu/PrograCompetitivaCUNEF" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -265,18 +265,18 @@
 
 
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../" title="Programación Competitiva CUNEF" class="md-nav__button md-logo" aria-label="Programación Competitiva CUNEF" data-md-component="logo">
+    <a href=".." title="Programación Competitiva CUNEF" class="md-nav__button md-logo" aria-label="Programación Competitiva CUNEF" data-md-component="logo">
       
-  <img src="../../../../resources/images/logo.jpg" alt="logo">
+  <img src="../resources/images/logo.jpg" alt="logo">
 
     </a>
     Programación Competitiva CUNEF
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/jparisu/PrograCompetitivaCUNEF" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/jparisu/PrograCompetitivaCUNEF" title="Ir al repositorio" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
@@ -296,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../" class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -323,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../onboarding/" class="md-nav__link">
+      <a href="../onboarding/" class="md-nav__link">
         
   
   
@@ -402,7 +402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techniques/binary-search/" class="md-nav__link">
+      <a href="../techniques/binary-search/" class="md-nav__link">
         
   
   
@@ -430,7 +430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../techniques/dynamic-programming/" class="md-nav__link">
+      <a href="../techniques/dynamic-programming/" class="md-nav__link">
         
   
   
@@ -462,8 +462,6 @@
       
   
   
-    
-  
   
   
     
@@ -476,11 +474,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -501,7 +499,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -519,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../fundamentals/loops/" class="md-nav__link">
+      <a href="../algorithms/fundamentals/loops/" class="md-nav__link">
         
   
   
@@ -544,37 +542,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Principiante · Búsqueda binaria
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../algorithms/searching/binary-search-array/" class="md-nav__link">
         
   
   
@@ -590,70 +561,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Código
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complejidad" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Complejidad
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ejemplos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Ejemplos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Referencias
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -666,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-structures/fenwick-tree/" class="md-nav__link">
+      <a href="../algorithms/data-structures/fenwick-tree/" class="md-nav__link">
         
   
   
@@ -694,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dynamic-programming/bitmask-tsp/" class="md-nav__link">
+      <a href="../algorithms/dynamic-programming/bitmask-tsp/" class="md-nav__link">
         
   
   
@@ -722,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../geometry/convex-hull/" class="md-nav__link">
+      <a href="../algorithms/geometry/convex-hull/" class="md-nav__link">
         
   
   
@@ -757,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ranklist/" class="md-nav__link">
+      <a href="../ranklist/" class="md-nav__link">
         
   
   
@@ -781,10 +688,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../cheatsheet/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chuletario
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -800,6 +734,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#descargas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descargas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formato-del-yaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formato del YAML
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generar-el-tuyo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generar el tuyo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor-visual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructor visual
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -863,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -891,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/graph/" class="md-nav__link">
+      <a href="../overview/graph/" class="md-nav__link">
         
   
   
@@ -978,7 +976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -1006,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/git-github/" class="md-nav__link">
+      <a href="../contributing/git-github/" class="md-nav__link">
         
   
   
@@ -1034,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/add-algorithm/" class="md-nav__link">
+      <a href="../contributing/add-algorithm/" class="md-nav__link">
         
   
   
@@ -1062,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../contributing/scripts/" class="md-nav__link">
+      <a href="../contributing/scripts/" class="md-nav__link">
         
   
   
@@ -1103,7 +1101,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
   
   
   
@@ -1112,15 +1110,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table of contents
+      Tabla de contenidos
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#codigo" class="md-nav__link">
+  <a href="#descargas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Código
+        Descargas
       
     </span>
   </a>
@@ -1128,10 +1126,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#complejidad" class="md-nav__link">
+  <a href="#formato-del-yaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Complejidad
+        Formato del YAML
       
     </span>
   </a>
@@ -1139,10 +1137,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ejemplos" class="md-nav__link">
+  <a href="#generar-el-tuyo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ejemplos
+        Generar el tuyo
       
     </span>
   </a>
@@ -1150,10 +1148,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#referencias" class="md-nav__link">
+  <a href="#constructor-visual" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Referencias
+        Constructor visual
       
     </span>
   </a>
@@ -1180,112 +1178,115 @@
   
 
 
-<h1 id="busqueda-binaria-en-un-array">Búsqueda binaria en un array<a class="headerlink" href="#busqueda-binaria-en-un-array" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Metadatos</p>
-<p><strong>Nivel:</strong> Principiante · <strong>Dificultad:</strong> 1.5 · <strong>Complejidad:</strong> O(log n)
-· <strong>Técnica:</strong> <a href="../../../techniques/binary-search/">Búsqueda binaria</a></p>
-</div>
-<p>Busca un valor en un array <strong>ordenado</strong> dividiendo el espacio de búsqueda por la mitad en
-cada paso. Devuelve la posición del valor, o <code>-1</code> si no está.</p>
-<h2 id="codigo">Código<a class="headerlink" href="#codigo" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label><label for="__tabbed_1_2">Python</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Binary search on a sorted vector.</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">// Returns an index i with a[i] == target, or -1 if target is not present.</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">//   time:  O(log n)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">//   space: O(1)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">// Precondition: `a` is sorted in non-decreasing order.</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">binary_search_idx</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">lo</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">hi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">hi</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">lo</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">// avoids overflow vs (lo + hi) / 2</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">mid</span><span class="p">;</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="n">lo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="sd">&quot;&quot;&quot;Binary search on a sorted list.</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">Returns an index i with a[i] == target, or -1 if target is not present.</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    time:  O(log n)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    space: O(1)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">Precondition: `a` is sorted in non-decreasing order.</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">binary_search</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">while</span> <span class="n">lo</span> <span class="o">&lt;=</span> <span class="n">hi</span><span class="p">:</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lo</span> <span class="o">+</span> <span class="n">hi</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>            <span class="k">return</span> <span class="n">mid</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">:</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>            <span class="n">lo</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>            <span class="n">hi</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</code></pre></div>
-</div>
-</div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Precondición</p>
-<p>El array debe estar <strong>ordenado</strong>. Si no lo está, ordénalo primero (O(n log n)).</p>
-</div>
-<h2 id="complejidad">Complejidad<a class="headerlink" href="#complejidad" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Operación</th>
-<th>Complejidad</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Búsqueda</td>
-<td>O(log n)</td>
-</tr>
-<tr>
-<td>Memoria</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Array</th>
-<th>Buscar</th>
-<th>Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>1 3 5 7 9 11</code></td>
-<td><code>7</code></td>
-<td><code>3</code> (posición)</td>
-</tr>
-<tr>
-<td><code>1 3 5 7 9 11</code></td>
-<td><code>4</code></td>
-<td><code>-1</code> (no está)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="referencias">Referencias<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<h1 id="chuletario">Chuletario<a class="headerlink" href="#chuletario" title="Permanent link">&para;</a></h1>
+<p>El <strong>chuletario</strong> (o <em>cheatsheet</em>) es una hoja de referencia compacta al estilo
+<a href="https://github.com/kactl/kactl">KACTL</a>: varias columnas con los algoritmos del
+repositorio impresos uno tras otro, pensada para imprimir y llevar a un
+concurso ICPC. Se genera a partir de los mismos ficheros de código que ves en
+cada algoritmo, así que <strong>lo que llevas al concurso es exactamente el código
+probado por el CI</strong>.</p>
+<p>Puedes usar el chuletario de tres maneras:</p>
+<ol>
+<li><strong>Descargar el chuletario completo</strong> que construye el CI (todos los algoritmos).</li>
+<li><strong>Construir el tuyo a medida</strong> con un fichero YAML y <code>tools/cheatsheet.py</code>.</li>
+<li><strong>Usar el constructor visual</strong> de esta página para generar ese YAML sin
+   escribirlo a mano.</li>
+</ol>
+<h2 id="descargas">Descargas<a class="headerlink" href="#descargas" title="Permanent link">&para;</a></h2>
+<!-- Estos ficheros los produce el CI dentro de docs/cheatsheet/. Hasta que el
+     CI se ejecute por primera vez darán 404: es normal. -->
+
 <ul>
-<li><a href="https://cp-algorithms.com/num_methods/binary_search.html">CP-Algorithms: Binary search</a></li>
+<li><a href="cheatsheet.pdf">:material-file-pdf-box: Chuletario completo (PDF)</a></li>
+<li><a href="cheatsheet.tex">:material-file-code: Fuente LaTeX (.tex)</a></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">¿Enlaces rotos (404)?</p>
+<p>Los ficheros <code>cheatsheet.pdf</code> y <code>cheatsheet.tex</code> los genera el CI y los
+publica en esta misma carpeta. Si acabas de crear la página puede que aún
+no existan: aparecerán en cuanto se ejecute el workflow del chuletario.</p>
+</div>
+<h2 id="formato-del-yaml">Formato del YAML<a class="headerlink" href="#formato-del-yaml" title="Permanent link">&para;</a></h2>
+<p>La configuración elige <strong>qué</strong> algoritmos entran y <strong>cómo</strong> se renderizan.
+Estos son los campos:</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valores</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>texto</td>
+<td>Título impreso en la hoja.</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td><code>cpp</code> | <code>py</code></td>
+<td>Lenguaje por defecto del código.</td>
+</tr>
+<tr>
+<td><code>style</code></td>
+<td><code>full</code> | <code>clean</code> | <code>contest</code></td>
+<td>Estilo de código por defecto.</td>
+</tr>
+<tr>
+<td><code>include_stats</code></td>
+<td><code>true</code> | <code>false</code></td>
+<td>Imprimir complejidad / caso de uso bajo cada fragmento.</td>
+</tr>
+<tr>
+<td><code>columns</code></td>
+<td>entero</td>
+<td>Número de columnas.</td>
+</tr>
+<tr>
+<td><code>algorithms</code></td>
+<td>lista</td>
+<td>Qué incluir, <strong>en orden</strong>. Cada elemento es un <code>id</code> suelto o un mapa que sobreescribe los valores globales (<code>id</code>, <code>version</code>, <code>style</code>, <code>language</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplo completo (<code>templates/cheatsheet.example.yaml</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Chuletario</span><span class="nv"> </span><span class="s">ICPC</span><span class="nv"> </span><span class="s">CUNEF&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpp</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">contest</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">include_stats</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">columns</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nt">algorithms</span><span class="p">:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">loops</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary-search-array</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fenwick-tree</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="c1"># Un elemento puede sobreescribir los valores globales:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitmask-tsp</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w">        </span><span class="c1"># por defecto: current_version del meta.yaml</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clean</span><span class="w">       </span><span class="c1"># por defecto: el style global</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">language</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cpp</span><span class="w">      </span><span class="c1"># por defecto: el language global</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">convex-hull</span>
+</code></pre></div>
+<h2 id="generar-el-tuyo">Generar el tuyo<a class="headerlink" href="#generar-el-tuyo" title="Permanent link">&para;</a></h2>
+<p>Guarda tu configuración (por ejemplo <code>mi_chuleta.yaml</code>) y ejecuta:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>tools/cheatsheet.py<span class="w"> </span>--config<span class="w"> </span>mi_chuleta.yaml<span class="w"> </span>--out<span class="w"> </span>build/chuleta<span class="w"> </span>--pdf
+</code></pre></div>
+<p>Esto escribe <code>build/chuleta.tex</code> y, si tienes <code>pdflatex</code> instalado,
+<code>build/chuleta.pdf</code>. Sin <code>pdflatex</code> obtienes solo el <code>.tex</code> (puedes compilarlo
+en <a href="https://www.overleaf.com/">Overleaf</a> u otro editor LaTeX).</p>
+<p>Opciones útiles: <code>--all</code> (incluir todos los algoritmos), <code>--language {cpp,py}</code>
+y <code>--style {full,clean,contest}</code> (forzar lenguaje/estilo globales), <code>-v</code>
+(detallado). Consulta <code>python tools/cheatsheet.py --help</code>.</p>
+<h2 id="constructor-visual">Constructor visual<a class="headerlink" href="#constructor-visual" title="Permanent link">&para;</a></h2>
+<p>Marca los algoritmos que quieras, elige lenguaje y estilo y pulsa <strong>Generar
+YAML</strong>. La página <strong>no compila LaTeX</strong> (es estática): produce el YAML que luego
+pasas por el comando de arriba.</p>
+<div id="cheatsheet-builder" markdown="0">
+  <p class="csb-message">Cargando la lista de algoritmos… Si este mensaje no
+  desaparece, necesitas JavaScript activado y el fichero
+  <code>assets/data/algorithms.json</code> (lo genera <code>tools/genoverview.py</code>).</p>
+</div>
 
 
 
@@ -1311,7 +1312,7 @@ cada paso. Devuelve la posición del valor, o <code>-1</code> si no está.</p>
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
+  Volver al principio
 </button>
         
       </main>
@@ -1343,16 +1344,16 @@ cada paso. Devuelve la posición del valor, o <code>-1</code> si no está.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.copy", "content.tabs.link", "navigation.sections", "navigation.top", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tabs.link", "navigation.sections", "navigation.top", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../../../../assets/js/ranklist.js"></script>
+        <script src="../assets/js/ranklist.js"></script>
       
-        <script src="../../../../assets/js/overview-table.js"></script>
+        <script src="../assets/js/overview-table.js"></script>
       
-        <script src="../../../../assets/js/cheatsheet-builder.js"></script>
+        <script src="../assets/js/cheatsheet-builder.js"></script>
       
     
   </body>

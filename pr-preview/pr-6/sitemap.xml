@@ -50,6 +50,41 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/searching/binary-search-array/"/>
     </url>
     <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/cheatsheet/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/add-algorithm/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/add-algorithm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/add-algorithm/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/git-github/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/git-github/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/git-github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/scripts/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/scripts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/scripts/"/>
+    </url>
+    <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/overview/</loc>
         <lastmod>2026-07-21</lastmod>
         <changefreq>daily</changefreq>
@@ -62,6 +97,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/overview/graph/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/overview/graph/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/ranklist/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/ranklist/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/ranklist/"/>
     </url>
     <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/binary-search/</loc>
@@ -127,6 +169,41 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/searching/binary-search-array/"/>
     </url>
     <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/cheatsheet/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/add-algorithm/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/add-algorithm/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/add-algorithm/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/git-github/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/git-github/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/git-github/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/scripts/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/scripts/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/scripts/"/>
+    </url>
+    <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/overview/</loc>
         <lastmod>2026-07-21</lastmod>
         <changefreq>daily</changefreq>
@@ -139,6 +216,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/overview/graph/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/overview/graph/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/ranklist/</loc>
+        <lastmod>2026-07-21</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/ranklist/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/ranklist/"/>
     </url>
     <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/binary-search/</loc>

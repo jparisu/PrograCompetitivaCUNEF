@@ -1,0 +1,132 @@
+[
+  {
+    "id": "loops",
+    "name": {
+      "es": "Bucles",
+      "en": "Loops"
+    },
+    "level": "base",
+    "difficulty": 0.5,
+    "techniques": [],
+    "tags": [
+      "for",
+      "while",
+      "basics"
+    ],
+    "prereq": [],
+    "complexity": "O(n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "../algorithms/fundamentals/loops/"
+  },
+  {
+    "id": "binary-search-array",
+    "name": {
+      "es": "Búsqueda binaria en un array",
+      "en": "Binary search on an array"
+    },
+    "level": "beginner",
+    "difficulty": 1.5,
+    "techniques": [
+      "binary-search"
+    ],
+    "tags": [
+      "search",
+      "sorted",
+      "logn"
+    ],
+    "prereq": [
+      "loops"
+    ],
+    "complexity": "O(log n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "../algorithms/searching/binary-search-array/"
+  },
+  {
+    "id": "fenwick-tree",
+    "name": {
+      "es": "Árbol de Fenwick",
+      "en": "Fenwick Tree (BIT)"
+    },
+    "level": "intermediate",
+    "difficulty": 3.0,
+    "techniques": [
+      "amortized"
+    ],
+    "tags": [
+      "range-query",
+      "point-update",
+      "logn"
+    ],
+    "prereq": [
+      "arrays",
+      "prefix-sums-1d"
+    ],
+    "complexity": "O(n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "../algorithms/data-structures/fenwick-tree/"
+  },
+  {
+    "id": "bitmask-tsp",
+    "name": {
+      "es": "DP con máscaras de bits — TSP",
+      "en": "Bitmask DP — TSP"
+    },
+    "level": "advanced",
+    "difficulty": 6.0,
+    "techniques": [
+      "dynamic-programming",
+      "bitmask"
+    ],
+    "tags": [
+      "tsp",
+      "held-karp",
+      "hamiltonian"
+    ],
+    "prereq": [
+      "dp-intro",
+      "bitmask"
+    ],
+    "complexity": "O(2^n * n^2)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "../algorithms/dynamic-programming/bitmask-tsp/"
+  },
+  {
+    "id": "convex-hull",
+    "name": {
+      "es": "Envolvente convexa",
+      "en": "Convex hull"
+    },
+    "level": "expert",
+    "difficulty": 5.5,
+    "techniques": [
+      "geometry"
+    ],
+    "tags": [
+      "monotone-chain",
+      "andrew",
+      "geometry"
+    ],
+    "prereq": [
+      "geometry-basics",
+      "sorting-builtin"
+    ],
+    "complexity": "O(n log n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "../algorithms/geometry/convex-hull/"
+  }
+]
