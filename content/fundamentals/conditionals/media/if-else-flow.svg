@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" role="img"
+     aria-label="Flujo de un if / else if / else para hallar el mayor de dos números">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <style>
+    .edge { fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .cond { fill: none; stroke: currentColor; stroke-width: 1.75; }
+    .box  { fill: rgba(236, 102, 7, 0.12); stroke: #ec6607; stroke-width: 1.75; }
+    .lbl  { font: 600 14px sans-serif; fill: currentColor; text-anchor: middle; }
+    .tag  { font: 700 12px sans-serif; fill: currentColor; text-anchor: middle; opacity: 0.65; }
+  </style>
+
+  <!-- decisión: a > b -->
+  <polygon class="cond" points="100,12 172,45 100,78 28,45"/>
+  <text class="lbl" x="100" y="50">a &gt; b</text>
+
+  <!-- rama verdadera -> a es mayor -->
+  <line class="edge" x1="172" y1="45" x2="248" y2="45" marker-end="url(#ah)"/>
+  <text class="tag" x="210" y="38">sí</text>
+  <rect class="box" x="250" y="25" width="160" height="40" rx="6"/>
+  <text class="lbl" x="330" y="50">a es mayor</text>
+
+  <!-- rama falsa -> siguiente decisión -->
+  <line class="edge" x1="100" y1="78" x2="100" y2="115" marker-end="url(#ah)"/>
+  <text class="tag" x="113" y="100">no</text>
+
+  <!-- decisión: a < b -->
+  <polygon class="cond" points="100,117 172,150 100,183 28,150"/>
+  <text class="lbl" x="100" y="155">a &lt; b</text>
+
+  <!-- rama verdadera -> b es mayor -->
+  <line class="edge" x1="172" y1="150" x2="248" y2="150" marker-end="url(#ah)"/>
+  <text class="tag" x="210" y="143">sí</text>
+  <rect class="box" x="250" y="130" width="160" height="40" rx="6"/>
+  <text class="lbl" x="330" y="155">b es mayor</text>
+
+  <!-- rama falsa -> son iguales -->
+  <line class="edge" x1="100" y1="183" x2="100" y2="223" marker-end="url(#ah)"/>
+  <text class="tag" x="113" y="207">no</text>
+  <rect class="box" x="20" y="225" width="160" height="40" rx="6"/>
+  <text class="lbl" x="100" y="250">son iguales</text>
+</svg>
