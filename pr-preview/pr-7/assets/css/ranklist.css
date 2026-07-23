@@ -1,0 +1,255 @@
+/*
+ * Styles for the ranking page (docs/ranklist/).
+ *
+ * Works in both Material colour schemes. We lean on Material's own CSS custom
+ * properties (--md-default-fg-color, --md-primary-fg-color, …) so the page
+ * follows the active palette, and add a couple of local variables that we
+ * override under [data-md-color-scheme="slate"] for dark mode.
+ */
+
+:root {
+  --ranklist-track: rgba(0, 0, 0, 0.08);
+  --ranklist-row-bg: rgba(0, 0, 0, 0.02);
+  --ranklist-row-border: rgba(0, 0, 0, 0.10);
+  --ranklist-up: #2e7d32;      /* green */
+  --ranklist-down: #c62828;    /* red */
+  --ranklist-same: #757575;    /* grey */
+  --ranklist-new: #1565c0;     /* blue */
+}
+
+[data-md-color-scheme="slate"] {
+  --ranklist-track: rgba(255, 255, 255, 0.12);
+  --ranklist-row-bg: rgba(255, 255, 255, 0.03);
+  --ranklist-row-border: rgba(255, 255, 255, 0.14);
+  --ranklist-up: #66bb6a;
+  --ranklist-down: #ef5350;
+  --ranklist-same: #9e9e9e;
+  --ranklist-new: #64b5f6;
+}
+
+/* --- Controls bar ------------------------------------------------------- */
+.ranklist-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.2rem 0 0.6rem;
+}
+
+.ranklist-controls__label {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.ranklist-controls__buttons {
+  display: inline-flex;
+  border: 1px solid var(--ranklist-row-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ranklist-btn {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font: inherit;
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ranklist-btn + .ranklist-btn {
+  border-left: 1px solid var(--ranklist-row-border);
+}
+
+.ranklist-btn:hover {
+  background: var(--ranklist-track);
+}
+
+.ranklist-btn.is-active {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color, #fff);
+}
+
+.ranklist-btn:focus-visible {
+  outline: 2px solid var(--md-primary-fg-color);
+  outline-offset: 2px;
+}
+
+/* --- Meta / banners ----------------------------------------------------- */
+.ranklist__updated {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.ranklist__banner {
+  font-size: 0.8rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+  background: var(--ranklist-track);
+  border: 1px dashed var(--ranklist-row-border);
+  margin: 0.4rem 0 0.8rem;
+}
+
+.ranklist-loading,
+.ranklist-empty,
+.ranklist-error {
+  opacity: 0.8;
+}
+
+.ranklist-error {
+  color: var(--ranklist-down);
+}
+
+/* --- Rows --------------------------------------------------------------- */
+.ranklist__rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+.ranklist__row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--ranklist-row-border);
+  border-radius: 0.5rem;
+  background: var(--ranklist-row-bg);
+  margin-bottom: 0.4rem;
+}
+
+.ranklist__pos {
+  font-weight: 700;
+  font-size: 1.05rem;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.ranklist__main {
+  min-width: 0;
+}
+
+.ranklist__name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ranklist__handle {
+  font-weight: 400;
+  font-size: 0.8rem;
+  opacity: 0.65;
+  font-family: var(--md-code-font-family, monospace);
+}
+
+/* Progress bar */
+.ranklist__bar {
+  margin-top: 0.35rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--ranklist-track);
+  overflow: hidden;
+}
+
+.ranklist__bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--md-primary-fg-color);
+  transition: width 0.3s ease;
+  min-width: 2px;
+}
+
+.ranklist__stats {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ranklist__points {
+  font-weight: 700;
+}
+
+.ranklist__solved {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+/* --- Change indicators -------------------------------------------------- */
+.ranklist__change {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  min-width: 3.5rem;
+  white-space: nowrap;
+}
+
+.ranklist__arrow {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ranklist__arrow--up {
+  color: var(--ranklist-up);
+}
+
+.ranklist__arrow--down {
+  color: var(--ranklist-down);
+}
+
+.ranklist__arrow--same {
+  color: var(--ranklist-same);
+}
+
+.ranklist__gain {
+  font-size: 0.75rem;
+}
+
+.ranklist__gain--up {
+  color: var(--ranklist-up);
+}
+
+.ranklist__gain--down {
+  color: var(--ranklist-down);
+}
+
+.ranklist__gain--same {
+  opacity: 0.6;
+}
+
+.ranklist__badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.ranklist__badge--new {
+  color: #fff;
+  background: var(--ranklist-new);
+}
+
+/* --- Narrow screens ----------------------------------------------------- */
+@media screen and (max-width: 44.9375em) {
+  .ranklist__row {
+    grid-template-columns: 2.2rem 1fr auto;
+    grid-template-areas:
+      "pos main change"
+      "pos stats change";
+    row-gap: 0.2rem;
+  }
+  .ranklist__pos { grid-area: pos; }
+  .ranklist__main { grid-area: main; }
+  .ranklist__stats {
+    grid-area: stats;
+    text-align: left;
+  }
+  .ranklist__change { grid-area: change; }
+}
