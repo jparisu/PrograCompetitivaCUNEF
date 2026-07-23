@@ -23,16 +23,22 @@ Steps
     overview   -> tools/genoverview.py (docs/assets/data/algorithms.json)
     taxonomy   -> tools/gentaxonomy.py (docs/assets/js/taxonomy.js from common.py)
     nav        -> tools/gennav.py      (the mkdocs.yml nav, grouped by level)
+    cheatsheet -> tools/cheatsheet.py  (docs/cheatsheet/cheatsheet.tex)
 
 The dependency graph and the type/level matrix are now rendered client-side from
 algorithms.json (docs/assets/js/graph.js and matrix.js), so there is no graph
 generation step here.
 
-Note: the cheatsheet (tools/cheatsheet.py) and the Kattis scraper
-(tools/scrape_kattis.py) are NOT part of this orchestrator. The cheatsheet needs
-LaTeX and is rebuilt by its own workflow (.github/workflows/cheatsheet.yml) so
-ordinary content PRs don't churn docs/cheatsheet/cheatsheet.*; the scraper needs
-network access. Run either on its own when needed.
+The cheatsheet step only (re)builds the deterministic ``.tex`` — it needs no
+LaTeX, so it is safe under ``status`` on any machine and in CI. The compiled
+``.pdf`` is a publish artifact: ``generate`` also compiles it *if* ``pdflatex``
+happens to be on PATH, but the PDF is git-ignored and produced for real by the
+docs deploy workflow. It runs last, after ``code``, since it reads the generated
+code files.
+
+Note: the Kattis scraper (tools/scrape_kattis.py) is NOT part of this orchestrator
+— it needs network access and keeps a dated history; run it (or its workflow) on
+its own.
 """
 from __future__ import annotations
 
@@ -50,6 +56,7 @@ STEPS = {
     "overview": ("Overview data (algorithms.json)", "genoverview", False),
     "taxonomy": ("Front-end taxonomy (assets/js/taxonomy.js)", "gentaxonomy", False),
     "nav": ("Site navigation (mkdocs.yml nav)", "gennav", False),
+    "cheatsheet": ("Cheatsheet LaTeX (docs/cheatsheet/cheatsheet.tex)", "cheatsheet", False),
 }
 
 
@@ -153,10 +160,13 @@ def main(argv: list[str] | None = None) -> int:
         selected = list(STEPS)
 
     total_pending = 0
+    per_step: list[tuple[str, int]] = []
     for name in selected:
         title, module_name, takes_algo = STEPS[name]
         changes = _run_step(module_name, takes_algo, check, args.algo, force=args.force)
-        total_pending += common.print_plan(changes, check=check, title=title)
+        pending = common.print_plan(changes, check=check, title=title)
+        per_step.append((title, pending))
+        total_pending += pending
 
     # Content contract check (only meaningful for a full run, not a --only subset).
     issues = validate() if not args.only else []
@@ -164,6 +174,25 @@ def main(argv: list[str] | None = None) -> int:
         print("\n=== Content validation ===")
         for msg in issues:
             print(f"  ✗ {msg}")
+
+    # Per-tool summary: one scannable line per generation tool, so the CI log makes
+    # it obvious WHICH tooling is out of date (and, in status mode, how to fix it).
+    # Only `status` treats pending files as a problem (✗ = stale); `generate` just
+    # reports what it wrote.
+    width = max((len(t) for t, _ in per_step), default=0)
+    print("\n=== Generation status ===")
+    for title, pending in per_step:
+        if pending == 0:
+            mark, state = "✓", "up to date"
+        elif check:
+            mark, state = "✗", f"{pending} file(s) stale"
+        else:
+            mark, state = "✓", f"{pending} file(s) written"
+        print(f"  {mark} {title.ljust(width)}   {state}")
+    if not args.only:
+        mark = "✓" if not issues else "✗"
+        state = "ok" if not issues else f"{len(issues)} violation(s)"
+        print(f"  {mark} {'Content contract'.ljust(width)}   {state}")
 
     print()
     if issues:

@@ -138,6 +138,11 @@ venv.bak/
 # mkdocs documentation
 /site
 
+# Cheatsheet PDF: a publish artifact compiled by CI (docs.yml) from the committed
+# and gated docs/cheatsheet/cheatsheet.tex — never committed. (Untrack an existing
+# copy once with: git rm --cached docs/cheatsheet/cheatsheet.pdf)
+docs/cheatsheet/cheatsheet.pdf
+
 # mypy
 .mypy_cache/
 .dmypy.json

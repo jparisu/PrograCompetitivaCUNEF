@@ -1,14 +1,21 @@
 name: Kattis standings
 
-# Weekly job: scrape the CUNEF Kattis affiliation ranking and commit the updated
-# standings JSON (which keeps a history of dated snapshots). The docs Ranking
-# page reads that JSON client-side. Each run appends a snapshot, which is what
-# powers the day/week/year position + points deltas over time.
+# Weekly job: scrape the CUNEF Kattis affiliation ranking and update the standings
+# JSON on a rolling pull request (branch `bot/standings`) — it NEVER commits to
+# main. Each run appends a dated snapshot (history is preserved: a new date is
+# appended, a same-date entry is refreshed), and the maintainer reviews & merges
+# the single open PR whenever ready. Runs every Monday morning and on manual
+# dispatch; if a PR is already open it just adds a commit to it, otherwise it
+# opens one.
 #
-# It uses a headless browser (--browser) because Kattis returns 403 to plain
-# HTTP scripts. If Kattis still blocks the CI runner, the job does NOT fail; it
-# just keeps the previous data. The reliable manual fallback is to save the page
-# in a browser and run:  python tools/scrape_kattis.py --html-file page.html
+# It uses a headless browser (--browser) because Kattis returns 403 to plain HTTP
+# scripts. If Kattis blocks the CI runner the job does NOT fail; it just keeps the
+# previous data. The reliable manual fallback is to save the page in a browser and
+# run:  python tools/scrape_kattis.py --html-file page.html
+#
+# Note: because the PR is opened with GITHUB_TOKEN, GitHub does not trigger the
+# other on:pull_request workflows for it (anti-recursion) — that is fine for a
+# data-only change; review the diff and merge.
 
 on:
   schedule:
@@ -16,17 +23,24 @@ on:
   workflow_dispatch:       # allow manual runs from the Actions tab
 
 permissions:
-  contents: write
+  contents: write        # push the bot/standings branch (not main)
+  pull-requests: write   # open / update the rolling PR
 
 concurrency:
   group: kattis-standings
   cancel-in-progress: false
+
+env:
+  BRANCH: bot/standings
+  DATA_FILE: docs/assets/data/standings.json
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history: needed to reset/rebase the rolling branch
 
       - uses: actions/setup-python@v5
         with:
@@ -38,16 +52,59 @@ jobs:
       - name: Install Chromium for Playwright
         run: python -m playwright install --with-deps chromium
 
-      # Best-effort: don't fail the job if Kattis blocks the runner; just keep
-      # the committed data. `|| true` lets the commit step run either way.
+      # Roll onto bot/standings: if a PR is already open, reuse that branch so its
+      # accumulated snapshots are the base the scraper appends to; otherwise start
+      # the branch fresh from main (whatever history was last merged). THIS is what
+      # makes the scrape append to the series instead of resetting it.
+      - name: Prepare rolling branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --no-tags origin main
+          git fetch --no-tags origin "$BRANCH" || true
+          PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // ""')
+          echo "PR_NUMBER=$PR" >> "$GITHUB_ENV"
+          if [ -n "$PR" ] && git show-ref --verify --quiet "refs/remotes/origin/$BRANCH"; then
+            echo "Open PR #$PR found — reusing $BRANCH (keeps its snapshot history)."
+            git checkout -B "$BRANCH" "origin/$BRANCH"
+          else
+            echo "No open PR — starting $BRANCH fresh from origin/main."
+            git checkout -B "$BRANCH" origin/main
+          fi
+
+      # Best-effort: don't fail the job if Kattis blocks the runner; just keep the
+      # existing data. scrape_kattis.py loads the current JSON and upserts today's
+      # snapshot (same date -> replaced; new date -> appended), preserving history.
       - name: Scrape standings (headless browser)
         run: |
           python tools/scrape_kattis.py --browser -v \
             || echo "::warning::Kattis scrape failed (likely bot protection); keeping previous standings."
 
-      # Commits only if standings.json actually changed. Pushes made with
-      # GITHUB_TOKEN do not retrigger workflows, so there is no loop.
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "data: update Kattis standings [bot]"
-          file_pattern: "docs/assets/data/standings.json"
+      # Commit only if standings.json actually changed, push to the rolling branch
+      # (never main), and open the PR the first time.
+      - name: Commit, push, and open PR if needed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- "$DATA_FILE"; then
+            echo "No change in $DATA_FILE — nothing to push."
+            exit 0
+          fi
+          git add "$DATA_FILE"
+          git commit -m "data: update Kattis standings [bot]"
+          # Normal push handles a new branch and the fast-forward "reuse open PR"
+          # case; the force-with-lease fallback handles the "reset fresh from main
+          # over a stale merged/closed branch" case without clobbering surprises.
+          git push origin "$BRANCH" || git push --force-with-lease origin "$BRANCH"
+          if [ -z "${PR_NUMBER:-}" ]; then
+            gh pr create --base main --head "$BRANCH" \
+              --title "data: update Kattis standings" \
+              --body "Automated Kattis standings update on a rolling branch. Each run appends a **dated snapshot** (history preserved: a new date is appended, a same-date entry refreshed). Review the diff and merge (rebase) when ready; close the PR to discard the pending snapshots."
+            echo "Opened a new standings PR."
+          else
+            echo "Added a commit to existing PR #${PR_NUMBER}."
+          fi

@@ -379,22 +379,30 @@ def compile_pdf(tex_path: Path, *, verbose: bool) -> bool:
 DEFAULT_SITE_TEX = common.DOCS_DIR / "cheatsheet" / "cheatsheet.tex"
 
 
-def generate(check: bool = False) -> list[common.Change]:
-    """Build the DEFAULT cheatsheet (every algorithm that has code) and write it
-    to docs/cheatsheet/cheatsheet.tex. On a real run (not --check) it also
-    compiles the PDF if pdflatex is available. Returns the .tex Change.
+def _site_config() -> dict:
+    """Presentation config for the site cheatsheet (title / columns / style / …).
 
-    Presentation (title, columns, language, style, stats) comes from
-    templates/cheatsheet.example.yaml; the algorithm list is ignored — ALL
-    algorithms with a matching code file are included.
+    Read from templates/cheatsheet.example.yaml for its *presentation* fields
+    only — the ``algorithms:`` list there is ignored; the site sheet always
+    includes every algorithm that has code (plus any per-item ``cheatsheet:``
+    opt-ins). Falls back to sane defaults if the file is missing/invalid.
     """
     try:
-        cfg = load_config(DEFAULT_CONFIG)
+        return load_config(DEFAULT_CONFIG)
     except ConfigError:
-        cfg = {"title": "Chuletario ICPC CUNEF", "language": "cpp", "style": "contest",
-               "include_stats": True, "columns": 3, "algorithms": []}
+        return {"title": "Chuletario ICPC CUNEF", "language": "cpp", "style": "contest",
+                "include_stats": True, "columns": 3, "algorithms": []}
 
-    items = []
+
+def build_site_items(cfg: dict) -> list[dict]:
+    """Resolve the canonical site cheatsheet contents.
+
+    Every algorithm with a matching code file is included, plus explicit
+    per-item ``cheatsheet:`` file opt-ins (which also let ``article`` pages
+    contribute). Ordered by ``common.iter_algorithms`` (level, id), so the
+    output is deterministic and therefore gate-able by ``tools/gen.py``.
+    """
+    items: list[dict] = []
     for algo in common.iter_algorithms():
         # An explicit meta `cheatsheet:` list wins for any format (article or
         # snippet): include exactly the files it names.
@@ -409,9 +417,26 @@ def generate(check: bool = False) -> list[common.Change]:
         version = resolved["version"] or algo.current_version
         if find_code_file(algo, version, resolved["style"], resolved["language"]):
             items.append(resolved)   # only items that actually have code to show
+    return items
 
-    body, _ = render_body(items, cfg, verbose=False)
-    doc = render_document(cfg, body)
+
+def build_site_document() -> str:
+    """Render the full site cheatsheet ``.tex`` string (deterministic; no LaTeX)."""
+    cfg = _site_config()
+    body, _ = render_body(build_site_items(cfg), cfg, verbose=False)
+    return render_document(cfg, body)
+
+
+def generate(check: bool = False) -> list[common.Change]:
+    """Build the site cheatsheet and write docs/cheatsheet/cheatsheet.tex.
+
+    Used by tools/gen.py: ``status`` compares the freshly-rendered ``.tex``
+    against the committed one (no LaTeX needed); ``generate`` writes it and,
+    only when it changed AND ``pdflatex`` is on PATH, also refreshes the local
+    PDF as a convenience. In CI the PDF is (re)built by the docs deploy via
+    ``cheatsheet.py --site --pdf`` and is git-ignored, so it is never gated here.
+    """
+    doc = build_site_document()
     change = common.write_if_changed(DEFAULT_SITE_TEX, doc, check)
 
     if not check and change.action != "unchanged" and shutil.which("pdflatex"):
@@ -475,6 +500,13 @@ def build_parser() -> argparse.ArgumentParser:
              "using the global defaults",
     )
     parser.add_argument(
+        "--site", action="store_true",
+        help="build the canonical SITE cheatsheet (every algorithm with code + "
+             "meta 'cheatsheet:' opt-ins) straight to docs/cheatsheet/cheatsheet.tex "
+             "— the exact content tools/gen.py gates. Ignores --config/--all/--out; "
+             "combine with --pdf (this is what the docs deploy runs).",
+    )
+    parser.add_argument(
         "-v", "--verbose", action="store_true",
         help="print each resolved algorithm and code file",
     )
@@ -483,6 +515,18 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+
+    # Canonical site build: same content tools/gen.py gates, always (re)written
+    # and — with --pdf — always recompiled (a fresh deploy runner has no prior
+    # PDF, so we cannot skip on "unchanged" the way generate() does).
+    if args.site:
+        doc = build_site_document()
+        DEFAULT_SITE_TEX.parent.mkdir(parents=True, exist_ok=True)
+        DEFAULT_SITE_TEX.write_text(doc, encoding="utf-8")
+        print(f"wrote {DEFAULT_SITE_TEX.relative_to(common.REPO_ROOT)} (site cheatsheet)")
+        if args.pdf and not compile_pdf(DEFAULT_SITE_TEX, verbose=args.verbose):
+            return 1
+        return 0
 
     try:
         cfg = load_config(args.config)
