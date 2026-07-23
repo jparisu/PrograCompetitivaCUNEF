@@ -2,7 +2,7 @@
 """Turn a YAML selection into a KACTL-style LaTeX cheatsheet (and, optionally, a PDF).
 
 The cheatsheet is a compact multi-column reference sheet built from the
-per-algorithm code files under ``docs/algorithms/**/code/``. You choose *what*
+per-item code files under ``docs/content/**/code/``. You choose *what*
 to include and *how* to render it in a small YAML config; this script resolves
 each algorithm to the right code file, injects everything into
 ``templates/cheatsheet.tex`` and writes a ``.tex`` (and a ``.pdf`` with ``--pdf``

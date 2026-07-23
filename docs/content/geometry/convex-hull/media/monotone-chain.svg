@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 220" role="img" aria-label="La envolvente construida como cadena inferior y cadena superior">
+  <style>
+    .lower { fill: none; stroke: #ec6607; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+    .upper { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; stroke-dasharray: 7 5; opacity: 0.85; }
+    .pt { fill: currentColor; }
+    .lbl { font: 600 13px sans-serif; }
+    .lbl.up { fill: currentColor; }
+    .lbl.lo { fill: #ec6607; }
+  </style>
+  <!-- upper chain (top): leftmost -> ... -> rightmost -->
+  <polyline class="upper" points="40,180 120,40 250,70"/>
+  <!-- lower chain (bottom): leftmost -> ... -> rightmost -->
+  <polyline class="lower" points="40,180 90,200 220,190 250,70"/>
+  <!-- interior hull vertices -->
+  <circle class="pt" cx="120" cy="40"  r="4.5"/>
+  <circle class="pt" cx="90"  cy="200" r="4.5"/>
+  <circle class="pt" cx="220" cy="190" r="4.5"/>
+  <!-- extreme points (x min / x max) where both chains meet -->
+  <circle class="pt" cx="40"  cy="180" r="6"/>
+  <circle class="pt" cx="250" cy="70"  r="6"/>
+  <!-- labels -->
+  <text class="lbl up" x="138" y="85">cadena superior</text>
+  <text class="lbl lo" x="95" y="160">cadena inferior</text>
+</svg>

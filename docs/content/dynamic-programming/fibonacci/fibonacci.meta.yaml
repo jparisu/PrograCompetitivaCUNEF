@@ -1,0 +1,14 @@
+id: fibonacci
+type: algorithm
+topic: dynamic-programming
+name:
+  es: "Fibonacci"
+  en: "Fibonacci"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: [recursion]
+related: [dynamic-programming]
+current_version: v1
+wip: true

@@ -14,9 +14,11 @@ students and faculty are very welcome — code, fixes, explanations, or just ide
 
 ## In short
 
-- Each algorithm is **one folder** under `docs/algorithms/<topic>/<algorithm>/`.
-- Write the hand-written `full` code (C++ **and** Python) and fill `meta.yaml`; the
-  `clean`/`contest` versions, tests, tables and graph are generated.
+- Each element (algorithm / technique / structure) is **one folder** under
+  `docs/content/<topic>/<id>/`.
+- Write the hand-written `full` code (C++ **and** Python) and fill `<id>.meta.yaml`; the
+  `clean`/`contest` versions, tests, tables, graph **and the site navigation** are
+  generated — you never edit `mkdocs.yml` by hand.
 - Before opening a PR:
 
   ```bash

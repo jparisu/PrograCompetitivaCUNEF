@@ -34,4 +34,8 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: regenerate derived files [autogen]"
-          file_pattern: "docs/**"
+          # docs/** covers clean/contest code, test fixtures and algorithms.json;
+          # mkdocs.yml carries the generated nav (tools/gennav.py).
+          file_pattern: |
+            docs/**
+            mkdocs.yml

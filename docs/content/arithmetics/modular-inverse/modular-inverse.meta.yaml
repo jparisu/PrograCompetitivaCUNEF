@@ -1,0 +1,13 @@
+id: modular-inverse
+type: technique
+topic: arithmetics
+name:
+  es: "Modular inverse"
+  en: "Modular inverse"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: [binary-exponentiation, gcd]
+current_version: v1
+wip: true

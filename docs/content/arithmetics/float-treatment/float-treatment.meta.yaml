@@ -1,0 +1,15 @@
+id: float-treatment
+type: technique
+format: article
+topic: arithmetics
+name:
+  es: "Coma flotante"
+  en: "Floating point"
+level: beginner
+difficulty: 1.8
+techniques: []
+tags: [float, double, precision, epsilon]
+prerequisites: [native-types]
+related: [decimal-precision]
+current_version: v1
+wip: true

@@ -1,0 +1,14 @@
+id: overflow
+type: technique
+format: article
+topic: fundamentals
+name:
+  es: "Desbordamiento (overflow)"
+  en: "Overflow"
+level: base
+difficulty: 0.9
+techniques: []
+tags: [overflow, int, long-long, limits]
+prerequisites: [native-types]
+current_version: v1
+wip: true

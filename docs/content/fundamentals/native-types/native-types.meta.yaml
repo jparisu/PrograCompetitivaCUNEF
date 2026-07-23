@@ -1,0 +1,14 @@
+id: native-types
+type: technique
+format: article
+topic: fundamentals
+name:
+  es: "Tipos nativos"
+  en: "Native types"
+level: base
+difficulty: 0.3
+techniques: []
+tags: [int, float, bool, char, types]
+prerequisites: []
+current_version: v1
+wip: true

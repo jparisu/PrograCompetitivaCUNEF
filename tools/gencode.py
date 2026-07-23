@@ -11,9 +11,10 @@ are **derived** from it, so authors never keep three copies in sync:
     full  --(strip comments/docstrings)-->  clean  --(shorten locals)-->  contest
 
 * ``full``    — hand-written, always. Never touched by this script.
-* ``clean``   — ``full`` with every comment and doc-string removed, blank lines
-                and trailing whitespace dropped. Safe for both languages.
-* ``contest`` — a compact form derived from ``clean``:
+* ``clean``   — ``full`` with every comment and doc-string removed and trailing
+                whitespace dropped, but the author's **blank lines are kept** as
+                logical separators (readable). Safe for both languages.
+* ``contest`` — a COMPACT form derived from ``clean`` (blank lines removed):
     - **Python**: local variables, function arguments and helper (nested) function
       names are renamed to short names (``a``, ``b``, ``c`` …) *consistently*,
       while the public API (the class/``type`` and functions named in
@@ -79,7 +80,11 @@ import common  # noqa: E402
 # full -> clean  (comment / doc-string stripping)
 # --------------------------------------------------------------------------- #
 def _normalize_lines(text: str) -> str:
-    """Strip trailing whitespace on every line and drop blank/whitespace-only lines."""
+    """Strip trailing whitespace on every line and drop blank/whitespace-only lines.
+
+    Used for the COMPACT ``contest`` style (no blank lines). ``clean`` keeps the
+    author's blank lines instead — see :func:`clean_cpp` / :func:`clean_python`.
+    """
     out = [line.rstrip() for line in text.splitlines()]
     out = [line for line in out if line != ""]
     return "\n".join(out) + "\n" if out else ""
@@ -136,8 +141,30 @@ def strip_cpp_comments(src: str) -> str:
 
 
 def clean_cpp(full_src: str) -> str:
-    """C++ ``full`` -> ``clean``: strip comments, blank lines and trailing whitespace."""
-    return _normalize_lines(strip_cpp_comments(full_src))
+    """C++ ``full`` -> ``clean``: strip comments and trailing whitespace, but KEEP
+    the author's blank lines as logical separators.
+
+    A line that becomes empty only because a whole-line comment was removed is
+    dropped; a line that was blank in the original source is preserved. Runs of
+    blank lines are collapsed to one, and leading/trailing blanks are trimmed.
+    """
+    stripped = strip_cpp_comments(full_src).splitlines()
+    orig = full_src.splitlines()
+    result: list[str] = []
+    for i, line in enumerate(stripped):
+        line = line.rstrip()
+        if line == "":
+            orig_blank = i < len(orig) and orig[i].strip() == ""
+            if not orig_blank:
+                continue                       # blank only from a removed comment
+            if not result or result[-1] == "":
+                continue                       # collapse leading / duplicate blanks
+            result.append("")
+            continue
+        result.append(line)
+    while result and result[-1] == "":
+        result.pop()
+    return "\n".join(result) + "\n" if result else ""
 
 
 def clean_python(full_src: str) -> str:
@@ -189,12 +216,22 @@ def clean_python(full_src: str) -> str:
         if idx in protected_lines:
             result.append(line)  # inside a multi-line string: do not touch
             continue
-        if idx in comment_col:
+        was_comment = idx in comment_col
+        if was_comment:
             line = line[: comment_col[idx]]
         line = line.rstrip()
         if line == "":
+            # Keep the author's blank lines as logical separators, but drop a line
+            # that is empty only because a whole-line comment was removed.
+            if was_comment:
+                continue
+            if not result or result[-1] == "":
+                continue                       # collapse leading / duplicate blanks
+            result.append("")
             continue
         result.append(line)
+    while result and result[-1] == "":
+        result.pop()
     return "\n".join(result) + "\n" if result else ""
 
 
@@ -407,7 +444,11 @@ def contest_python(clean_src: str, api_names: set[str]) -> str:
     except SyntaxError:  # pragma: no cover - defensive
         return _normalize_lines(clean_src)
 
-    return out.rstrip("\n") + "\n"
+    # contest is COMPACT: drop the blank lines `ast.unparse` inserts around defs
+    # (the readable blank lines live in `clean`). Empty lines are never
+    # significant in Python, so this is a safe transform for generated code.
+    out_lines = [ln for ln in out.split("\n") if ln.strip() != ""]
+    return "\n".join(out_lines) + "\n" if out_lines else ""
 
 
 def contest_cpp(clean_src: str) -> str:
@@ -561,7 +602,7 @@ def build_parser() -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description=(
             "Generate the 'clean' and 'contest' code styles from the hand-written\n"
-            "'full' style, for every algorithm under docs/algorithms/**.\n\n"
+            "'full' style, for every item under docs/content/**.\n\n"
             "Style chain:  full  ->  clean  ->  contest\n"
             "  full     hand-written (never modified by this tool)\n"
             "  clean    comments & doc-strings stripped, blank lines removed\n"

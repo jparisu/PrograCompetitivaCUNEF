@@ -1,0 +1,13 @@
+id: segment-tree
+type: structure
+topic: data-structures
+name:
+  es: "Segment tree"
+  en: "Segment tree"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: [lists, recursion]
+current_version: v1
+wip: true

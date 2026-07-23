@@ -5,9 +5,10 @@ profesores. Aquí encontrarás todo lo necesario, **desde cero**.
 
 ## La idea en una frase
 
-> Cada algoritmo es **una carpeta**. Escribes el código `full` (comentado) en C++ y
-> Python, rellenas un `meta.yaml`, y **el resto se genera solo**: las versiones `clean` y
-> `contest`, los tests, la tabla resumen, el grafo de dependencias y el chuletario.
+> Cada elemento es **una carpeta** en `docs/content/<tema>/<id>/`. Escribes el código
+> `full` (comentado) en C++ y Python, rellenas un `meta.yaml`, y **el resto se genera
+> solo**: las versiones `clean` y `contest`, los tests, la tabla resumen, el grafo de
+> dependencias, el chuletario y **la navegación del sitio** (no tocas `mkdocs.yml`).
 
 ## Ruta recomendada
 

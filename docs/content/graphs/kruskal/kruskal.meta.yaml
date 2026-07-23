@@ -1,0 +1,14 @@
+id: kruskal
+type: algorithm
+topic: graphs
+name:
+  es: "Kruskal (MST)"
+  en: "Kruskal (MST)"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: [graphs, union-find]
+related: [prim]
+current_version: v1
+wip: true

@@ -1,0 +1,14 @@
+id: tsp
+type: algorithm
+topic: graphs
+name:
+  es: "Travelling salesman problem"
+  en: "Travelling salesman problem"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: [graphs]
+related: [bitmask-tsp]
+current_version: v1
+wip: true

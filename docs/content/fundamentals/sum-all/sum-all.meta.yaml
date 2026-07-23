@@ -1,0 +1,13 @@
+id: sum-all
+type: algorithm
+topic: fundamentals
+name:
+  es: "Sum all"
+  en: "Sum all"
+level: base
+difficulty: 1.0
+techniques: []
+tags: []
+prerequisites: [loops]
+current_version: v1
+wip: true

@@ -36,6 +36,12 @@ jobs:
         if: github.event.action != 'closed'
         run: python tools/gen.py status
 
+      # PR gate: compile & run every code variant against the meta.yaml examples,
+      # so the documented examples really are passing tests (g++ ships on the runner).
+      - name: Run example tests
+        if: github.event.action != 'closed'
+        run: python tools/runtests.py
+
       # Build (also the PR gate: --strict fails on broken links / missing nav).
       # Skipped when a PR is closed — nothing to build, we only clean up below.
       - name: Build site

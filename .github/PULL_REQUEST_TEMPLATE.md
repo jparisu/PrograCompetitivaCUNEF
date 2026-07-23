@@ -2,19 +2,20 @@
 
 ## ¿Qué añade este PR?
 
-- [ ] Nuevo algoritmo
+- [ ] Nuevo elemento (algoritmo / técnica / estructura)
 - [ ] Corrección / mejora
 - [ ] Documentación
 - [ ] Otro: ___
 
-## Checklist para un algoritmo nuevo
+## Checklist para un elemento nuevo
 
-- [ ] Carpeta en `docs/algorithms/<tema>/<algoritmo>/`
-- [ ] `meta.yaml` completo (id, level, techniques, prerequisites, examples)
+- [ ] Carpeta en `docs/content/<tema>/<id>/`
+- [ ] `<id>.meta.yaml` completo (id, type, topic, level, techniques, prerequisites, examples)
 - [ ] Código `full` en C++ **y** Python
-- [ ] Explicación en `index.md` (español; inglés opcional)
+- [ ] Explicación en `index.md` (español; inglés opcional en `index.en.md`)
 - [ ] `python tools/gen.py generate` ejecutado y ficheros derivados incluidos
 - [ ] `python tools/gen.py status` dice "up to date"
+- [ ] `python tools/runtests.py` pasa en local
 
 ## Notas
 

@@ -14,7 +14,7 @@ Learn to program in **C++** and **Python** and go on to compete in **ICPC**-styl
 Clear explanations, ready-to-copy code, and a cheatsheet for contest day.
 
 [Start here :material-rocket-launch:](start/onboarding.md){ .md-button .md-button--primary }
-[Browse algorithms](algorithms/index.md){ .md-button }
+[Browse algorithms](content/index.md){ .md-button }
 
 </div>
 
@@ -62,7 +62,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     First contact with programming: I/O, loops, arrays.
 
-    [:octicons-arrow-right-24: Loops](algorithms/fundamentals/loops/index.md)
+    [:octicons-arrow-right-24: Loops](content/fundamentals/loops/index.md)
 
 -   :material-school-outline:{ .lg } __Beginner__
 
@@ -70,7 +70,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     First contest techniques: binary search, two pointers, greedy.
 
-    [:octicons-arrow-right-24: Binary search](algorithms/searching/binary-search-array/index.md)
+    [:octicons-arrow-right-24: Binary search](content/search/binary-search-array/index.md)
 
 -   :material-database-outline:{ .lg } __Intermediate__
 
@@ -78,7 +78,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     Data structures and graphs: the core of regional contests.
 
-    [:octicons-arrow-right-24: Fenwick tree](algorithms/data-structures/fenwick-tree/index.md)
+    [:octicons-arrow-right-24: Fenwick tree](content/data-structures/fenwick-tree/index.md)
 
 -   :material-lightning-bolt:{ .lg } __Advanced__
 
@@ -86,7 +86,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     Powerful techniques: bitmask DP, advanced graphs, strings.
 
-    [:octicons-arrow-right-24: Dijkstra](algorithms/graphs/dijkstra/index.md)
+    [:octicons-arrow-right-24: Dijkstra](content/graphs/dijkstra/index.md)
 
 -   :material-trophy-outline:{ .lg } __Expert__
 
@@ -94,7 +94,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     Elite topics that make the difference at the finals.
 
-    [:octicons-arrow-right-24: Convex hull](algorithms/geometry/convex-hull/index.md)
+    [:octicons-arrow-right-24: Convex hull](content/geometry/convex-hull/index.md)
 
 -   :material-map-outline:{ .lg } __Lost?__
 
@@ -102,7 +102,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     Follow the dependency graph to see what to learn before each topic.
 
-    [:octicons-arrow-right-24: Dependency graph](start/graph.md)
+    [:octicons-arrow-right-24: Dependency graph](content/graph.md)
 
 </div>
 
@@ -114,7 +114,7 @@ These are the contests we aim for. Train with this material and get a team toget
 
     The patterns that recur across problems.
 
-    [:octicons-arrow-right-24: See techniques](techniques/dynamic-programming/index.md)
+    [:octicons-arrow-right-24: See techniques](content/dynamic-programming/dynamic-programming/index.md)
 
 -   :material-podium:{ .lg } __Ranking__
 

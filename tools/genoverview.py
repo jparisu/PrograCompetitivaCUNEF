@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate the machine-readable algorithms index consumed by the overview table.
 
-Every algorithm under ``docs/algorithms/**`` owns a ``meta.yaml`` (the single
+Every item under ``docs/content/**`` owns a ``meta.yaml`` (the single
 source of truth, see ``.devs/v2-design.md`` §3). This script reads all of them
 and distils each into a compact JSON record, writing the whole collection to::
 
@@ -130,6 +130,9 @@ def _entry(algo: common.Algorithm) -> "OrderedDict[str, object]":
     entry["techniques"] = list(algo.meta.get("techniques") or [])
     entry["tags"] = list(algo.meta.get("tags") or [])
     entry["prereq"] = list(algo.meta.get("prerequisites") or [])
+    # `related` = non-prerequisite connectors: ids of concepts linked in the
+    # dependency graph by a plain line (not an arrow). See docs/assets/js/graph.js.
+    entry["related"] = list(algo.meta.get("related") or [])
     entry["complexity"] = _complexity(algo)
     entry["languages"] = _languages(algo)
     entry["url"] = _url(algo)

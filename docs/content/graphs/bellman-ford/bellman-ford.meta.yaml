@@ -1,0 +1,14 @@
+id: bellman-ford
+type: algorithm
+topic: graphs
+name:
+  es: "Bellman-Ford"
+  en: "Bellman-Ford"
+level: advanced
+difficulty: 4.0
+techniques: []
+tags: [shortest-path, negative-weights]
+prerequisites: [graphs]
+related: [dijkstra]
+current_version: v1
+wip: true

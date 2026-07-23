@@ -21,16 +21,18 @@ Steps
     code       -> tools/gencode.py     (clean/contest styles from full)
     tests      -> tools/gentests.py    (test/cases/*.in|*.out from meta examples)
     overview   -> tools/genoverview.py (docs/assets/data/algorithms.json)
-    cheatsheet -> tools/cheatsheet.py  (docs/cheatsheet/cheatsheet.tex, all algorithms;
-                                        PDF too if pdflatex is installed)
+    taxonomy   -> tools/gentaxonomy.py (docs/assets/js/taxonomy.js from common.py)
+    nav        -> tools/gennav.py      (the mkdocs.yml nav, grouped by level)
 
 The dependency graph and the type/level matrix are now rendered client-side from
 algorithms.json (docs/assets/js/graph.js and matrix.js), so there is no graph
 generation step here.
 
-Note: the Kattis scraper (tools/scrape_kattis.py) and the cheatsheet builder
-(tools/cheatsheet.py) are NOT part of this orchestrator — the first needs network
-access and the second needs an explicit config; run them on their own.
+Note: the cheatsheet (tools/cheatsheet.py) and the Kattis scraper
+(tools/scrape_kattis.py) are NOT part of this orchestrator. The cheatsheet needs
+LaTeX and is rebuilt by its own workflow (.github/workflows/cheatsheet.yml) so
+ordinary content PRs don't churn docs/cheatsheet/cheatsheet.*; the scraper needs
+network access. Run either on its own when needed.
 """
 from __future__ import annotations
 
@@ -46,7 +48,8 @@ STEPS = {
     "code": ("Code styles (clean / contest)", "gencode", True),
     "tests": ("Test fixtures (cases/*.in|*.out)", "gentests", True),
     "overview": ("Overview data (algorithms.json)", "genoverview", False),
-    "cheatsheet": ("Default cheatsheet (docs/cheatsheet/cheatsheet.tex)", "cheatsheet", False),
+    "taxonomy": ("Front-end taxonomy (assets/js/taxonomy.js)", "gentaxonomy", False),
+    "nav": ("Site navigation (mkdocs.yml nav)", "gennav", False),
 }
 
 
@@ -64,9 +67,17 @@ def validate() -> list[str]:
     """
     issues: list[str] = []
     for a in common.iter_algorithms():
+        rel = a.meta_path.relative_to(common.REPO_ROOT)
+        # Every item (WIP or not) must declare a known topic — a typo silently
+        # drops it from the Temas view and breaks its topic-icon link.
+        topic = a.meta.get("topic")
+        if topic not in common.TOPICS:
+            issues.append(
+                f"{a.id}: unknown topic {topic!r} in {rel}. "
+                f"Use one of: {', '.join(common.TOPIC_IDS)} (defined in tools/common.py)."
+            )
         if a.is_article or a.is_wip:
             continue
-        rel = a.meta_path.relative_to(common.REPO_ROOT)
         has_code = a.code_dir.is_dir() and any(a.code_dir.glob("*.full.*"))
         examples = a.meta.get("examples")
         has_examples = isinstance(examples, list) and any(

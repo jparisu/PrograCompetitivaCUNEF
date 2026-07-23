@@ -1,0 +1,14 @@
+id: palindrome-checker
+type: algorithm
+topic: strings
+name:
+  es: "Palindrome checker"
+  en: "Palindrome checker"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: [loops]
+related: [punctuation-checker]
+current_version: v1
+wip: true

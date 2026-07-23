@@ -1,0 +1,13 @@
+id: prim
+type: algorithm
+topic: graphs
+name:
+  es: "Prim (MST)"
+  en: "Prim (MST)"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: [graphs, priority-queue]
+current_version: v1
+wip: true
