@@ -1,125 +1,39 @@
 /*
- * overview-table.js — interactive "Resumen" table for the algorithms overview.
+ * overview-table.js — interactive catalogue table.
  *
- * Vanilla JS, no dependencies. On load, if #overview-table exists it fetches the
- * generated data file (page-relative: ../assets/data/algorithms.json, so it also
- * resolves correctly under /pr-preview/pr-N/) and renders a table with:
- *   - sortable columns (click header; numeric for difficulty, string otherwise),
- *   - a text filter (name/tags/techniques) plus level and technique <select>s,
- *   - per-column show/hide checkboxes,
- *   - draggable headers to reorder columns.
+ * Data + filtering come from the shared window.Catalog (same module the graph
+ * and the matrix use), so the multi-select "type"/"level" filtering logic is
+ * defined once and reused. This file adds the table-specific bits: sortable and
+ * resizable columns, show/hide columns, a text search, and a requirements
+ * column that links each prerequisite to its page.
  *
- * The data file is written by tools/genoverview.py. If it is missing/unreadable
- * a message is shown in the container instead of throwing.
+ * A page can lock the level with  <div id="overview-table" data-level="...">.
  */
 (function () {
   "use strict";
 
-  var LEVEL_ORDER = ["base", "beginner", "intermediate", "advanced", "expert"];
-  var LEVEL_LABELS = {
-    base: "Base",
-    beginner: "Principiante",
-    intermediate: "Intermedio",
-    advanced: "Avanzado",
-    expert: "Experto",
+  var BY_ID = {};                        // id -> item, for requirement links
+  var DEFAULT_WIDTHS = {
+    name: 300, type: 110, level: 120, difficulty: 95,
+    requirements: 220, complexity: 160, languages: 110, tags: 190,
   };
-  var LANG_LABELS = { cpp: "C++", py: "Python" };
 
-  // Column definitions. `key` maps to a data field; `sortValue` yields a
-  // comparable value; `render` builds the cell's DOM content.
-  var COLUMNS = [
-    {
-      key: "name",
-      label: "Nombre",
-      numeric: false,
-      sortValue: function (r) { return nameOf(r).toLowerCase(); },
-      render: function (r) {
-        var a = document.createElement("a");
-        a.href = r.url || "#";
-        a.textContent = nameOf(r);
-        return a;
-      },
-    },
-    {
-      key: "level",
-      label: "Nivel",
-      numeric: false,
-      sortValue: function (r) {
-        var i = LEVEL_ORDER.indexOf(r.level);
-        return i === -1 ? 99 : i;
-      },
-      render: function (r) {
-        var span = document.createElement("span");
-        span.className = "ov-badge ov-badge--" + (r.level || "unknown");
-        span.textContent = LEVEL_LABELS[r.level] || r.level || "—";
-        return span;
-      },
-    },
-    {
-      key: "difficulty",
-      label: "Dificultad",
-      numeric: true,
-      sortValue: function (r) {
-        var v = parseFloat(r.difficulty);
-        return isNaN(v) ? -Infinity : v;
-      },
-      render: function (r) {
-        return document.createTextNode(
-          r.difficulty === null || r.difficulty === undefined ? "—" : String(r.difficulty)
-        );
-      },
-    },
-    {
-      key: "techniques",
-      label: "Técnicas",
-      numeric: false,
-      sortValue: function (r) { return (r.techniques || []).join(", ").toLowerCase(); },
-      render: function (r) { return chips(r.techniques, "ov-chip"); },
-    },
-    {
-      key: "complexity",
-      label: "Complejidad",
-      numeric: false,
-      sortValue: function (r) { return (r.complexity || "").toLowerCase(); },
-      render: function (r) {
-        var code = document.createElement("code");
-        code.textContent = r.complexity || "—";
-        return code;
-      },
-    },
-    {
-      key: "languages",
-      label: "Lenguajes",
-      numeric: false,
-      sortValue: function (r) { return (r.languages || []).join(", "); },
-      render: function (r) {
-        var labels = (r.languages || []).map(function (l) { return LANG_LABELS[l] || l; });
-        return chips(labels, "ov-lang");
-      },
-    },
-    {
-      key: "tags",
-      label: "Tags",
-      numeric: false,
-      sortValue: function (r) { return (r.tags || []).join(", ").toLowerCase(); },
-      render: function (r) { return chips(r.tags, "ov-chip ov-chip--tag"); },
-    },
-  ];
+  var container, filterState;
+  var state = {
+    data: [],
+    order: null,          // set once columns exist
+    visible: {},
+    sortKey: "level",
+    sortDir: 1,
+    text: "",
+    widths: {},
+  };
 
-  function nameOf(r) {
-    if (r && r.name) {
-      if (typeof r.name === "string") return r.name;
-      return r.name.es || r.name.en || r.id || "";
-    }
-    return (r && r.id) || "";
-  }
+  function nameOf(r) { return Catalog.name(r); }
 
   function chips(items, cls) {
     var frag = document.createDocumentFragment();
-    if (!items || !items.length) {
-      frag.appendChild(document.createTextNode("—"));
-      return frag;
-    }
+    if (!items || !items.length) { frag.appendChild(document.createTextNode("—")); return frag; }
     items.forEach(function (it) {
       var s = document.createElement("span");
       s.className = cls;
@@ -129,77 +43,169 @@
     return frag;
   }
 
-  // ------------------------------------------------------------------ state
-  var state = {
-    data: [],
-    order: COLUMNS.map(function (c) { return c.key; }), // column display order
-    visible: {},                                        // key -> bool
-    sortKey: "level",
-    sortDir: 1,                                          // 1 asc, -1 desc
-    text: "",
-    level: "",
-    technique: "",
-  };
-  COLUMNS.forEach(function (c) { state.visible[c.key] = true; });
-
-  function colByKey(key) {
-    for (var i = 0; i < COLUMNS.length; i++) {
-      if (COLUMNS[i].key === key) return COLUMNS[i];
-    }
-    return null;
+  function reqLinks(ids) {
+    var frag = document.createDocumentFragment();
+    if (!ids || !ids.length) { frag.appendChild(document.createTextNode("—")); return frag; }
+    ids.forEach(function (id, i) {
+      if (i) frag.appendChild(document.createTextNode(", "));
+      var e = BY_ID[id];
+      if (e) {
+        var a = document.createElement("a");
+        a.href = Catalog.url(e);
+        a.textContent = Catalog.name(e);
+        frag.appendChild(a);
+      } else {
+        var s = document.createElement("span");
+        s.className = "ov-req-missing";
+        s.textContent = id;
+        frag.appendChild(s);
+      }
+    });
+    return frag;
   }
 
-  // ------------------------------------------------------------------ filtering
-  function matchesText(row, text) {
-    if (!text) return true;
-    var hay = [
-      nameOf(row),
-      (row.tags || []).join(" "),
-      (row.techniques || []).join(" "),
-    ].join(" ").toLowerCase();
-    return hay.indexOf(text.toLowerCase()) !== -1;
+  var COLUMNS = [
+    {
+      key: "name", label: "Nombre",
+      sortValue: function (r) { return nameOf(r).toLowerCase(); },
+      render: function (r) {
+        var frag = document.createDocumentFragment();
+        var ti = Catalog.topicInfo(r);
+        if (ti) {
+          var ic = document.createElement("a");
+          ic.className = "topic-icon topic-icon--link";
+          ic.textContent = ti.icon; ic.title = ti.title; ic.href = Catalog.topicHref(r);
+          frag.appendChild(ic);
+          frag.appendChild(document.createTextNode(" "));
+        }
+        var a = document.createElement("a");
+        a.href = Catalog.url(r);
+        a.textContent = nameOf(r);
+        frag.appendChild(a);
+        if (r.wip) {
+          var cr = document.createElement("span");
+          cr.className = "wip-crane"; cr.textContent = " 🏗️"; cr.title = "En construcción";
+          frag.appendChild(cr);
+        }
+        return frag;
+      },
+    },
+    {
+      key: "type", label: "Tipo",
+      sortValue: function (r) { return Catalog.TYPE_LABELS[r.type] || r.type || ""; },
+      render: function (r) {
+        var s = document.createElement("span");
+        s.className = "ov-type ov-type--" + (r.type || "unknown");
+        s.textContent = Catalog.TYPE_LABELS[r.type] || r.type || "—";
+        return s;
+      },
+    },
+    {
+      key: "level", label: "Nivel", numeric: true,
+      sortValue: function (r) { var i = Catalog.LEVELS.indexOf(r.level); return i === -1 ? 99 : i; },
+      render: function (r) {
+        var s = document.createElement("span");
+        s.className = "ov-badge ov-badge--" + (r.level || "unknown");
+        s.textContent = Catalog.LEVEL_LABELS[r.level] || r.level || "—";
+        return s;
+      },
+    },
+    {
+      key: "difficulty", label: "Dificultad", numeric: true,
+      sortValue: function (r) { var v = parseFloat(r.difficulty); return isNaN(v) ? -Infinity : v; },
+      render: function (r) {
+        return document.createTextNode(
+          r.difficulty === null || r.difficulty === undefined ? "—" : String(r.difficulty));
+      },
+    },
+    {
+      key: "requirements", label: "Requisitos",
+      sortValue: function (r) { return (r.prereq || []).join(", ").toLowerCase(); },
+      render: function (r) { return reqLinks(r.prereq); },
+    },
+    {
+      key: "complexity", label: "Complejidad",
+      sortValue: function (r) { return (r.complexity || "").toLowerCase(); },
+      render: function (r) { var c = document.createElement("code"); c.textContent = r.complexity || "—"; return c; },
+    },
+    {
+      key: "languages", label: "Lenguajes",
+      sortValue: function (r) { return (r.languages || []).join(", "); },
+      render: function (r) {
+        var labels = (r.languages || []).map(function (l) { return l === "cpp" ? "C++" : l === "py" ? "Python" : l; });
+        return chips(labels, "ov-lang");
+      },
+    },
+    {
+      key: "tags", label: "Tags",
+      sortValue: function (r) { return (r.tags || []).join(", ").toLowerCase(); },
+      render: function (r) { return chips(r.tags, "ov-chip ov-chip--tag"); },
+    },
+  ];
+
+  function colByKey(k) { for (var i = 0; i < COLUMNS.length; i++) if (COLUMNS[i].key === k) return COLUMNS[i]; return null; }
+
+  function matchesText(r) {
+    if (!state.text) return true;
+    var hay = [nameOf(r), (r.tags || []).join(" "), (r.techniques || []).join(" ")].join(" ").toLowerCase();
+    return hay.indexOf(state.text.toLowerCase()) !== -1;
   }
 
   function filtered() {
     return state.data.filter(function (r) {
-      if (!matchesText(r, state.text)) return false;
-      if (state.level && r.level !== state.level) return false;
-      if (state.technique && (r.techniques || []).indexOf(state.technique) === -1) return false;
-      return true;
+      return matchesText(r) && Catalog.passes(r, filterState);
     });
   }
 
   function sorted(rows) {
     var col = colByKey(state.sortKey);
     if (!col) return rows;
-    var copy = rows.slice();
-    copy.sort(function (a, b) {
-      var va = col.sortValue(a);
-      var vb = col.sortValue(b);
-      var cmp;
-      if (col.numeric) {
-        cmp = va - vb;
-      } else if (typeof va === "number" && typeof vb === "number") {
-        cmp = va - vb;
-      } else {
-        cmp = String(va).localeCompare(String(vb), "es");
-      }
-      if (cmp === 0) {
-        // stable tie-break by name so re-sorts are deterministic
-        cmp = nameOf(a).localeCompare(nameOf(b), "es");
-      }
+    return rows.slice().sort(function (a, b) {
+      var va = col.sortValue(a), vb = col.sortValue(b), cmp;
+      if (col.numeric || (typeof va === "number" && typeof vb === "number")) cmp = va - vb;
+      else cmp = String(va).localeCompare(String(vb), "es");
+      if (cmp === 0) cmp = nameOf(a).localeCompare(nameOf(b), "es");
       return cmp * state.sortDir;
     });
-    return copy;
   }
 
-  // ------------------------------------------------------------------ rendering
-  var container;
-
   function orderedVisibleColumns() {
-    return state.order
-      .map(colByKey)
-      .filter(function (c) { return c && state.visible[c.key]; });
+    return state.order.map(colByKey).filter(function (c) { return c && state.visible[c.key]; });
+  }
+
+  function addResizer(th, key, index, colgroup, cols, table) {
+    var res = document.createElement("span");
+    res.className = "ov-resizer";
+    res.addEventListener("mousedown", function (e) {
+      e.preventDefault(); e.stopPropagation();
+      var startX = e.clientX, startW = state.widths[key] || DEFAULT_WIDTHS[key] || 140;
+      th.draggable = false;
+      function move(ev) {
+        var w = Math.max(60, startW + (ev.clientX - startX));
+        state.widths[key] = w;
+        if (colgroup.children[index]) colgroup.children[index].style.width = w + "px";
+        var t = 0; cols.forEach(function (c) { t += state.widths[c.key] || DEFAULT_WIDTHS[c.key] || 140; });
+        table.style.width = t + "px";
+      }
+      function up() { document.removeEventListener("mousemove", move); document.removeEventListener("mouseup", up); th.draggable = true; }
+      document.addEventListener("mousemove", move); document.addEventListener("mouseup", up);
+    });
+    th.appendChild(res);
+  }
+
+  var dragKey = null;
+  function wireDrag(th, key) {
+    th.addEventListener("dragstart", function (e) { dragKey = key; th.classList.add("ov-dragging"); if (e.dataTransfer) { e.dataTransfer.effectAllowed = "move"; try { e.dataTransfer.setData("text/plain", key); } catch (x) {} } });
+    th.addEventListener("dragend", function () { th.classList.remove("ov-dragging"); dragKey = null; });
+    th.addEventListener("dragover", function (e) { if (dragKey && dragKey !== key) { e.preventDefault(); th.classList.add("ov-drop-target"); } });
+    th.addEventListener("dragleave", function () { th.classList.remove("ov-drop-target"); });
+    th.addEventListener("drop", function (e) {
+      e.preventDefault(); th.classList.remove("ov-drop-target");
+      if (!dragKey || dragKey === key) return;
+      state.order = state.order.filter(function (k) { return k !== dragKey; });
+      state.order.splice(state.order.indexOf(key), 0, dragKey);
+      render();
+    });
   }
 
   function render() {
@@ -208,252 +214,109 @@
 
     var table = document.createElement("table");
     table.className = "ov-table";
+    table.style.tableLayout = "fixed";
 
-    // --- header
+    var colgroup = document.createElement("colgroup");
+    var totalW = 0;
+    cols.forEach(function (col) {
+      var w = state.widths[col.key] || DEFAULT_WIDTHS[col.key] || 140;
+      var c = document.createElement("col"); c.style.width = w + "px";
+      colgroup.appendChild(c); totalW += w;
+    });
+    table.style.width = totalW + "px";
+    table.appendChild(colgroup);
+
     var thead = document.createElement("thead");
     var htr = document.createElement("tr");
-    cols.forEach(function (col) {
+    cols.forEach(function (col, colIndex) {
       var th = document.createElement("th");
-      th.dataset.key = col.key;
-      th.className = "ov-th";
-      th.setAttribute("draggable", "true");
-      th.setAttribute("scope", "col");
-
-      var label = document.createElement("span");
-      label.className = "ov-th-label";
-      label.textContent = col.label;
-      th.appendChild(label);
-
-      var ind = document.createElement("span");
-      ind.className = "ov-sort-ind";
-      if (state.sortKey === col.key) {
-        ind.textContent = state.sortDir === 1 ? "▲" : "▼";
-        th.classList.add("ov-sorted");
-        th.setAttribute("aria-sort", state.sortDir === 1 ? "ascending" : "descending");
-      } else {
-        ind.textContent = "";
-        th.setAttribute("aria-sort", "none");
-      }
+      th.className = "ov-th"; th.dataset.key = col.key; th.setAttribute("draggable", "true"); th.setAttribute("scope", "col");
+      var label = document.createElement("span"); label.className = "ov-th-label"; label.textContent = col.label; th.appendChild(label);
+      var ind = document.createElement("span"); ind.className = "ov-sort-ind";
+      if (state.sortKey === col.key) { ind.textContent = state.sortDir === 1 ? "▲" : "▼"; th.classList.add("ov-sorted"); }
       th.appendChild(ind);
-
-      label.addEventListener("click", function () { onSort(col.key); });
+      label.addEventListener("click", function () {
+        if (state.sortKey === col.key) state.sortDir *= -1; else { state.sortKey = col.key; state.sortDir = 1; }
+        render();
+      });
       wireDrag(th, col.key);
+      addResizer(th, col.key, colIndex, colgroup, cols, table);
       htr.appendChild(th);
     });
-    thead.appendChild(htr);
-    table.appendChild(thead);
+    thead.appendChild(htr); table.appendChild(thead);
 
-    // --- body
     var tbody = document.createElement("tbody");
     if (!rows.length) {
-      var tr = document.createElement("tr");
-      var td = document.createElement("td");
-      td.colSpan = cols.length || 1;
-      td.className = "ov-empty";
-      td.textContent = "No hay algoritmos que coincidan con el filtro.";
-      tr.appendChild(td);
-      tbody.appendChild(tr);
+      var tr = document.createElement("tr"); var td = document.createElement("td");
+      td.colSpan = cols.length || 1; td.className = "ov-empty"; td.textContent = "No hay elementos que coincidan con el filtro.";
+      tr.appendChild(td); tbody.appendChild(tr);
     } else {
       rows.forEach(function (r) {
         var tr = document.createElement("tr");
+        if (r.wip) tr.className = "ov-row--wip";
         cols.forEach(function (col) {
-          var td = document.createElement("td");
-          td.className = "ov-td ov-td--" + col.key;
-          td.dataset.label = col.label;
-          td.appendChild(col.render(r));
-          tr.appendChild(td);
+          var td = document.createElement("td"); td.className = "ov-td ov-td--" + col.key; td.dataset.label = col.label;
+          td.appendChild(col.render(r)); tr.appendChild(td);
         });
         tbody.appendChild(tr);
       });
     }
     table.appendChild(tbody);
 
-    var count = document.createElement("p");
-    count.className = "ov-count";
-    count.textContent = rows.length + " de " + state.data.length + " algoritmos";
+    var count = document.createElement("p"); count.className = "ov-count";
+    count.textContent = rows.length + " de " + state.data.length + " elementos";
 
     container.textContent = "";
-    var scroller = document.createElement("div");
-    scroller.className = "ov-scroll";
-    scroller.appendChild(table);
-    container.appendChild(scroller);
-    container.appendChild(count);
-  }
-
-  function onSort(key) {
-    if (state.sortKey === key) {
-      state.sortDir *= -1;
-    } else {
-      state.sortKey = key;
-      state.sortDir = 1;
-    }
-    render();
-  }
-
-  // ------------------------------------------------------------------ drag reorder
-  var dragKey = null;
-  function wireDrag(th, key) {
-    th.addEventListener("dragstart", function (e) {
-      dragKey = key;
-      th.classList.add("ov-dragging");
-      if (e.dataTransfer) {
-        e.dataTransfer.effectAllowed = "move";
-        try { e.dataTransfer.setData("text/plain", key); } catch (err) {}
-      }
-    });
-    th.addEventListener("dragend", function () {
-      th.classList.remove("ov-dragging");
-      dragKey = null;
-      var all = th.parentNode ? th.parentNode.querySelectorAll(".ov-drop-target") : [];
-      Array.prototype.forEach.call(all, function (n) { n.classList.remove("ov-drop-target"); });
-    });
-    th.addEventListener("dragover", function (e) {
-      if (dragKey && dragKey !== key) {
-        e.preventDefault();
-        if (e.dataTransfer) e.dataTransfer.dropEffect = "move";
-        th.classList.add("ov-drop-target");
-      }
-    });
-    th.addEventListener("dragleave", function () {
-      th.classList.remove("ov-drop-target");
-    });
-    th.addEventListener("drop", function (e) {
-      e.preventDefault();
-      th.classList.remove("ov-drop-target");
-      if (!dragKey || dragKey === key) return;
-      moveColumn(dragKey, key);
-      render();
-    });
-  }
-
-  function moveColumn(fromKey, toKey) {
-    if (fromKey === toKey) return;
-    if (state.order.indexOf(fromKey) === -1 || state.order.indexOf(toKey) === -1) return;
-    // Remove the dragged key, then insert it just before its drop target.
-    state.order = state.order.filter(function (k) { return k !== fromKey; });
-    var targetIdx = state.order.indexOf(toKey);
-    state.order.splice(targetIdx, 0, fromKey);
-  }
-
-  // ------------------------------------------------------------------ controls
-  function populateSelect(sel, values, current) {
-    if (!sel) return;
-    // keep the first ("all") option, drop the rest
-    while (sel.options.length > 1) sel.remove(1);
-    values.forEach(function (v) {
-      var opt = document.createElement("option");
-      opt.value = v.value;
-      opt.textContent = v.label;
-      sel.appendChild(opt);
-    });
-    if (current) sel.value = current;
+    var scroller = document.createElement("div"); scroller.className = "ov-scroll"; scroller.appendChild(table);
+    container.appendChild(scroller); container.appendChild(count);
   }
 
   function buildControls() {
-    var filterInput = document.getElementById("ov-filter");
-    var levelSel = document.getElementById("ov-level");
-    var techSel = document.getElementById("ov-technique");
+    var controls = document.getElementById("ov-controls");
+    var search = document.getElementById("ov-filter");
+    if (search) search.addEventListener("input", function () { state.text = search.value; render(); });
+
+    if (controls) {
+      var fmount = document.createElement("div"); fmount.className = "cat-filters";
+      controls.insertBefore(fmount, controls.firstChild);
+      var locked = container.getAttribute("data-level") || undefined;
+      filterState = Catalog.makeFilters(fmount, { lockedLevel: locked }, function () { render(); });
+    } else {
+      filterState = { types: new Set(Catalog.TYPES), levels: new Set(Catalog.LEVELS) };
+    }
+
     var colsBox = document.getElementById("ov-columns");
-
-    // levels present in the data, in canonical order
-    var levelsPresent = LEVEL_ORDER.filter(function (lv) {
-      return state.data.some(function (r) { return r.level === lv; });
-    });
-    populateSelect(levelSel, levelsPresent.map(function (lv) {
-      return { value: lv, label: LEVEL_LABELS[lv] || lv };
-    }), state.level);
-
-    // techniques present, sorted alphabetically, unique
-    var techSet = {};
-    state.data.forEach(function (r) {
-      (r.techniques || []).forEach(function (t) { techSet[t] = true; });
-    });
-    var techs = Object.keys(techSet).sort(function (a, b) { return a.localeCompare(b, "es"); });
-    populateSelect(techSel, techs.map(function (t) {
-      return { value: t, label: t };
-    }), state.technique);
-
-    if (filterInput) {
-      filterInput.addEventListener("input", function () {
-        state.text = filterInput.value;
-        render();
-      });
-    }
-    if (levelSel) {
-      levelSel.addEventListener("change", function () {
-        state.level = levelSel.value;
-        render();
-      });
-    }
-    if (techSel) {
-      techSel.addEventListener("change", function () {
-        state.technique = techSel.value;
-        render();
-      });
-    }
-
-    // show/hide column checkboxes
     if (colsBox) {
       COLUMNS.forEach(function (col) {
-        var id = "ov-col-" + col.key;
-        var label = document.createElement("label");
-        label.className = "ov-col-toggle";
-
-        var cb = document.createElement("input");
-        cb.type = "checkbox";
-        cb.id = id;
-        cb.checked = state.visible[col.key];
-        cb.addEventListener("change", function () {
-          state.visible[col.key] = cb.checked;
-          render();
-        });
-
-        var span = document.createElement("span");
-        span.textContent = col.label;
-
-        label.appendChild(cb);
-        label.appendChild(span);
-        colsBox.appendChild(label);
+        var label = document.createElement("label"); label.className = "ov-col-toggle";
+        var cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = state.visible[col.key];
+        cb.addEventListener("change", function () { state.visible[col.key] = cb.checked; render(); });
+        var span = document.createElement("span"); span.textContent = col.label;
+        label.appendChild(cb); label.appendChild(span); colsBox.appendChild(label);
       });
     }
-  }
-
-  // ------------------------------------------------------------------ boot
-  function showMessage(msg) {
-    container.textContent = "";
-    var p = document.createElement("p");
-    p.className = "ov-error";
-    p.textContent = msg;
-    container.appendChild(p);
   }
 
   function init() {
     container = document.getElementById("overview-table");
     if (!container) return;
+    state.order = COLUMNS.map(function (c) { return c.key; });
+    COLUMNS.forEach(function (c) { state.visible[c.key] = true; });
 
-    fetch("../assets/data/algorithms.json", { cache: "no-cache" })
-      .then(function (resp) {
-        if (!resp.ok) throw new Error("HTTP " + resp.status);
-        return resp.json();
-      })
-      .then(function (data) {
-        if (!Array.isArray(data)) throw new Error("formato inesperado");
-        state.data = data;
-        buildControls();
-        render();
-      })
-      .catch(function (err) {
-        showMessage(
-          "No se pudo cargar la tabla de algoritmos (algorithms.json). " +
-          "Ejecuta 'python tools/genoverview.py' para generarla. Detalle: " +
-          (err && err.message ? err.message : err)
-        );
-      });
+    Catalog.load().then(function (data) {
+      state.data = data;
+      BY_ID = {};
+      data.forEach(function (e) { BY_ID[e.id] = e; });
+      buildControls();
+      render();
+    }).catch(function (err) {
+      container.textContent = "";
+      var p = document.createElement("p"); p.className = "ov-error";
+      p.textContent = "No se pudo cargar la tabla (" + (err && err.message ? err.message : "error") + ").";
+      container.appendChild(p);
+    });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
 })();

@@ -15,12 +15,13 @@ Ejecuta de una vez todas las generaciones (código, tests, resumen).
 
 ```bash
 python tools/gen.py status                 # muestra qué se crearía/modificaría (no escribe)
-python tools/gen.py generate               # crea/actualiza los ficheros derivados
+python tools/gen.py generate               # crea SOLO los ficheros derivados que falten
+python tools/gen.py generate --force       # regenera también los que ya existen
 python tools/gen.py generate --only code --algo fenwick-tree
 ```
 
-`status` termina con error si algo está desactualizado — es lo que usa la CI para pedirte
-que regeneres antes de fusionar.
+`status` termina con error si falta algún fichero derivado (o, con `--force`, si alguno
+quedaría desactualizado) — es lo que usa la CI para pedirte que regeneres antes de fusionar.
 
 ## `gencode.py` — versiones del código
 
@@ -28,13 +29,33 @@ Genera las versiones `clean` (sin comentarios) y `contest` (nombres cortos) a pa
 versión `full`.
 
 ```bash
-python tools/gencode.py            # genera lo que falte
+python tools/gencode.py            # crea SOLO las versiones que falten
+python tools/gencode.py --force    # regenera también las que ya existen
 python tools/gencode.py --check    # dry-run
 ```
 
-- Nunca sobrescribe un fichero escrito a mano (sin la marca `AUTO-GENERATED`).
+- **Por defecto no sobrescribe ficheros existentes**: solo crea los que faltan. Así puedes
+  escribir tu propia `clean`/`contest` y conservarla. Usa `--force` para regenerarlos.
 - En Python, `contest` renombra variables locales de forma segura. En C++ es una versión
   compacta (sin comentarios): conviene repasar/reescribir a mano si quieres nombres cortos.
+
+### Directivas de generación (comentarios ocultos)
+
+Dentro de un comentario **oculto** (`//!` en C++, `#!` en Python) puedes escribir directivas
+que afinan la generación fichero a fichero:
+
+| Directiva | Dónde | Efecto |
+|-----------|-------|--------|
+| `no-clean`    | en el `full` | no genera su versión `clean` |
+| `no-contest`  | en el `full` | no genera su versión `contest` |
+| `no-generate` | en cualquier fichero | nunca lo sobrescribe, ni con `--force` |
+
+Ejemplo — una `contest` escrita a mano que no debe tocarse:
+
+```cpp
+//! no-generate
+// (tu versión optimizada a mano)
+```
 
 ## `gentests.py` — fixtures de test
 
@@ -47,7 +68,7 @@ python tools/gentests.py
 
 ## `genoverview.py` — datos de la tabla resumen
 
-Genera `docs/assets/data/algorithms.json`, que alimenta la [tabla dinámica](../overview/index.md).
+Genera `docs/assets/data/algorithms.json`, que alimenta la [tabla de algoritmos](../algorithms/index.md).
 
 ```bash
 python tools/genoverview.py

@@ -1,0 +1,13 @@
+id: gcd
+type: algorithm
+topic: arithmetics
+name:
+  es: "GCD (Euclid)"
+  en: "GCD (Euclid)"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

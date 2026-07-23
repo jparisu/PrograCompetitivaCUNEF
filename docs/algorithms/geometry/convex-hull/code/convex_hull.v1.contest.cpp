@@ -1,5 +1,5 @@
-// AUTO-GENERATED from convex_hull.v1.clean.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
+//! AUTO-GENERATED from convex_hull.v1.clean.cpp — do not edit.
+//! To override, replace this file with a hand-written version (remove this marker).
 #include <vector>
 #include <algorithm>
 using namespace std;

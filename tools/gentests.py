@@ -92,6 +92,8 @@ def generate(check: bool = False, algo: str | None = None) -> list[common.Change
     changes: list[common.Change] = []
 
     for a in common.iter_algorithms(only=algo):
+        if a.is_article:
+            continue  # articles are not tested
         examples = _examples(a)
         if not examples:
             # Nothing to generate; skipped silently here (reported in verbose main()).

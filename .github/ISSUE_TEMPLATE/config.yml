@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Conversación / preguntas (Discussions)
+    url: https://github.com/jparisu/PrograCompetitivaCUNEF/discussions
+    about: Para ideas abiertas, dudas o debate, usa las Discussions en vez de una incidencia.

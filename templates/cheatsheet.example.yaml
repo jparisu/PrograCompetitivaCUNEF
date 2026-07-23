@@ -36,8 +36,7 @@ include_stats: true
 columns: 3
 
 algorithms:
-  - loops
   - binary-search-array
   - fenwick-tree
-  - bitmask-tsp
+  - dijkstra
   - convex-hull

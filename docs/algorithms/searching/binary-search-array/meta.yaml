@@ -1,11 +1,12 @@
 id: binary-search-array
-topic: searching
+type: algorithm
+topic: search
 name:
-  es: Búsqueda binaria en un array
-  en: Binary search on an array
+  es: Binary search
+  en: Binary search
 level: beginner
 difficulty: 1.5
-techniques: [binary-search]
+techniques: []
 tags: [search, sorted, logn]
 prerequisites: [loops]
 current_version: v1

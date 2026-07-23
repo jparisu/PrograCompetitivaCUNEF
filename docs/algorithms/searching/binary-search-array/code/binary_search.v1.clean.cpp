@@ -1,5 +1,5 @@
-// AUTO-GENERATED from binary_search.v1.full.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
+//! AUTO-GENERATED from binary_search.v1.full.cpp — do not edit.
+//! To override, replace this file with a hand-written version (remove this marker).
 #include <vector>
 using namespace std;
 int binary_search_idx(const vector<int>& a, int target) {

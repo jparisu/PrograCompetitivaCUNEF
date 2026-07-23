@@ -51,11 +51,10 @@ include_stats: true
 columns: 3
 
 algorithms:
-  - loops
   - binary-search-array
   - fenwick-tree
   # Un elemento puede sobreescribir los valores globales:
-  - id: bitmask-tsp
+  - id: dijkstra
     version: v1        # por defecto: current_version del meta.yaml
     style: clean       # por defecto: el style global
     language: cpp      # por defecto: el language global

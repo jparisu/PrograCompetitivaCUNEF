@@ -147,11 +147,44 @@ def normalize_item(item, cfg: dict) -> dict:
     if style not in STYLES:
         raise ConfigError(f"{item['id']}: style must be one of {STYLES}")
     return {
+        "kind": "snippet",
         "id": item["id"],
         "version": item.get("version"),  # None -> current_version
         "style": style,
         "language": lang,
     }
+
+
+def meta_cheatsheet_items(algo: common.Algorithm, cfg: dict) -> list[dict]:
+    """Resolve an algorithm's optional ``cheatsheet:`` list into render items.
+
+    Each entry is a mapping ``{file, title, language}`` naming a source file to
+    include verbatim (relative to the algorithm folder, or its ``code/`` dir).
+    This is the granular opt-in used by ``article`` pages (and any snippet that
+    wants to show specific files rather than its canonical implementation).
+    """
+    raw = algo.meta.get("cheatsheet")
+    if not raw:
+        return []
+    if not isinstance(raw, list):
+        raise ConfigError(f"{algo.id}: meta 'cheatsheet' must be a list")
+    items: list[dict] = []
+    for entry in raw:
+        if not isinstance(entry, dict) or "file" not in entry:
+            raise ConfigError(
+                f"{algo.id}: each 'cheatsheet' entry must be a mapping with a 'file' key"
+            )
+        lang = entry.get("language", cfg["language"])
+        if lang not in LANGUAGES:
+            raise ConfigError(f"{algo.id}: cheatsheet language must be one of {sorted(LANGUAGES)}")
+        items.append({
+            "kind": "file",
+            "id": algo.id,
+            "file": entry["file"],
+            "title": entry.get("title") or algo.name("es"),
+            "language": lang,
+        })
+    return items
 
 
 # --------------------------------------------------------------------------- #
@@ -207,7 +240,9 @@ def render_algorithm_block(algo: common.Algorithm, resolved: dict, cfg: dict,
         )
         return None
 
-    code = code_file.read_text(encoding="utf-8")
+    # Strip hidden comments (//! / #!, incl. the AUTO-GENERATED header) — they
+    # must not appear in the cheatsheet.
+    code = common.strip_hidden_comments(code_file.read_text(encoding="utf-8"), ext)
     if verbose:
         print(f"  + {algo.id}: {code_file.relative_to(common.REPO_ROOT)}")
 
@@ -222,6 +257,35 @@ def render_algorithm_block(algo: common.Algorithm, resolved: dict, cfg: dict,
     lines.append(f"\\begin{{lstlisting}}{lang_opt}")
     lines.append(code.rstrip("\n"))
     lines.append("\\end{lstlisting}")
+    return "\n".join(lines)
+
+
+def render_file_block(algo: common.Algorithm, resolved: dict, *, verbose: bool) -> str | None:
+    """Render one explicit ``cheatsheet:`` file entry into a LaTeX block."""
+    ext = resolved["language"]
+    rel = resolved["file"]
+    candidates = [algo.directory / rel, algo.code_dir / rel]
+    code_file = next((p for p in candidates if p.is_file()), None)
+    if code_file is None:
+        print(
+            f"warning: cheatsheet file for '{algo.id}' not found "
+            f"(looked for {rel} under {algo.directory.relative_to(common.REPO_ROOT)}); skipping",
+            file=sys.stderr,
+        )
+        return None
+
+    code = common.strip_hidden_comments(code_file.read_text(encoding="utf-8"), ext)
+    if verbose:
+        print(f"  + {algo.id}: {code_file.relative_to(common.REPO_ROOT)}")
+
+    lst_lang = LST_LANGUAGE.get(ext, "")
+    lang_opt = f"[language={lst_lang}]" if lst_lang else ""
+    lines = [
+        f"\\csalgo{{{latex_escape(resolved['title'])}}}",
+        f"\\begin{{lstlisting}}{lang_opt}",
+        code.rstrip("\n"),
+        "\\end{lstlisting}",
+    ]
     return "\n".join(lines)
 
 
@@ -243,7 +307,10 @@ def render_body(items: list[dict], cfg: dict, *, verbose: bool) -> tuple[str, in
         if algo is None:
             print(f"warning: unknown algorithm id '{resolved['id']}'; skipping", file=sys.stderr)
             continue
-        block = render_algorithm_block(algo, resolved, cfg, verbose=verbose)
+        if resolved.get("kind") == "file":
+            block = render_file_block(algo, resolved, verbose=verbose)
+        else:
+            block = render_algorithm_block(algo, resolved, cfg, verbose=verbose)
         if block is not None:
             blocks.append(block)
     return "\n\n".join(blocks), len(blocks)
@@ -304,6 +371,53 @@ def compile_pdf(tex_path: Path, *, verbose: bool) -> bool:
         if verbose:
             print(f"  compiled {pdf_path.relative_to(common.REPO_ROOT) if pdf_path.is_relative_to(common.REPO_ROOT) else pdf_path}")
     return True
+
+
+# --------------------------------------------------------------------------- #
+# Orchestrator entry point (used by tools/gen.py)
+# --------------------------------------------------------------------------- #
+DEFAULT_SITE_TEX = common.DOCS_DIR / "cheatsheet" / "cheatsheet.tex"
+
+
+def generate(check: bool = False) -> list[common.Change]:
+    """Build the DEFAULT cheatsheet (every algorithm that has code) and write it
+    to docs/cheatsheet/cheatsheet.tex. On a real run (not --check) it also
+    compiles the PDF if pdflatex is available. Returns the .tex Change.
+
+    Presentation (title, columns, language, style, stats) comes from
+    templates/cheatsheet.example.yaml; the algorithm list is ignored — ALL
+    algorithms with a matching code file are included.
+    """
+    try:
+        cfg = load_config(DEFAULT_CONFIG)
+    except ConfigError:
+        cfg = {"title": "Chuletario ICPC CUNEF", "language": "cpp", "style": "contest",
+               "include_stats": True, "columns": 3, "algorithms": []}
+
+    items = []
+    for algo in common.iter_algorithms():
+        # An explicit meta `cheatsheet:` list wins for any format (article or
+        # snippet): include exactly the files it names.
+        explicit = meta_cheatsheet_items(algo, cfg)
+        if explicit:
+            items.extend(explicit)
+            continue
+        # Articles have no canonical snippet — skip unless they opted in above.
+        if algo.is_article:
+            continue
+        resolved = normalize_item(algo.id, cfg)
+        version = resolved["version"] or algo.current_version
+        if find_code_file(algo, version, resolved["style"], resolved["language"]):
+            items.append(resolved)   # only items that actually have code to show
+
+    body, _ = render_body(items, cfg, verbose=False)
+    doc = render_document(cfg, body)
+    change = common.write_if_changed(DEFAULT_SITE_TEX, doc, check)
+
+    if not check and change.action != "unchanged" and shutil.which("pdflatex"):
+        compile_pdf(DEFAULT_SITE_TEX, verbose=False)
+
+    return [change]
 
 
 # --------------------------------------------------------------------------- #

@@ -1,0 +1,46 @@
+name: 🐛 Error o errata
+description: Reporta un fallo, una errata, un enlace roto o un error en el código.
+title: "[Error]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. Antes, comprueba que no exista ya en
+        [las incidencias abiertas](https://github.com/jparisu/PrograCompetitivaCUNEF/issues).
+  - type: input
+    id: page
+    attributes:
+      label: Página o URL
+      description: ¿Dónde ocurre? Pega el enlace de la página si puedes.
+      placeholder: https://jparisu.github.io/PrograCompetitivaCUNEF/...
+    validations:
+      required: false
+  - type: textarea
+    id: what
+    attributes:
+      label: ¿Qué ocurre?
+      description: Qué esperabas que pasara y qué pasó en realidad.
+    validations:
+      required: true
+  - type: dropdown
+    id: lang
+    attributes:
+      label: Lenguaje (si es un error de código)
+      options: ["No aplica", "C++", "Python"]
+    validations:
+      required: false
+  - type: dropdown
+    id: version
+    attributes:
+      label: Versión del código (si aplica)
+      options: ["No aplica", "full", "clean", "contest"]
+    validations:
+      required: false
+  - type: textarea
+    id: extra
+    attributes:
+      label: Detalles adicionales
+      description: Caso de entrada que falla, captura, o cualquier contexto útil.
+    validations:
+      required: false

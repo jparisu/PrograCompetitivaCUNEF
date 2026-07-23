@@ -1,0 +1,24 @@
+name: 💡 Sugerencia
+description: Propón contenido nuevo o una mejora concreta.
+title: "[Sugerencia]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¿Es más una idea abierta o una duda? Mejor usa las
+        [Discussions](https://github.com/jparisu/PrograCompetitivaCUNEF/discussions).
+  - type: textarea
+    id: idea
+    attributes:
+      label: Tu propuesta
+      description: ¿Qué te gustaría añadir o mejorar, y por qué sería útil?
+    validations:
+      required: true
+  - type: input
+    id: topic
+    attributes:
+      label: Tema o algoritmo relacionado (opcional)
+      placeholder: "p. ej. Grafos, Programación dinámica, segment-tree…"
+    validations:
+      required: false

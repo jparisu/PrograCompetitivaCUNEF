@@ -1,0 +1,13 @@
+id: max-flow
+type: algorithm
+topic: graphs
+name:
+  es: "Max flow"
+  en: "Max flow"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

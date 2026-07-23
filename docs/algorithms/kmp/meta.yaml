@@ -1,0 +1,13 @@
+id: kmp
+type: algorithm
+topic: strings
+name:
+  es: "KMP"
+  en: "KMP"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

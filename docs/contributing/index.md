@@ -15,6 +15,22 @@ profesores. Aquí encontrarás todo lo necesario, **desde cero**.
 2. [Añadir un algoritmo](add-algorithm.md) — el paso a paso completo.
 3. [Scripts del proyecto](scripts.md) — qué hace cada script y cómo ejecutarlo.
 
+¿Solo quieres **proponer una idea o reportar un fallo** (sin escribir código)? Ve a
+[Sugerencias e incidencias](issues.md).
+
+## Abrir un Pull Request
+
+Cuando tengas tus cambios en una rama de tu *fork*, abre el Pull Request desde aquí. Se
+rellenará automáticamente con la [plantilla de PR](https://github.com/jparisu/PrograCompetitivaCUNEF/blob/main/.github/PULL_REQUEST_TEMPLATE.md)
+(un checklist para que no se te olvide nada):
+
+[:material-source-pull: Abrir un Pull Request](https://github.com/jparisu/PrograCompetitivaCUNEF/compare){ .md-button .md-button--primary }
+
+!!! info "¿Cómo funciona?"
+    El enlace abre la vista de *comparar* de GitHub. Elige tu *fork* y tu rama como origen
+    y `main` como destino. Al crear el PR verás el checklist de la plantilla y, cuando la
+    CI termine, un comentario con el **enlace de vista previa** de la web.
+
 ## Requisitos
 
 - Python 3.11 o superior.

@@ -1,0 +1,13 @@
+id: stack-queue
+type: structure
+topic: data-structures
+name:
+  es: "Stack & queue"
+  en: "Stack & queue"
+level: base
+difficulty: 1.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

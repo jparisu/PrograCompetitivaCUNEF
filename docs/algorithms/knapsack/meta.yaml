@@ -1,0 +1,13 @@
+id: knapsack
+type: algorithm
+topic: dynamic-programming
+name:
+  es: "Knapsack"
+  en: "Knapsack"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

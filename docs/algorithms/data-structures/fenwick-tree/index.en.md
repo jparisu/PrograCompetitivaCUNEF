@@ -10,17 +10,45 @@ structure when the array changes and we need range sums many times.
 ## Code
 
 === "C++"
-    ```cpp
-    --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.cpp"
-    ```
-=== "Python"
-    ```python
-    --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.py"
-    ```
 
-!!! note "`clean` and `contest` versions"
-    In the next phase, the comment-free (`clean`) and compressed (`contest`) versions
-    will be generated automatically.
+    === "full"
+
+        ```cpp
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.cpp"
+        ```
+
+    === "clean"
+
+        ```cpp
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.clean.cpp"
+        ```
+
+    === "contest"
+
+        ```cpp
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.contest.cpp"
+        ```
+
+=== "Python"
+
+    === "full"
+
+        ```python
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.py"
+        ```
+
+    === "clean"
+
+        ```python
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.clean.py"
+        ```
+
+    === "contest"
+
+        ```python
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.contest.py"
+        ```
+
 
 ## Complexity
 

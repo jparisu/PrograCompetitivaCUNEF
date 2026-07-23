@@ -1,0 +1,17 @@
+id: lists
+type: structure
+topic: data-structures
+name:
+  es: "Arrays"
+  en: "Arrays"
+level: base
+difficulty: 0.8
+techniques: []
+tags: [array, vector, list, sequence]
+prerequisites: []
+current_version: v1
+stats:
+  use_case:
+    es: "Secuencia de elementos accesibles por índice."
+    en: "Sequence of elements accessed by index."
+wip: true

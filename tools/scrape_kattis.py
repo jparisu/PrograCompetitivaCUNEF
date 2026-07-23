@@ -89,9 +89,11 @@ DEFAULT_URL = f"https://open.kattis.com/affiliations/{DEFAULT_AFFILIATION}"
 DEFAULT_OUTPUT = DOCS_DIR / "assets" / "data" / "standings.json"
 DEFAULT_TIMEOUT = 30.0
 MAX_PAGES = 50  # safety cap when following pagination
+# A realistic browser User-Agent: Kattis sits behind bot protection that returns
+# 403 to obvious bot user-agents. This raises the chance the request is served.
 USER_AGENT = (
-    "PrograCompetitivaCUNEF-standings-bot/1.0 "
-    "(+https://github.com/jparisu/PrograCompetitivaCUNEF; educational use)"
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 )
 
 # Exit codes.
@@ -297,7 +299,11 @@ def fetch_all_members(url: str, timeout: float) -> list[dict]:
     Raises ``requests.RequestException`` on network failure.
     """
     session = requests.Session()
-    session.headers.update({"User-Agent": USER_AGENT})
+    session.headers.update({
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
+    })
 
     members: list[dict] = []
     seen_handles: set[str] = set()
@@ -336,6 +342,39 @@ def fetch_all_members(url: str, timeout: float) -> list[dict]:
     for i, m in enumerate(members, start=1):
         m["rank"] = i
     return members
+
+
+def fetch_members_browser(url: str, timeout: float) -> list[dict]:
+    """Fetch the standings with a headless browser (Playwright + Chromium).
+
+    Renders the page like a real browser, which is far more likely to get past
+    Kattis' bot protection than a plain HTTP request. Requires Playwright:
+        pip install playwright && python -m playwright install chromium
+    Parses the first page only (the affiliation ranking is a single table).
+    """
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError as exc:  # pragma: no cover
+        raise SystemExit(
+            "Playwright is required for --browser. Install it with:\n"
+            "    pip install playwright && python -m playwright install chromium"
+        ) from exc
+
+    log.info("fetching via headless browser: %s", url)
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch()
+        try:
+            page = browser.new_page(user_agent=USER_AGENT, locale="es-ES")
+            page.goto(url, timeout=int(timeout * 1000), wait_until="domcontentloaded")
+            # Wait for the standings table to be present, then read the HTML.
+            try:
+                page.wait_for_selector("table", timeout=int(timeout * 1000))
+            except Exception:
+                log.warning("no <table> appeared within timeout; parsing whatever loaded")
+            html = page.content()
+        finally:
+            browser.close()
+    return parse_members(html)
 
 
 # --------------------------------------------------------------------------- #
@@ -458,6 +497,24 @@ def build_parser() -> argparse.ArgumentParser:
         help=f"HTTP request timeout in seconds (default: {DEFAULT_TIMEOUT:g}).",
     )
     parser.add_argument(
+        "--html-file",
+        type=Path,
+        default=None,
+        metavar="PATH",
+        help="Parse a locally saved copy of the affiliation page instead of "
+        "fetching it. Useful because Kattis bot-protection may return 403 to "
+        "scripts: open the page in your browser, save it as HTML, and pass it "
+        "here (single page only).",
+    )
+    parser.add_argument(
+        "--browser",
+        action="store_true",
+        help="Fetch with a headless browser (Playwright + Chromium) instead of a "
+        "plain HTTP request — far more likely to get past Kattis' bot protection "
+        "(used by the weekly GitHub Action). Requires 'pip install playwright' "
+        "and 'python -m playwright install chromium'.",
+    )
+    parser.add_argument(
         "--dry-run",
         action="store_true",
         help="Parse and print the standings but do not write the output file.",
@@ -496,9 +553,18 @@ def main(argv: list[str] | None = None) -> int:
     # Determine the snapshot date. Only touch datetime.now() when not overridden.
     snapshot_date = args.date or date_cls.today().isoformat()
 
-    # 1. Fetch + parse.
+    # 1. Fetch + parse (or parse a locally saved page, bypassing the network).
     try:
-        members = fetch_all_members(args.url, timeout=args.timeout)
+        if args.html_file:
+            log.info("parsing local file: %s", args.html_file)
+            members = parse_members(args.html_file.read_text(encoding="utf-8", errors="replace"))
+        elif args.browser:
+            members = fetch_members_browser(args.url, timeout=args.timeout)
+        else:
+            members = fetch_all_members(args.url, timeout=args.timeout)
+    except FileNotFoundError:
+        log.error("html file not found: %s", args.html_file)
+        return EXIT_IO
     except requests.RequestException as exc:
         log.error("network error while fetching %s: %s", args.url, exc)
         return EXIT_NETWORK

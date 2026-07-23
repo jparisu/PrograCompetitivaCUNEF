@@ -1,0 +1,51 @@
+{#-
+  Custom top navigation with dropdowns.
+  Top-level sections open a menu of their children; a child that is itself a
+  section (a level) opens a second-level fly-out menu. Built from `nav`, so it
+  stays in sync with mkdocs.yml. Falls back to Material's base tab classes.
+
+  TODO(nav-dropdown): the dropdown reveal is currently HOVER-ONLY and unreliable
+  live. Clicking a tab NAVIGATES to its index page (the tab is useful on its
+  own). Revisit to make click-to-open work — see assets/js/nav-dropdown.js.
+-#}
+{% macro first_url(item) -%}
+  {%- if item.is_page -%}{{ item.url | url }}
+  {%- elif item.children -%}{{ first_url(item.children[0]) }}
+  {%- else -%}#{%- endif -%}
+{%- endmacro %}
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      {% for nav_item in nav %}
+        {% set has_children = nav_item.children and nav_item.children | length > 0 %}
+        {% set has_sections = has_children and (nav_item.children | selectattr("is_section") | list | length > 0) %}
+        <li class="md-tabs__item{% if has_children %} cunef-has-menu{% endif %}">
+          <a href="{{ first_url(nav_item) }}"
+             class="md-tabs__link{% if nav_item.active %} md-tabs__link--active{% endif %}">
+            {{ nav_item.title }}
+          </a>
+          {% if has_children %}
+            <ul class="cunef-menu">
+              {% for child in nav_item.children %}
+                {% if child.is_section %}
+                  <li class="cunef-menu__group">
+                    <span class="cunef-menu__label">{{ child.title }}</span>
+                    <ul class="cunef-submenu">
+                      {% for gc in child.children %}
+                        <li><a class="cunef-menu__link" href="{{ gc.url | url }}">{{ gc.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% else %}
+                  {#- a plain page; the section index (first page when the tab has levels) is emphasised -#}
+                  <li><a class="cunef-menu__link{% if loop.first and has_sections %} cunef-menu__index{% endif %}" href="{{ child.url | url }}">{{ child.title }}</a></li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

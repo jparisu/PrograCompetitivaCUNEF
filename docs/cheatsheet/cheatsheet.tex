@@ -88,32 +88,9 @@
 \vspace{0.8ex}
 
 \begin{multicols}{3}
-\csalgo{Bucles}
-\csstats{time: O(n), space: O(1)  |  Repetir instrucciones un número de veces o hasta una condición.}
-\begin{lstlisting}[language=C++]
-// AUTO-GENERATED from loops.v1.clean.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
-#include <iostream>
-using namespace std;
-int main() {
-    int n;
-    cin >> n;
-    long long sum = 0;
-    for (int i = 0; i < n; i++) {
-        int x;
-        cin >> x;
-        sum += x;
-    }
-    cout << sum << "\n";
-    return 0;
-}
-\end{lstlisting}
-
-\csalgo{Búsqueda binaria en un array}
+\csalgo{Binary search}
 \csstats{time: O(log n), space: O(1)  |  Encontrar un valor en un array ordenado.}
 \begin{lstlisting}[language=C++]
-// AUTO-GENERATED from binary_search.v1.clean.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
 #include <vector>
 using namespace std;
 int binary_search_idx(const vector<int>& a, int target) {
@@ -128,11 +105,59 @@ int binary_search_idx(const vector<int>& a, int target) {
 }
 \end{lstlisting}
 
-\csalgo{Árbol de Fenwick}
+\csalgo{Fast I/O (C++)}
+\begin{lstlisting}[language=C++]
+// Fast I/O — put these two lines at the very start of main():
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+// Then read/write as usual (now unbuffered from C stdio, much faster):
+//   int x; cin >> x;          // input
+//   cout << x << "\n";         // output ('\n' is faster than endl)
+\end{lstlisting}
+
+\csalgo{Fast I/O (Python)}
+\begin{lstlisting}[language=Python]
+import sys
+
+data = sys.stdin.buffer.read().split()   # fast input: read all tokens at once
+it = iter(data)
+def read_int():                          # next integer from the input
+    return int(next(it))
+
+out = sys.stdout.write                   # fast output: out(str(x) + "\n")
+\end{lstlisting}
+
+\csalgo{Dijkstra}
+\csstats{time: O((V+E) log V), space: O(V+E)  |  Camino más corto desde un origen con pesos no negativos.}
+\begin{lstlisting}[language=C++]
+#include <vector>
+#include <queue>
+#include <functional>
+using namespace std;
+const long long INF = 1e18;
+vector<long long> dijkstra(int n, const vector<vector<pair<int, int>>>& adj, int src) {
+    vector<long long> dist(n, INF);
+    priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<>> pq;
+    dist[src] = 0;
+    pq.push({0, src});
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+        if (d > dist[u]) continue;
+        for (auto [v, w] : adj[u]) {
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+    return dist;
+}
+\end{lstlisting}
+
+\csalgo{Fenwick Tree (BIT)}
 \csstats{build: O(n), update: O(log n), query: O(log n), space: O(n)  |  Sumas de prefijos con actualizaciones puntuales.}
 \begin{lstlisting}[language=C++]
-// AUTO-GENERATED from fenwick.v1.clean.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
 #include <vector>
 using namespace std;
 struct FenwickTree {
@@ -153,42 +178,9 @@ struct FenwickTree {
 };
 \end{lstlisting}
 
-\csalgo{DP con máscaras de bits — TSP}
-\csstats{time: O(2\textasciicircum{}n * n\textasciicircum{}2), space: O(2\textasciicircum{}n * n)  |  Ruta mínima que visita todos los nodos una vez (n pequeño, n <= \textasciitilde{}20).}
-\begin{lstlisting}[language=C++]
-// AUTO-GENERATED from tsp.v1.clean.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
-#include <vector>
-#include <algorithm>
-using namespace std;
-const long long INF = 1e18;
-long long tsp(const vector<vector<long long>>& dist) {
-    int n = dist.size();
-    vector<vector<long long>> dp(1 << n, vector<long long>(n, INF));
-    dp[1][0] = 0;
-    for (int mask = 1; mask < (1 << n); mask++) {
-        for (int u = 0; u < n; u++) {
-            if (dp[mask][u] == INF || !(mask & (1 << u))) continue;
-            for (int v = 0; v < n; v++) {
-                if (mask & (1 << v)) continue;
-                int nmask = mask | (1 << v);
-                dp[nmask][v] = min(dp[nmask][v], dp[mask][u] + dist[u][v]);
-            }
-        }
-    }
-    long long ans = INF;
-    int full = (1 << n) - 1;
-    for (int u = 0; u < n; u++)
-        ans = min(ans, dp[full][u] + dist[u][0]);
-    return ans;
-}
-\end{lstlisting}
-
-\csalgo{Envolvente convexa}
+\csalgo{Convex hull}
 \csstats{time: O(n log n), space: O(n)  |  El menor polígono convexo que contiene un conjunto de puntos.}
 \begin{lstlisting}[language=C++]
-// AUTO-GENERATED from convex_hull.v1.clean.cpp — do not edit.
-// To override, replace this file with a hand-written version (remove this marker).
 #include <vector>
 #include <algorithm>
 using namespace std;

@@ -18,9 +18,15 @@ Examples
 
 Steps
 -----
-    code      -> tools/gencode.py     (clean/contest styles from full)
-    tests     -> tools/gentests.py    (test/cases/*.in|*.out from meta examples)
-    overview  -> tools/genoverview.py (docs/assets/data/algorithms.json)
+    code       -> tools/gencode.py     (clean/contest styles from full)
+    tests      -> tools/gentests.py    (test/cases/*.in|*.out from meta examples)
+    overview   -> tools/genoverview.py (docs/assets/data/algorithms.json)
+    cheatsheet -> tools/cheatsheet.py  (docs/cheatsheet/cheatsheet.tex, all algorithms;
+                                        PDF too if pdflatex is installed)
+
+The dependency graph and the type/level matrix are now rendered client-side from
+algorithms.json (docs/assets/js/graph.js and matrix.js), so there is no graph
+generation step here.
 
 Note: the Kattis scraper (tools/scrape_kattis.py) and the cheatsheet builder
 (tools/cheatsheet.py) are NOT part of this orchestrator — the first needs network
@@ -40,6 +46,7 @@ STEPS = {
     "code": ("Code styles (clean / contest)", "gencode", True),
     "tests": ("Test fixtures (cases/*.in|*.out)", "gentests", True),
     "overview": ("Overview data (algorithms.json)", "genoverview", False),
+    "cheatsheet": ("Default cheatsheet (docs/cheatsheet/cheatsheet.tex)", "cheatsheet", False),
 }
 
 
@@ -47,11 +54,48 @@ def _load(module_name: str):
     return __import__(module_name)
 
 
-def _run_step(module_name: str, takes_algo: bool, check: bool, algo: str | None):
+def validate() -> list[str]:
+    """Return a list of human-readable violations of the content contract.
+
+    A non-WIP ``snippet`` element (the default format) is the site's canonical
+    "one implementation" page: it MUST ship a ``full`` code file and at least one
+    ``examples`` entry (so it can be generated, tested, and put on the cheatsheet).
+    ``article`` elements (free-form prose) and ``wip`` placeholders are exempt.
+    """
+    issues: list[str] = []
+    for a in common.iter_algorithms():
+        if a.is_article or a.is_wip:
+            continue
+        rel = a.meta_path.relative_to(common.REPO_ROOT)
+        has_code = a.code_dir.is_dir() and any(a.code_dir.glob("*.full.*"))
+        examples = a.meta.get("examples")
+        has_examples = isinstance(examples, list) and any(
+            isinstance(e, dict) for e in examples
+        )
+        if not has_code:
+            issues.append(
+                f"{a.id}: snippet element has no '*.full.*' code file "
+                f"({a.code_dir.relative_to(common.REPO_ROOT)}/). "
+                f"Add an implementation, or set 'format: article' / 'wip: true' in {rel}."
+            )
+        if not has_examples:
+            issues.append(
+                f"{a.id}: snippet element has no 'examples:' in {rel}. "
+                f"Add at least one example, or set 'format: article' / 'wip: true'."
+            )
+    return issues
+
+
+def _run_step(module_name: str, takes_algo: bool, check: bool, algo: str | None,
+              force: bool = False):
     module = _load(module_name)
     if not hasattr(module, "generate"):
         raise SystemExit(f"tools/{module_name}.py does not expose generate(); cannot orchestrate it.")
     if takes_algo:
+        # Only gencode understands --force (existing code files are the ones an
+        # author may customise); other derived artifacts always refresh.
+        if module_name == "gencode":
+            return module.generate(check=check, algo=algo, force=force)
         return module.generate(check=check, algo=algo)
     return module.generate(check=check)
 
@@ -77,6 +121,13 @@ def main(argv: list[str] | None = None) -> int:
         metavar="ID",
         help="restrict code/tests to a single algorithm id (ignored by the overview step).",
     )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="regenerate existing code files too (default: only create missing "
+        "ones, so hand-customised styles are preserved). Files with a "
+        "'no-generate' directive are never overwritten. Affects the 'code' step.",
+    )
     parser.add_argument("-v", "--verbose", action="store_true", help="more detailed output.")
     args = parser.parse_args(argv)
 
@@ -93,12 +144,24 @@ def main(argv: list[str] | None = None) -> int:
     total_pending = 0
     for name in selected:
         title, module_name, takes_algo = STEPS[name]
-        changes = _run_step(module_name, takes_algo, check, args.algo)
+        changes = _run_step(module_name, takes_algo, check, args.algo, force=args.force)
         total_pending += common.print_plan(changes, check=check, title=title)
 
+    # Content contract check (only meaningful for a full run, not a --only subset).
+    issues = validate() if not args.only else []
+    if issues:
+        print("\n=== Content validation ===")
+        for msg in issues:
+            print(f"  ✗ {msg}")
+
     print()
-    if check and total_pending:
-        print(f"{total_pending} file(s) out of date. Run: python tools/gen.py generate")
+    if issues:
+        print(f"{len(issues)} content violation(s) — see above.")
+    if check and (total_pending or issues):
+        if total_pending:
+            print(f"{total_pending} file(s) out of date. Run: python tools/gen.py generate")
+        return 1
+    if issues:
         return 1
     if check:
         print("All derived files are up to date.")

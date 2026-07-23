@@ -1,0 +1,17 @@
+id: dictionaries
+type: structure
+topic: data-structures
+name:
+  es: "Dictionaries / maps"
+  en: Dictionaries / maps
+level: beginner
+difficulty: 1.5
+techniques: []
+tags: [map, dict, hash, key-value]
+prerequisites: [lists]
+current_version: v1
+stats:
+  use_case:
+    es: "Asociar claves con valores y buscarlas rápido."
+    en: "Associate keys with values and look them up fast."
+wip: true

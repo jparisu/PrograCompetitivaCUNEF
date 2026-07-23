@@ -1,0 +1,13 @@
+id: bfs
+type: algorithm
+topic: graphs
+name:
+  es: "Breadth-first search (BFS)"
+  en: "Breadth-first search (BFS)"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true
