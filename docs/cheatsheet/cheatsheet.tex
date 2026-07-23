@@ -143,27 +143,22 @@ int binary_search_idx(const vector<int>& a, int target) {
 }
 \end{lstlisting}
 
-\csalgo{Fenwick Tree (BIT)}
-\csstats{build: O(n), update: O(log n), query: O(log n), space: O(n)  |  Sumas de prefijos con actualizaciones puntuales.}
+\csalgo{Fast I/O (C++)}
 \begin{lstlisting}[language=C++]
-#include <vector>
-using namespace std;
-struct FenwickTree {
-    int n;
-    vector<int> tree;
-    FenwickTree(int n) : n(n), tree(n) {}
-    void update(int index, int delta) {
-        for (index++; index <= n; index += index & -index)
-            tree[index - 1] += delta;
-    }
-    int query(int index) {
-        int acc = 0;
-        for (; index > 0; index -= index & -index)
-            acc += tree[index - 1];
-        return acc;
-    }
-    int query_range(int l, int r) { return query(r) - query(l); }
-};
+// C++ fast I/O — put these two lines first, inside main():
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+// Then read/print as usual:  cin >> x;   cout << x << '\n';
+// (use '\n', never endl inside loops — endl flushes the buffer every time).
+\end{lstlisting}
+
+\csalgo{Fast I/O (Python)}
+\begin{lstlisting}[language=Python]
+# Python fast I/O — swap input() for the buffered reader (drop-in, at the top):
+import sys
+input = sys.stdin.readline
+# input().split() reads one line; for many tokens at once: sys.stdin.read().split().
+# Print a lot in one go:  print("\n".join(map(str, answers)))
 \end{lstlisting}
 
 \csalgo{Dijkstra}
@@ -192,6 +187,29 @@ vector<long long> dijkstra(int n, const vector<vector<pair<int, int>>>& adj, int
     }
     return dist;
 }
+\end{lstlisting}
+
+\csalgo{Fenwick Tree (BIT)}
+\csstats{build: O(n), update: O(log n), query: O(log n), space: O(n)  |  Sumas de prefijos con actualizaciones puntuales.}
+\begin{lstlisting}[language=C++]
+#include <vector>
+using namespace std;
+struct FenwickTree {
+    int n;
+    vector<int> tree;
+    FenwickTree(int n) : n(n), tree(n) {}
+    void update(int index, int delta) {
+        for (index++; index <= n; index += index & -index)
+            tree[index - 1] += delta;
+    }
+    int query(int index) {
+        int acc = 0;
+        for (; index > 0; index -= index & -index)
+            acc += tree[index - 1];
+        return acc;
+    }
+    int query_range(int l, int r) { return query(r) - query(l); }
+};
 \end{lstlisting}
 
 \csalgo{Convex hull}

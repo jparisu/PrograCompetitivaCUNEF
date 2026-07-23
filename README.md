@@ -5,6 +5,11 @@ para programación competitiva (C++ y Python), orientado a concursos tipo ICPC.
 
 La documentación se construye con **MkDocs (Material)** y se publica en **GitHub Pages**.
 
+## Documentación online
+
+<https://jparisu.github.io/PrograCompetitivaCUNEF/>
+
+
 ## Ver la documentación en local (sin hacer push)
 
 Puedes previsualizar toda la web en tu ordenador. Necesitas Python 3.11+.
@@ -42,7 +47,3 @@ python tools/gen.py status       # comprueba que está al día (lo usa la CI)
 ```
 
 Consulta la sección **Contribuir** de la documentación para el detalle de cada script.
-
-## Documentación online
-
-<https://jparisu.github.io/PrograCompetitivaCUNEF/>

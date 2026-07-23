@@ -30,17 +30,27 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pip install -r tools/requirements.txt
 
-      # PR gate: fail if derived files (clean/contest code, test fixtures,
-      # overview data) weren't regenerated. Fix locally with `python tools/gen.py generate`.
-      - name: Check generated files are up to date
-        if: github.event.action != 'closed'
-        run: python tools/gen.py status
+      # NOTE: the "generated files are up to date" gate now lives in its own
+      # workflow (.github/workflows/generated.yml) so it reports as a separate,
+      # LaTeX-free check. It is intentionally not duplicated here.
 
       # PR gate: compile & run every code variant against the meta.yaml examples,
       # so the documented examples really are passing tests (g++ ships on the runner).
       - name: Run example tests
         if: github.event.action != 'closed'
         run: python tools/runtests.py
+
+      # The cheatsheet PDF is a publish artifact, NOT committed to the repo: build
+      # it from the gated docs/cheatsheet/cheatsheet.tex so the Cheatsheet page's
+      # PDF link resolves under --strict and it ships to gh-pages (prod + previews).
+      # `--site` rebuilds the exact .tex that generated.yml gates, then compiles the
+      # PDF. LaTeX lives only here, so the generation check stays LaTeX-free.
+      - name: Build cheatsheet PDF
+        if: github.event.action != 'closed'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-recommended texlive-latex-extra
+          python tools/cheatsheet.py --site --pdf
 
       # Build (also the PR gate: --strict fails on broken links / missing nav).
       # Skipped when a PR is closed — nothing to build, we only clean up below.
