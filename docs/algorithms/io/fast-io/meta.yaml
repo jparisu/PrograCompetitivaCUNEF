@@ -1,0 +1,25 @@
+id: fast-io
+type: technique
+format: article
+topic: fundamentals
+name:
+  es: E/S rápida
+  en: Fast I/O
+level: beginner
+difficulty: 1.0
+techniques: []
+tags: [io, performance, tle]
+prerequisites: [loops]
+current_version: v1
+stats:
+  use_case:
+    es: "Leer entradas grandes sin superar el tiempo límite."
+    en: "Read large inputs without exceeding the time limit."
+# Not a versioned snippet, but still worth a chuletario entry: the minimal
+# input/output boilerplate for each language.
+cheatsheet:
+  - { file: code/io.cpp, title: "Fast I/O (C++)", language: cpp }
+  - { file: code/io.py,  title: "Fast I/O (Python)", language: py }
+references:
+  - title: "Codeforces: fast input/output"
+    url: "https://codeforces.com/blog/entry/5217"

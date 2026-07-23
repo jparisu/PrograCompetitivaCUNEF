@@ -1,8 +1,13 @@
-// Binary search on a sorted vector.
-// Returns an index i with a[i] == target, or -1 if target is not present.
-//   time:  O(log n)
-//   space: O(1)
-// Precondition: `a` is sorted in non-decreasing order.
+/**
+ * Binary search on a sorted vector.
+ *
+ * Finds a value in a sorted array by halving the search range at each step,
+ * turning an O(n) scan into O(log n).
+ *
+ * Input:  a — vector sorted in non-decreasing order; target — value to find.
+ * Output: an index i with a[i] == target, or -1 if target is not present.
+ * Complexity: O(log n) time, O(1) space.
+ */
 #include <vector>
 using namespace std;
 

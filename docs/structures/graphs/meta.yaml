@@ -1,0 +1,17 @@
+id: graphs
+type: structure
+topic: graphs
+name:
+  es: Grafos
+  en: Graphs
+level: intermediate
+difficulty: 3.0
+techniques: []
+tags: [graph, adjacency, nodes, edges]
+prerequisites: [lists, dictionaries]
+current_version: v1
+stats:
+  use_case:
+    es: "Representar relaciones entre elementos (nodos y aristas)."
+    en: "Represent relationships between elements (nodes and edges)."
+wip: true

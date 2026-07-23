@@ -1,10 +1,13 @@
 /**
  * Convex hull — Andrew's monotone chain.
  *
- * Returns the vertices of the convex hull in counter-clockwise order.
- *   time:  O(n log n)   (dominated by the sort)
- *   space: O(n)
- * Collinear points on the hull edges are removed (strict `<= 0` test).
+ * Computes the convex hull: the smallest convex polygon that contains a set of
+ * 2D points (imagine a rubber band snapping around them).
+ *
+ * Input:  pts — a vector of 2D points (P{x, y}).
+ * Output: the hull vertices in counter-clockwise order; collinear points on the
+ *         hull edges are removed (strict `<= 0` test).
+ * Complexity: O(n log n) time (dominated by the sort), O(n) space.
  */
 #include <vector>
 #include <algorithm>
@@ -17,7 +20,7 @@ struct P {
     }
 };
 
-// Cross product of OA x OB. >0 left turn, <0 right turn, =0 collinear.
+// Cross product of vectors OA and OB: >0 left turn, <0 right turn, =0 collinear.
 long long cross(const P& O, const P& A, const P& B) {
     return (A.x - O.x) * (B.y - O.y) - (A.y - O.y) * (B.x - O.x);
 }

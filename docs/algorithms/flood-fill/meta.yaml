@@ -1,0 +1,13 @@
+id: flood-fill
+type: algorithm
+topic: graphs
+name:
+  es: "Flood fill"
+  en: "Flood fill"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

@@ -1,7 +1,8 @@
 id: fenwick-tree
+type: structure
 topic: data-structures
 name:
-  es: Árbol de Fenwick
+  es: "Fenwick Tree (BIT)"
   en: Fenwick Tree (BIT)
 level: intermediate
 difficulty: 3.0

@@ -1,5 +1,5 @@
-# AUTO-GENERATED from fenwick.v1.clean.py — do not edit.
-# To override, replace this file with a hand-written version (remove this marker).
+#! AUTO-GENERATED from fenwick.v1.clean.py — do not edit.
+#! To override, replace this file with a hand-written version (remove this marker).
 class FenwickTree:
 
     def __init__(self, e):

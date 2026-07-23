@@ -1,16 +1,23 @@
 """Binary search on a sorted list.
 
-Returns an index i with a[i] == target, or -1 if target is not present.
-    time:  O(log n)
-    space: O(1)
-Precondition: `a` is sorted in non-decreasing order.
+Finds a value in a **sorted** array by halving the search range at each step,
+turning an O(n) scan into O(log n).
+
+Args:
+    a (list[int]): array sorted in non-decreasing order.
+    target (int): value to look for.
+Returns:
+    int: an index ``i`` with ``a[i] == target``, or ``-1`` if it is not present.
+
+Complexity: O(log n) time, O(1) space.
 """
 
 
-def binary_search(a, target):
-    lo, hi = 0, len(a) - 1
+def binary_search(a: list[int], target: int) -> int:
+    lo: int = 0
+    hi: int = len(a) - 1
     while lo <= hi:
-        mid = (lo + hi) // 2
+        mid: int = (lo + hi) // 2
         if a[mid] == target:
             return mid
         if a[mid] < target:

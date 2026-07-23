@@ -1,0 +1,14 @@
+id: comparisons
+type: technique
+format: article
+topic: fundamentals
+name:
+  es: "Comparaciones"
+  en: "Comparisons"
+level: base
+difficulty: 1.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

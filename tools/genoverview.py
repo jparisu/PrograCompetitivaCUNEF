@@ -96,14 +96,15 @@ def _languages(algo: common.Algorithm) -> list[str]:
 
 
 def _url(algo: common.Algorithm) -> str:
-    """Page-relative link from /overview/ to the algorithm page.
+    """Site-root-relative link to the algorithm page (no leading slash).
 
-    The algorithm folder relative to docs/ looks like
-    ``algorithms/data-structures/fenwick-tree``; from /overview/ (depth 1) the
-    link back up and into it is ``../algorithms/data-structures/fenwick-tree/``.
+    e.g. ``algorithms/data-structures/fenwick-tree/``. The table JS prepends the
+    site base (derived from its own script URL), so the link resolves correctly
+    from any page depth (/algorithms/ and /algorithms/levels/<lvl>/) and under
+    /pr-preview/pr-N/.
     """
     rel = algo.directory.relative_to(common.DOCS_DIR).as_posix()
-    return f"../{rel}/"
+    return f"{rel}/"
 
 
 def _name(algo: common.Algorithm) -> dict[str, str]:
@@ -119,6 +120,10 @@ def _entry(algo: common.Algorithm) -> "OrderedDict[str, object]":
     """Build one ordered JSON record for an algorithm."""
     entry: "OrderedDict[str, object]" = OrderedDict()
     entry["id"] = algo.id
+    entry["type"] = algo.type
+    entry["format"] = algo.format
+    entry["topic"] = algo.meta.get("topic", "")
+    entry["wip"] = bool(algo.meta.get("wip", False))
     entry["name"] = _name(algo)
     entry["level"] = algo.meta.get("level", "")
     entry["difficulty"] = algo.meta.get("difficulty")

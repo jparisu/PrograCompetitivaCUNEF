@@ -1,22 +1,58 @@
-# Búsqueda binaria en un array
+# Binary search
 
 !!! info "Metadatos"
-    **Nivel:** Principiante · **Dificultad:** 1.5 · **Complejidad:** O(log n)
-    · **Técnica:** [Búsqueda binaria](../../../techniques/binary-search/index.md)
+    **Tipo:** Algoritmo · **Nivel:** Principiante · **Dificultad:** 1.5 · **Complejidad:** O(log n)
 
 Busca un valor en un array **ordenado** dividiendo el espacio de búsqueda por la mitad en
 cada paso. Devuelve la posición del valor, o `-1` si no está.
 
+<figure class="algo-figure">
+  <img src="media/binary-search.svg" alt="En cada paso se compara con el elemento central y se descarta la mitad del rango">
+  <figcaption>En cada paso se compara con el elemento central y se descarta la mitad del rango.</figcaption>
+</figure>
+
 ## Código
 
 === "C++"
-    ```cpp
-    --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.full.cpp"
-    ```
+
+    === "full"
+
+        ```cpp
+        --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.full.cpp"
+        ```
+
+    === "clean"
+
+        ```cpp
+        --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.clean.cpp"
+        ```
+
+    === "contest"
+
+        ```cpp
+        --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.contest.cpp"
+        ```
+
 === "Python"
-    ```python
-    --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.full.py"
-    ```
+
+    === "full"
+
+        ```python
+        --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.full.py"
+        ```
+
+    === "clean"
+
+        ```python
+        --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.clean.py"
+        ```
+
+    === "contest"
+
+        ```python
+        --8<-- "algorithms/searching/binary-search-array/code/binary_search.v1.contest.py"
+        ```
+
 
 !!! warning "Precondición"
     El array debe estar **ordenado**. Si no lo está, ordénalo primero (O(n log n)).

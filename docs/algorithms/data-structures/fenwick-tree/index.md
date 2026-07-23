@@ -1,7 +1,7 @@
-# Árbol de Fenwick (BIT)
+# Fenwick Tree (BIT)
 
 !!! info "Metadatos"
-    **Nivel:** Intermedio · **Dificultad:** 3.0 · **Complejidad:** O(log n) por operación
+    **Tipo:** Estructura · **Nivel:** Intermedio · **Dificultad:** 3.0 · **Complejidad:** O(log n) por operación
 
 El **árbol de Fenwick** (o *Binary Indexed Tree*) mantiene las sumas de prefijos de un
 array permitiendo **actualizaciones puntuales** y **consultas de rango**, ambas en
@@ -11,17 +11,45 @@ muchas veces.
 ## Código
 
 === "C++"
-    ```cpp
-    --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.cpp"
-    ```
-=== "Python"
-    ```python
-    --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.py"
-    ```
 
-!!! note "Versiones `clean` y `contest`"
-    En la siguiente fase se generarán automáticamente las versiones sin comentarios
-    (`clean`) y comprimida (`contest`).
+    === "full"
+
+        ```cpp
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.cpp"
+        ```
+
+    === "clean"
+
+        ```cpp
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.clean.cpp"
+        ```
+
+    === "contest"
+
+        ```cpp
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.contest.cpp"
+        ```
+
+=== "Python"
+
+    === "full"
+
+        ```python
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.full.py"
+        ```
+
+    === "clean"
+
+        ```python
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.clean.py"
+        ```
+
+    === "contest"
+
+        ```python
+        --8<-- "algorithms/data-structures/fenwick-tree/code/fenwick.v1.contest.py"
+        ```
+
 
 ## Complejidad
 

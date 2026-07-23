@@ -1,7 +1,8 @@
-# AUTO-GENERATED from binary_search.v1.clean.py — do not edit.
-# To override, replace this file with a hand-written version (remove this marker).
+#! AUTO-GENERATED from binary_search.v1.clean.py — do not edit.
+#! To override, replace this file with a hand-written version (remove this marker).
 def binary_search(b, f):
-    d, c = (0, len(b) - 1)
+    d = 0
+    c = len(b) - 1
     while d <= c:
         e = (d + c) // 2
         if b[e] == f:

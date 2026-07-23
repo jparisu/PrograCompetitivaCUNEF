@@ -1,0 +1,13 @@
+id: io
+type: technique
+topic: fundamentals
+name:
+  es: "Input/Output"
+  en: "Input/Output"
+level: base
+difficulty: 1.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true

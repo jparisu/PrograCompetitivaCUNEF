@@ -1,0 +1,16 @@
+id: a-star
+type: algorithm
+topic: graphs
+name:
+  es: "A*"
+  en: A*
+level: advanced
+difficulty: 5.0
+techniques: [graph-traversal]
+tags: [shortest-path, heuristic, pathfinding]
+prerequisites: [dijkstra]
+current_version: v1
+wip: true
+references:
+  - title: "Red Blob Games: Introduction to A*"
+    url: "https://www.redblobgames.com/pathfinding/a-star/introduction.html"

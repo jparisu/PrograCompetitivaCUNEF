@@ -1,31 +1,31 @@
 # Bucles
 
 !!! info "Metadatos"
-    **Nivel:** Base · **Dificultad:** 0.5 · **Complejidad:** O(n)
+    **Tipo:** Técnica · **Nivel:** Base · **Dificultad:** 0.5
 
-Los **bucles** son partes del código que se repiten hasta que se cumple una condición.
-Los dos más habituales son `for` (cuando sabemos cuántas veces repetir) y `while`
-(cuando repetimos hasta que ocurra algo).
+Los **bucles** repiten una parte del código varias veces. Son el ladrillo básico de casi
+todo programa: recorrer una lista, leer varias entradas, probar candidatos…
 
-## Código
+Hay dos formas fundamentales, y existen en todos los lenguajes:
 
-En este ejemplo leemos `n` números y mostramos su suma.
+- **`for`** — cuando **sabes cuántas veces** vas a repetir (p. ej. "n veces").
+- **`while`** — cuando repites **hasta que se cumpla una condición** (no sabes cuántas
+  vueltas dará de antemano).
 
-=== "C++"
-    ```cpp
-    --8<-- "algorithms/fundamentals/loops/code/loops.v1.full.cpp"
-    ```
-=== "Python"
-    ```python
-    --8<-- "algorithms/fundamentals/loops/code/loops.v1.full.py"
-    ```
+La idea es la misma en cualquier lenguaje; lo que cambia es la **sintaxis**. Elige el tuyo:
 
-!!! note "Versiones `clean` y `contest`"
-    En la siguiente fase se generarán automáticamente las versiones sin comentarios
-    (`clean`) y comprimida (`contest`).
+<div class="grid cards" markdown>
 
-## Ejemplo
+-   :simple-cplusplus:{ .lg } __Bucles en C++__
 
-| Entrada | Salida |
-|---------|--------|
-| `3` <br> `10 20 30` | `60` |
+    `for`, `while` y `do…while` con la sintaxis de C++.
+
+    [:octicons-arrow-right-24: Ver en C++](cpp.md)
+
+-   :simple-python:{ .lg } __Bucles en Python__
+
+    `for` sobre `range`/iterables y `while`.
+
+    [:octicons-arrow-right-24: Ver en Python](python.md)
+
+</div>

@@ -1,7 +1,8 @@
 id: convex-hull
+type: algorithm
 topic: geometry
 name:
-  es: Envolvente convexa
+  es: "Convex hull"
   en: Convex hull
 level: expert
 difficulty: 5.5

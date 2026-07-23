@@ -1,0 +1,14 @@
+id: complexity
+type: technique
+format: article
+topic: fundamentals
+name:
+  es: "Complejidad (Big-O)"
+  en: "Complexity (Big-O)"
+level: base
+difficulty: 1.0
+techniques: []
+tags: []
+prerequisites: []
+current_version: v1
+wip: true
