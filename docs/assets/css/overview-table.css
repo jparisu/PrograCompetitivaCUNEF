@@ -205,11 +205,13 @@
   white-space: nowrap;
 }
 
-.ov-badge--base { background: #2e7d32; }
-.ov-badge--beginner { background: #0277bd; }
-.ov-badge--intermediate { background: #f9a825; color: #222; }
-.ov-badge--advanced { background: #e65100; }
-.ov-badge--expert { background: #c62828; }
+/* Level badges use the canonical --level-* palette (see assets/css/theme.css).
+   Intermediate keeps dark text because the yellow fill is illegible with white. */
+.ov-badge--base { background: var(--level-base); }
+.ov-badge--beginner { background: var(--level-beginner); }
+.ov-badge--intermediate { background: var(--level-intermediate); color: #222; }
+.ov-badge--advanced { background: var(--level-advanced); }
+.ov-badge--expert { background: var(--level-expert); }
 .ov-badge--unknown { background: var(--md-default-fg-color--light); }
 
 /* --------------------------------------------------------------- misc */

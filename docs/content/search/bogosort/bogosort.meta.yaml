@@ -1,0 +1,13 @@
+id: bogosort
+type: algorithm
+topic: search
+name:
+  es: "Bogosort"
+  en: "Bogosort"
+level: expert
+difficulty: 10.0
+techniques: []
+tags: []
+prerequisites: [loops]
+current_version: v1
+wip: true

@@ -1,0 +1,13 @@
+id: punctuation-checker
+type: algorithm
+topic: strings
+name:
+  es: "Punctuation checker"
+  en: "Punctuation checker"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: [loops]
+current_version: v1
+wip: true

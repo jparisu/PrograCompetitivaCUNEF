@@ -1,0 +1,13 @@
+id: graph-coloring
+type: algorithm
+topic: graphs
+name:
+  es: "Graph coloring"
+  en: "Graph coloring"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: [graphs]
+current_version: v1
+wip: true

@@ -8,6 +8,18 @@
   --cunef-orange-dark: #c4530a;
   --cunef-orange-light: #ff8a3d;
   --cunef-ink: #1b2733;
+
+  /* Canonical difficulty-level palette — the SINGLE source of truth for level
+     colours across the site (chips, matrix, overview badges, dependency graph).
+     Do not hard-code these hexes elsewhere; reference the token instead.
+     `--level-intermediate-ink` is a darker gold used only where the yellow
+     appears as TEXT/border (the fill yellow is illegible as small text). */
+  --level-base: #2e7d32;
+  --level-beginner: #1e88e5;
+  --level-intermediate: #f9a825;
+  --level-intermediate-ink: #8a6d00;
+  --level-advanced: #e53935;
+  --level-expert: #6a1b9a;
 }
 
 /* ---- Light scheme ---- */
@@ -155,6 +167,8 @@
 .hero h1 {
   font-weight: 800;
   margin: 0.2rem 0 0.4rem;
+  border-bottom: none;        /* the hero title is centred; no section rule */
+  padding-bottom: 0;
 }
 .hero .hero-tagline {
   font-size: 1.05rem;
@@ -163,6 +177,25 @@
   color: var(--md-default-fg-color--light);
 }
 .hero .md-button { margin: 0.2rem 0.3rem; }
+
+/* =========================================================================
+   Page headings: bold titles, with a horizontal rule under the page title (h1)
+   and under each section heading (h2) so sections read as clearly separated.
+   ========================================================================= */
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-default-fg-color);          /* Material dims h1 by default */
+  border-bottom: 2px solid var(--md-primary-fg-color);   /* CUNEF orange accent */
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+.md-typeset h2 {
+  font-weight: 700;
+  border-bottom: 1px solid var(--md-default-fg-color--lighter);
+  padding-bottom: 0.25rem;
+  margin-top: 2.2rem;
+}
+.md-typeset h3 { font-weight: 700; }
 
 /* =========================================================================
    Grid cards: level accent stripe + hover lift
@@ -178,24 +211,6 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   border-top-color: var(--cunef-orange-dark);
 }
-
-/* =========================================================================
-   Level badges (used in overview / algorithm headers)
-   ========================================================================= */
-.level-badge {
-  display: inline-block;
-  padding: 0.08rem 0.5rem;
-  border-radius: 1rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #fff;
-  vertical-align: middle;
-}
-.level-badge.base         { background: #2e7d32; }
-.level-badge.beginner     { background: #1e88e5; }
-.level-badge.intermediate { background: #f9a825; color: #1b2733; }
-.level-badge.advanced     { background: #e53935; }
-.level-badge.expert       { background: #6a1b9a; }
 
 /* =========================================================================
    Contest cards (home)
@@ -259,11 +274,11 @@
 .md-typeset .todo-level { margin: 0.8rem 0 0.2rem; }
 .md-typeset .todo-ul { margin-top: 0.2rem; }
 .todo-meta { opacity: 0.65; font-size: 0.85em; }
-.cat-chip--level-base.is-active         { background: #2e7d3226; border-color: #2e7d32; }
-.cat-chip--level-beginner.is-active     { background: #1e88e526; border-color: #1e88e5; }
-.cat-chip--level-intermediate.is-active { background: #f9a82533; border-color: #f9a825; }
-.cat-chip--level-advanced.is-active     { background: #e5393526; border-color: #e53935; }
-.cat-chip--level-expert.is-active       { background: #6a1b9a26; border-color: #6a1b9a; }
+.cat-chip--level-base.is-active         { background: #2e7d3226; border-color: var(--level-base); }
+.cat-chip--level-beginner.is-active     { background: #1e88e526; border-color: var(--level-beginner); }
+.cat-chip--level-intermediate.is-active { background: #f9a82533; border-color: var(--level-intermediate); }
+.cat-chip--level-advanced.is-active     { background: #e5393526; border-color: var(--level-advanced); }
+.cat-chip--level-expert.is-active       { background: #6a1b9a26; border-color: var(--level-expert); }
 /* Type chips share ONE neutral colour: type is not a colour dimension here
    (elements are coloured by level), so per-type colours would be misleading. */
 .cat-chip--type-technique.is-active,
@@ -278,9 +293,6 @@
   border-radius: 0.5rem; font-size: 0.72rem; font-weight: 600; text-decoration: none;
   border: 1px solid currentColor;   /* all entries have a defined edge (WIP = dashed) */
 }
-.md-typeset .cat-badge--technique { background: #d7f0ea; color: #00695c; }
-.md-typeset .cat-badge--algorithm { background: #dbeafe; color: #1565c0; }
-.md-typeset .cat-badge--structure { background: #f0e0f7; color: #6a1b9a; }
 .md-typeset .cat-badge:hover { filter: brightness(0.95); }
 
 .matrix__scroll { overflow-x: auto; }
@@ -292,11 +304,11 @@
 .md-typeset .matrix thead th { font-weight: 700; }
 .matrix__level { font-weight: 700; white-space: nowrap; }
 .matrix__empty { opacity: 0.4; }
-.matrix__row--base .matrix__level         { color: #2e7d32; }
-.matrix__row--beginner .matrix__level     { color: #1e88e5; }
-.matrix__row--intermediate .matrix__level { color: #b8860b; }
-.matrix__row--advanced .matrix__level     { color: #e53935; }
-.matrix__row--expert .matrix__level       { color: #6a1b9a; }
+.matrix__row--base .matrix__level         { color: var(--level-base); }
+.matrix__row--beginner .matrix__level     { color: var(--level-beginner); }
+.matrix__row--intermediate .matrix__level { color: var(--level-intermediate-ink); }
+.matrix__row--advanced .matrix__level     { color: var(--level-advanced); }
+.matrix__row--expert .matrix__level       { color: var(--level-expert); }
 .matrix__row--base         { background: #2e7d3212; }
 .matrix__row--beginner     { background: #1e88e512; }
 .matrix__row--intermediate { background: #f9a82519; }
@@ -326,7 +338,6 @@
 .md-typeset .cat-lvl--intermediate { background: #fdf3d7; color: #7a5b00; }
 .md-typeset .cat-lvl--advanced     { background: #fde3e1; color: #b71c1c; }
 .md-typeset .cat-lvl--expert       { background: #efe4f7; color: #4a148c; }
-.md-typeset .topics-table .topics__subrow th { padding-left: 1.4rem; font-weight: 500; opacity: 0.9; }
 
 /* Content-type badges (overview table) */
 .md-typeset .ov-type {

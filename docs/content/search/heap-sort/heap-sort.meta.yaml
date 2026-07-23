@@ -1,0 +1,14 @@
+id: heap-sort
+type: algorithm
+topic: search
+name:
+  es: "Heap sort"
+  en: "Heap sort"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: [priority-queue]
+related: [merge-sort]
+current_version: v1
+wip: true

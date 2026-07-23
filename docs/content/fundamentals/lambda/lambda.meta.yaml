@@ -1,0 +1,15 @@
+id: lambda
+type: technique
+format: article
+topic: fundamentals
+name:
+  es: "Lambda"
+  en: "Lambda"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: [lambda, functional, comparator]
+prerequisites: []
+related: [comparisons]
+current_version: v1
+wip: true

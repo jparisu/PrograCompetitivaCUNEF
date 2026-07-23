@@ -1,0 +1,13 @@
+id: newton-binomial
+type: technique
+topic: combinatorics
+name:
+  es: "Newtons binomial"
+  en: "Newtons binomial"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: [combinatory]
+current_version: v1
+wip: true

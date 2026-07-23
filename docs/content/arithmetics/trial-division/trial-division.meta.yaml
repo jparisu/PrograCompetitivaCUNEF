@@ -1,0 +1,13 @@
+id: trial-division
+type: technique
+topic: arithmetics
+name:
+  es: "Trial division"
+  en: "Trial division"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: [loops]
+current_version: v1
+wip: true

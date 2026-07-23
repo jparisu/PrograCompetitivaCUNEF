@@ -18,35 +18,23 @@
 window.Catalog = (function () {
   "use strict";
 
-  var LEVELS = ["base", "beginner", "intermediate", "advanced", "expert"];
-  var LEVEL_LABELS = {
-    base: "Base", beginner: "Principiante", intermediate: "Intermedio",
-    advanced: "Avanzado", expert: "Experto",
-  };
-  var TYPES = ["technique", "algorithm", "structure"];
-  var TYPE_LABELS = { technique: "Técnica", algorithm: "Algoritmo", structure: "Estructura" };
+  // Taxonomy (levels, types, topics, language labels) is the SINGLE source of
+  // truth in tools/common.py, mirrored to the browser as window.Taxonomy by
+  // tools/gentaxonomy.py -> assets/js/taxonomy.js (loaded before this file).
+  // Edit the taxonomy there, not here.
+  var T = window.Taxonomy || {};
+  var LEVELS = T.LEVELS || [];
+  var LEVEL_LABELS = T.LEVEL_LABELS || {};
+  var TYPES = T.TYPES || [];
+  var TYPE_LABELS = T.TYPE_LABELS || {};
+  var TOPICS = T.TOPICS || {};
+  var LANG_LABELS = T.LANG_LABELS || {};
 
-  // Flat topic taxonomy: id -> { label, icon (emoji, renders in HTML and in
-  // Mermaid nodes), desc (short, for the Temas table) }. Order = display order.
-  // Edit here to restyle/relabel everywhere at once.
-  var TOPICS = {
-    "fundamentals":        { label: "Fundamentos",           icon: "🧱", desc: "Fundamentos de programación y conceptos." },
-    "strings":             { label: "Strings",               icon: "🔤", desc: "Procesamiento de texto y búsqueda de patrones." },
-    "search":              { label: "Ordenación y búsqueda", icon: "🔎", desc: "Ordenar y localizar datos rápidamente." },
-    "data-structures":     { label: "Estructuras de datos",  icon: "🗃️", desc: "Guardar y organizar datos para consultarlos rápido." },
-    "graphs":              { label: "Grafos",                icon: "🕸️", desc: "Nodos y aristas: recorridos, caminos, flujos." },
-    "dynamic-programming": { label: "Programación dinámica", icon: "🧩", desc: "Combinar soluciones de subproblemas solapados." },
-    "greedy":              { label: "Voraz (greedy)",        icon: "🪙", desc: "Elegir la mejor opción local en cada paso." },
-    "arithmetics":         { label: "Aritmética",            icon: "➗", desc: "Aritmética modular, primos, teoría de números." },
-    "combinatorics":       { label: "Combinatoria",          icon: "🎲", desc: "Contar combinaciones, permutaciones y casos." },
-    "geometry":            { label: "Geometría",             icon: "📐", desc: "Puntos, rectas, polígonos y envolventes." },
-  };
-
-  var TOPIC_IDS = Object.keys(TOPICS);
+  var TOPIC_IDS = T.TOPIC_IDS || Object.keys(TOPICS);
   var TOPIC_LABELS = {};
-  TOPIC_IDS.forEach(function (k) { TOPIC_LABELS[k] = TOPICS[k].label; });
+  TOPIC_IDS.forEach(function (k) { TOPIC_LABELS[k] = (TOPICS[k] || {}).label || k; });
 
-  var TOPICS_PAGE = "topics/";   // site-root-relative URL of the topics page
+  var TOPICS_PAGE = "content/topics/";   // site-root-relative URL of the topics page
 
   // Returns {icon, title, anchor} for an item's topic, or null.
   function topicInfo(item) {
@@ -197,9 +185,12 @@ window.Catalog = (function () {
     return state;
   }
 
+  function langLabel(ext) { return LANG_LABELS[ext] || ext; }
+
   return {
     LEVELS: LEVELS, LEVEL_LABELS: LEVEL_LABELS, TYPES: TYPES, TYPE_LABELS: TYPE_LABELS,
-    TOPICS: TOPICS, TOPIC_IDS: TOPIC_IDS, TOPICS_PAGE: TOPICS_PAGE,
+    TOPICS: TOPICS, TOPIC_IDS: TOPIC_IDS, TOPIC_LABELS: TOPIC_LABELS, TOPICS_PAGE: TOPICS_PAGE,
+    LANG_LABELS: LANG_LABELS, langLabel: langLabel,
     topicInfo: topicInfo, topicHref: topicHref,
     SITE_BASE: SITE_BASE, load: load, url: url, name: name,
     makeFilters: makeFilters, passes: passes,

@@ -1,0 +1,14 @@
+id: floyd-warshall
+type: algorithm
+topic: graphs
+name:
+  es: "Floyd-Warshall"
+  en: "Floyd-Warshall"
+level: intermediate
+difficulty: 3.5
+techniques: []
+tags: []
+prerequisites: [graphs]
+related: [dijkstra]
+current_version: v1
+wip: true

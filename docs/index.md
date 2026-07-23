@@ -14,7 +14,7 @@ Aprende a programar en **C++** y **Python** y llega a competir en concursos tipo
 Explicaciones claras, código listo para copiar y un chuletario para el día del concurso.
 
 [Empezar aquí :material-rocket-launch:](start/onboarding.md){ .md-button .md-button--primary }
-[Ver algoritmos](algorithms/index.md){ .md-button }
+[Ver algoritmos](content/index.md){ .md-button }
 
 </div>
 
@@ -63,7 +63,7 @@ equipo.
 
     Primer contacto con la programación: entrada/salida, bucles, arrays.
 
-    [:octicons-arrow-right-24: Bucles](algorithms/fundamentals/loops/index.md)
+    [:octicons-arrow-right-24: Base](content/levels/base/index.md)
 
 -   :material-school-outline:{ .lg } __Principiante__
 
@@ -71,7 +71,7 @@ equipo.
 
     Primeras técnicas de concurso: búsqueda binaria, dos punteros, voraz.
 
-    [:octicons-arrow-right-24: Binary search](algorithms/searching/binary-search-array/index.md)
+    [:octicons-arrow-right-24: Principiante](content/levels/beginner/index.md)
 
 -   :material-database-outline:{ .lg } __Intermedio__
 
@@ -79,7 +79,7 @@ equipo.
 
     Estructuras de datos y grafos: el núcleo de los concursos regionales.
 
-    [:octicons-arrow-right-24: Árbol de Fenwick](algorithms/data-structures/fenwick-tree/index.md)
+    [:octicons-arrow-right-24: Intermedio](content/levels/intermediate/index.md)
 
 -   :material-lightning-bolt:{ .lg } __Avanzado__
 
@@ -87,7 +87,7 @@ equipo.
 
     Técnicas potentes: DP con máscaras, grafos avanzados, cadenas.
 
-    [:octicons-arrow-right-24: Dijkstra](algorithms/graphs/dijkstra/index.md)
+    [:octicons-arrow-right-24: Avanzado](content/levels/advanced/index.md)
 
 -   :material-trophy-outline:{ .lg } __Experto__
 
@@ -95,7 +95,7 @@ equipo.
 
     Temas de élite que marcan la diferencia en la final.
 
-    [:octicons-arrow-right-24: Envolvente convexa](algorithms/geometry/convex-hull/index.md)
+    [:octicons-arrow-right-24: Experto](content/levels/expert/index.md)
 
 -   :material-map-outline:{ .lg } __¿Perdido?__
 
@@ -103,7 +103,7 @@ equipo.
 
     Sigue el grafo de dependencias para saber qué aprender antes de cada tema.
 
-    [:octicons-arrow-right-24: Grafo de dependencias](start/graph.md)
+    [:octicons-arrow-right-24: Grafo de dependencias](content/graph.md)
 
 </div>
 
@@ -111,11 +111,11 @@ equipo.
 
 <div class="grid cards" markdown>
 
--   :material-lightbulb-on-outline:{ .lg } __Técnicas__
+-   :material-book:{ .lg } __Contenidos__
 
-    Los patrones que se repiten entre problemas.
+    Técnicas, algoritmos, estructuras de datos y trucos de programación competitiva.
 
-    [:octicons-arrow-right-24: Ver técnicas](techniques/dynamic-programming/index.md)
+    [:octicons-arrow-right-24: Ver contenidos](content/index.md)
 
 -   :material-podium:{ .lg } __Ranking__
 

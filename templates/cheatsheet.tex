@@ -22,6 +22,7 @@
 \usepackage{multicol}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{graphicx}   % for optional logos on the title page (see below)
 
 % Tighten everything up for a dense reference sheet.
 \setlength{\parindent}{0pt}
@@ -68,16 +69,53 @@
     {×}{{$\times$}}1 {·}{{$\cdot$}}1 {∞}{{$\infty$}}1 {°}{{$^\circ$}}1,
 }
 
-% Section heading for one algorithm.
+% Section heading for one algorithm: bold title, then a separating rule.
+% The rule sits BELOW the title (small positive gaps around it) so it never
+% overlaps the heading text.
 \newcommand{\csalgo}[1]{%
-  \vspace{0.4ex}%
+  \vspace{0.8ex}%
   {\bfseries\small #1}\par
-  \vspace{-0.6ex}{\color{cs@rule}\hrule height 0.4pt}\vspace{0.4ex}%
+  \vspace{0.4ex}{\color{cs@rule}\hrule height 0.4pt}\vspace{0.5ex}%
 }
 % Stats line (complexity / use case) under an algorithm heading.
 \newcommand{\csstats}[1]{{\scriptsize\itshape #1\par\vspace{0.3ex}}}
 
 \begin{document}
+
+% =====================================================================
+% TITLE PAGE — your team's cover sheet.
+%
+% Edit the fields marked "<-- EDIT" below (team name, university, members,
+% logos). Contests such as ICPC / SWERC usually require your team name and
+% institution on printed material, so keep a cover page handy.
+%
+% To add a logo: drop an image (png / jpg / pdf) next to this .tex file and
+% UNCOMMENT the matching \includegraphics line (graphicx is already loaded).
+%
+% Don't want a cover? Delete this whole block, from the line below down to
+% and including the "\clearpage".
+% ---------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+  \vspace*{\fill}
+
+  % \includegraphics[width=7cm]{logo.png}\par        % <-- EDIT: university logo (uncomment)
+  \vspace{1cm}
+
+  {\Huge\bfseries Nombre del equipo}\par              % <-- EDIT: your team name
+  \vspace{0.8cm}
+  {\Large CUNEF Universidad}\par                      % <-- EDIT: your university / institution
+  \vspace{0.5cm}
+  {\large Integrante 1 \quad Integrante 2 \quad Integrante 3}\par   % <-- EDIT: team members
+  \vspace{1.5cm}
+
+  % \includegraphics[width=4cm]{mascota.png}\par      % <-- EDIT: extra image / mascot (uncomment)
+
+  \vspace*{\fill}
+\end{center}
+\end{titlepage}
+\clearpage
+% =====================================================================
 
 % --- Title -------------------------------------------------------------
 \begin{center}

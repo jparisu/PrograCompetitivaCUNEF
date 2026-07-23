@@ -1,0 +1,13 @@
+id: prefix-sums
+type: technique
+topic: data-structures
+name:
+  es: "Prefix sums"
+  en: "Prefix sums"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: [lists]
+current_version: v1
+wip: true

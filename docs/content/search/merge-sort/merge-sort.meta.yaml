@@ -1,0 +1,14 @@
+id: merge-sort
+type: algorithm
+topic: search
+name:
+  es: "Merge sort"
+  en: "Merge sort"
+level: beginner
+difficulty: 2.0
+techniques: []
+tags: []
+prerequisites: [recursion]
+related: [quick-sort]
+current_version: v1
+wip: true

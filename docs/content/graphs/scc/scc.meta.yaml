@@ -1,0 +1,14 @@
+id: scc
+type: algorithm
+topic: graphs
+name:
+  es: "Strongly connected components"
+  en: "Strongly connected components"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: [graphs, dfs]
+related: [topological-sort]
+current_version: v1
+wip: true

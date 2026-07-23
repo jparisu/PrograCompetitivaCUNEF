@@ -1,0 +1,13 @@
+id: matrix-exponentiation
+type: algorithm
+topic: arithmetics
+name:
+  es: "Matrix exponentiation"
+  en: "Matrix exponentiation"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: [matrix-multiplication, binary-exponentiation]
+current_version: v1
+wip: true

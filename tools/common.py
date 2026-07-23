@@ -1,12 +1,12 @@
 """Shared helpers for the tools/ scripts.
 
-Every generation script reads the per-algorithm ``meta.yaml`` files under
-``docs/algorithms/**`` and the code files under each ``code/`` directory,
+Every generation script reads the per-item ``meta.yaml`` files under
+``docs/content/**`` and the code files under each ``code/`` directory,
 following the conventions documented in ``.devs/v2-design.md``.
 
 This module is the single contract the other scripts build on:
 
-- Paths and constants (``DOCS_DIR``, ``ALGORITHMS_DIR``, ``LEVELS``, ``STYLES``,
+- Paths and constants (``DOCS_DIR``, ``CONTENT_DIR``, ``LEVELS``, ``STYLES``,
   ``LANGUAGES``).
 - ``iter_algorithms()`` to walk the algorithm folders.
 - Code-file name parsing/building (``parse_code_filename`` / ``build_code_filename``).
@@ -33,15 +33,25 @@ except ImportError:  # pragma: no cover
 # --------------------------------------------------------------------------- #
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DOCS_DIR = REPO_ROOT / "docs"
-ALGORITHMS_DIR = DOCS_DIR / "algorithms"
-TECHNIQUES_DIR = DOCS_DIR / "techniques"
-STRUCTURES_DIR = DOCS_DIR / "structures"
+# Single content root. Every item is a folder `docs/content/<topic>/<id>/` with a
+# meta.yaml; its `type` (algorithm/technique/structure) and `level` come from that
+# meta.yaml, not from its folder location.
+CONTENT_DIR = DOCS_DIR / "content"
 
-# All roots that hold content items (each item = a folder with a meta.yaml).
-CONTENT_DIRS = [ALGORITHMS_DIR, TECHNIQUES_DIR, STRUCTURES_DIR]
+# All roots that hold content items (each item = a folder with a <id>.meta.yaml).
+CONTENT_DIRS = [CONTENT_DIR]
 
 # Difficulty levels, in order.
 LEVELS = ["base", "beginner", "intermediate", "advanced", "expert"]
+
+# Difficulty levels and their display labels (Spanish).
+LEVEL_LABELS = {
+    "base": "Base",
+    "beginner": "Principiante",
+    "intermediate": "Intermedio",
+    "advanced": "Avanzado",
+    "expert": "Experto",
+}
 
 # Content types and their display labels (Spanish).
 TYPES = ["technique", "algorithm", "structure"]
@@ -50,6 +60,25 @@ TYPE_LABELS = {
     "algorithm": "Algoritmo",
     "structure": "Estructura",
 }
+
+# Flat topic taxonomy — the SINGLE source of truth for topics, shared by the
+# Python tools and (via tools/gentaxonomy.py -> assets/js/taxonomy.js) the
+# front-end. id -> {label, icon (emoji), desc (short, for the Temas table)}.
+# Insertion order = display order. Add a new topic here (one place) and it is
+# available everywhere: the Temas filter, the topics table, the icon links.
+TOPICS = {
+    "fundamentals":        {"label": "Fundamentos",           "icon": "🧱", "desc": "Fundamentos de programación y conceptos."},
+    "strings":             {"label": "Strings",               "icon": "🔤", "desc": "Procesamiento de texto y búsqueda de patrones."},
+    "search":              {"label": "Ordenación y búsqueda", "icon": "🔎", "desc": "Ordenar y localizar datos rápidamente."},
+    "data-structures":     {"label": "Estructuras de datos",  "icon": "🗃️", "desc": "Guardar y organizar datos para consultarlos rápido."},
+    "graphs":              {"label": "Grafos",                "icon": "🕸️", "desc": "Nodos y aristas: recorridos, caminos, flujos."},
+    "dynamic-programming": {"label": "Programación dinámica", "icon": "🧩", "desc": "Combinar soluciones de subproblemas solapados."},
+    "greedy":              {"label": "Voraz (greedy)",        "icon": "🪙", "desc": "Elegir la mejor opción local en cada paso."},
+    "arithmetics":         {"label": "Aritmética",            "icon": "➗", "desc": "Aritmética modular, primos, teoría de números."},
+    "combinatorics":       {"label": "Combinatoria",          "icon": "🎲", "desc": "Contar combinaciones, permutaciones y casos."},
+    "geometry":            {"label": "Geometría",             "icon": "📐", "desc": "Puntos, rectas, polígonos y envolventes."},
+}
+TOPIC_IDS = list(TOPICS)
 
 # Code styles, in generation order (each is derived from the previous one).
 STYLES = ["full", "clean", "contest"]
@@ -175,7 +204,7 @@ class Algorithm:
 
     @property
     def meta_path(self) -> Path:
-        return self.directory / "meta.yaml"
+        return self.directory / f"{self.directory.name}.meta.yaml"
 
     @property
     def current_version(self) -> str:
@@ -205,7 +234,7 @@ def load_yaml(path: Path) -> dict:
 
 
 def iter_algorithms(only: str | None = None) -> list[Algorithm]:
-    """Return every algorithm under ``docs/algorithms/**`` sorted by id.
+    """Return every item under ``docs/content/**`` sorted by (level, id).
 
     If ``only`` is given, restrict to the algorithm whose id matches it.
     """
@@ -214,7 +243,7 @@ def iter_algorithms(only: str | None = None) -> list[Algorithm]:
     for root in CONTENT_DIRS:
         if not root.is_dir():
             continue
-        for meta_path in sorted(root.glob("**/meta.yaml")):
+        for meta_path in sorted(root.glob("**/*.meta.yaml")):
             if meta_path in seen:
                 continue
             seen.add(meta_path)

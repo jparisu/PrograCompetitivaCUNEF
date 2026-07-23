@@ -5,9 +5,12 @@ site_url: https://jparisu.github.io/PrograCompetitivaCUNEF/
 repo_url: https://github.com/jparisu/PrograCompetitivaCUNEF
 edit_uri: edit/main/docs/
 
-# NOTE (prototype): pages are hand-authored for now. In the next step they will be
-# generated from each algorithm's meta.yaml via mkdocs-macros; the auto-gen of
-# clean/contest code and the tests come after that.
+# Content lives one folder per item under docs/content/<topic>/<id>/, each with a
+# meta.yaml (single source of truth). Derived pieces are generated: the nav
+# (tools/gennav.py -> the nav below), the overview data (algorithms.json), the
+# front-end taxonomy (assets/js/taxonomy.js), and the clean/contest code + tests.
+# Item pages render their metadata/code blocks from meta.yaml via the `macros`
+# plugin (see main.py), so the prose page holds only the explanation.
 
 # To compare with the classic ReadTheDocs look, temporarily set `name: readthedocs`
 # below and run `mkdocs serve` (note: that theme drops tabs, the palette toggle and
@@ -65,6 +68,13 @@ markdown_extensions:
 plugins:
   - search:
       lang: [es, en]
+  # Renders item-page macros (metadata/code_tabs) from meta.yaml — see main.py.
+  # Opt-in only: a page runs macros only with front-matter `render_macros: true`,
+  # so Material/attr-list syntax on other pages is never touched by Jinja.
+  - macros:
+      module_name: main
+      render_by_default: false
+      on_error_fail: true
   - i18n:
       docs_structure: suffix        # index.md (es, default) + index.en.md (en)
       fallback_to_default: true     # missing translation -> Spanish
@@ -77,16 +87,12 @@ plugins:
           name: English
           build: true
 
-# Keep legacy Sphinx files and non-page assets out of the build (they stay on disk).
+# Keep per-item source files (code, tests, meta) out of the built site (they
+# stay on disk and feed the generators).
 exclude_docs: |
   **/code/**
   **/test/**
   **/*.yaml
-  md/
-  conf.py
-  requirements.txt
-  spelling/
-  resources/cheatsheet.md
 
 extra_css:
   - assets/css/theme.css
@@ -95,10 +101,10 @@ extra_css:
   - assets/css/cheatsheet-builder.css
 
 extra_javascript:
-  - assets/js/catalog.js          # shared data + filters (must load first)
+  - assets/js/taxonomy.js         # generated taxonomy (levels/types/topics) — load first
+  - assets/js/catalog.js          # shared data + filters (reads window.Taxonomy)
   - assets/js/page-icon.js        # topic icon next to the page title
   - assets/js/nav-wip.js          # gray out WIP (unimplemented) entries in the sidebar
-  - assets/js/nav-dropdown.js
   - assets/js/ranklist.js
   - assets/js/overview-table.js
   - assets/js/graph.js
@@ -107,104 +113,104 @@ extra_javascript:
   - assets/js/todo.js
   - assets/js/cheatsheet-builder.js
 
-# Two parallel trees — Técnicas and Algoritmos — each grouped by the 5 levels
-# (rendered as collapsible dropdowns since navigation.sections is off). The first
-# bare page under each section is its landing/index (navigation.indexes).
+# === AUTO-GENERATED NAV — do not edit below (run: python tools/gen.py generate) ===
 nav:
-  - Inicio: index.md
-  - Empezar aquí: start/onboarding.md
-  # One unified catalogue: techniques + algorithms + structures, grouped by level.
-  # Tree labels carry the type (the level index page is the section landing).
+- Inicio: index.md
+- Empezar aquí: start/onboarding.md
+- Contenidos:
   - Contenidos:
-      - Contenidos:
-          - algorithms/index.md
-          - Temas: topics/index.md
-          - Mapa de contenidos: start/matrix.md
-          - Grafo de dependencias: start/graph.md
-      - Base:
-          - algorithms/levels/base/index.md
-          - "Bucles — Técnica":
-              - algorithms/fundamentals/loops/index.md
-              - "En C++": algorithms/fundamentals/loops/cpp.md
-              - "En Python": algorithms/fundamentals/loops/python.md
-          - "Condicionales — Técnica":
-              - algorithms/fundamentals/conditionals/index.md
-              - "En C++": algorithms/fundamentals/conditionals/cpp.md
-              - "En Python": algorithms/fundamentals/conditionals/python.md
-          - "Arrays — Estructura": structures/lists/index.md
-          - "Input/Output — Técnica": techniques/io/index.md
-          - "Comparaciones — Técnica": techniques/comparisons/index.md
-          - "Búsqueda del máximo — Algoritmo": algorithms/max-search/index.md
-          - "Sum all — Algoritmo": algorithms/sum-all/index.md
-          - "Complejidad (Big-O) — Técnica": techniques/complexity/index.md
-          - "Stack & queue — Estructura": structures/stack-queue/index.md
-          - "Búsqueda lineal — Algoritmo": algorithms/linear-search/index.md
-          - "Bogosort — Algoritmo": algorithms/bogosort/index.md
-      - Principiante:
-          - algorithms/levels/beginner/index.md
-          - "E/S rápida — Técnica": algorithms/io/fast-io/index.md
-          - "Binary search — Algoritmo": algorithms/searching/binary-search-array/index.md
-          - "Dictionaries / maps — Estructura": structures/dictionaries/index.md
-          - "Factorización — Técnica": techniques/factorization/index.md
-          - "Trial division — Técnica": techniques/trial-division/index.md
-          - "Euler factorization — Técnica": techniques/euler-factorization/index.md
-          - "Recursión — Técnica": techniques/recursion/index.md
-          - "Lambda — Técnica": techniques/lambda/index.md
-          - "Decimal precision — Técnica": techniques/decimal-precision/index.md
-          - "Merge sort — Algoritmo": algorithms/merge-sort/index.md
-          - "Quicksort — Algoritmo": algorithms/quick-sort/index.md
-          - "Flood fill — Algoritmo": algorithms/flood-fill/index.md
-          - "Fibonacci — Algoritmo": algorithms/fibonacci/index.md
-          - "Prefix sums — Técnica": techniques/prefix-sums/index.md
-          - "Priority queue (heap) — Estructura": structures/priority-queue/index.md
-          - "Breadth-first search (BFS) — Algoritmo": algorithms/bfs/index.md
-          - "Depth-first search (DFS) — Algoritmo": algorithms/dfs/index.md
-          - "Sieve of Eratosthenes — Algoritmo": algorithms/sieve/index.md
-          - "GCD (Euclid) — Algoritmo": algorithms/gcd/index.md
-          - "Palindrome checker — Algoritmo": algorithms/palindrome-checker/index.md
-          - "Punctuation checker — Algoritmo": algorithms/punctuation-checker/index.md
-      - Intermedio:
-          - algorithms/levels/intermediate/index.md
-          - "Dynamic programming — Técnica": techniques/dynamic-programming/index.md
-          - "Dijkstra — Algoritmo": algorithms/graphs/dijkstra/index.md
-          - "Fenwick Tree (BIT) — Estructura": algorithms/data-structures/fenwick-tree/index.md
-          - "Grafos — Estructura": structures/graphs/index.md
-          - "Kruskal (MST) — Algoritmo": algorithms/kruskal/index.md
-          - "Topological sort — Algoritmo": algorithms/topological-sort/index.md
-          - "Multiplicación de matrices — Algoritmo": algorithms/matrix-multiplication/index.md
-          - "Combinatoria — Técnica": techniques/combinatory/index.md
-          - "Newtons binomial — Técnica": techniques/newton-binomial/index.md
-          - "Union-Find (DSU) — Estructura": structures/union-find/index.md
-          - "Segment tree — Estructura": structures/segment-tree/index.md
-          - "Bellman-Ford — Algoritmo": algorithms/bellman-ford/index.md
-          - "Floyd-Warshall — Algoritmo": algorithms/floyd-warshall/index.md
-          - "Prim (MST) — Algoritmo": algorithms/prim/index.md
-          - "Binary exponentiation — Algoritmo": algorithms/binary-exponentiation/index.md
-          - "Modular inverse — Técnica": techniques/modular-inverse/index.md
-          - "KMP — Algoritmo": algorithms/kmp/index.md
-          - "Knapsack — Algoritmo": algorithms/knapsack/index.md
-          - "Longest increasing subsequence — Algoritmo": algorithms/lis/index.md
-      - Avanzado:
-          - algorithms/levels/advanced/index.md
-          - "Bitmask DP — TSP — Algoritmo": algorithms/dynamic-programming/bitmask-tsp/index.md
-          - "A* — Algoritmo": algorithms/graphs/a-star/index.md
-          - "Matrix exponentiation — Algoritmo": algorithms/matrix-exponentiation/index.md
-          - "Heap sort — Algoritmo": algorithms/heap-sort/index.md
-          - "Strongly connected components — Algoritmo": algorithms/scc/index.md
-          - "Lowest common ancestor — Algoritmo": algorithms/lca/index.md
-          - "Graph coloring — Algoritmo": algorithms/graph-coloring/index.md
-          - "Max flow — Algoritmo": algorithms/max-flow/index.md
-          - "Travelling salesman problem — Algoritmo": algorithms/tsp/index.md
-      - Experto:
-          - algorithms/levels/expert/index.md
-          - "Convex hull — Algoritmo": algorithms/geometry/convex-hull/index.md
-  - Ranking: ranklist/index.md
-  - Chuletario: cheatsheet/index.md
-  - Contribuir:
-      - Cómo contribuir: contributing/index.md
-      - ToDo: contributing/todo.md
-      - Sugerencias e incidencias: contributing/issues.md
-      - Git y GitHub: contributing/git-github.md
-      - Añadir un algoritmo: contributing/add-algorithm.md
-      - Scripts del proyecto: contributing/scripts.md
-      - Autores: contributing/authors.md
+    - content/index.md
+    - Temas: content/topics/index.md
+    - Mapa de contenidos: content/matrix.md
+    - Grafo de dependencias: content/graph.md
+  - Base:
+    - content/levels/base/index.md
+    - Comparaciones — Técnica: content/fundamentals/comparisons/index.md
+    - Tipos nativos — Técnica: content/fundamentals/native-types/index.md
+    - Condicionales — Técnica:
+      - content/fundamentals/conditionals/index.md
+      - En C++: content/fundamentals/conditionals/cpp.md
+      - En Python: content/fundamentals/conditionals/python.md
+    - Bucles — Técnica:
+      - content/fundamentals/loops/index.md
+      - En C++: content/fundamentals/loops/cpp.md
+      - En Python: content/fundamentals/loops/python.md
+    - Arrays — Estructura: content/data-structures/lists/index.md
+    - Desbordamiento (overflow) — Técnica: content/fundamentals/overflow/index.md
+    - Búsqueda del máximo — Algoritmo: content/search/max-search/index.md
+    - Búsqueda lineal — Algoritmo: content/search/linear-search/index.md
+    - Complejidad (Big-O) — Técnica: content/fundamentals/complexity/index.md
+    - Input/Output — Técnica: content/fundamentals/io/index.md
+    - Stack & queue — Estructura: content/data-structures/stack-queue/index.md
+    - Sum all — Algoritmo: content/fundamentals/sum-all/index.md
+  - Principiante:
+    - content/levels/beginner/index.md
+    - E/S rápida — Técnica: content/fundamentals/fast-io/index.md
+    - Binary search — Algoritmo: content/search/binary-search-array/index.md
+    - Dictionaries / maps — Estructura: content/data-structures/dictionaries/index.md
+    - Coma flotante — Técnica: content/arithmetics/float-treatment/index.md
+    - Iteradores — Técnica: content/fundamentals/iterators/index.md
+    - Breadth-first search (BFS) — Algoritmo: content/graphs/bfs/index.md
+    - Decimal precision — Técnica: content/fundamentals/decimal-precision/index.md
+    - Depth-first search (DFS) — Algoritmo: content/graphs/dfs/index.md
+    - Euler factorization — Técnica: content/arithmetics/euler-factorization/index.md
+    - Factorización — Técnica: content/arithmetics/factorization/index.md
+    - Fibonacci — Algoritmo: content/dynamic-programming/fibonacci/index.md
+    - Flood fill — Algoritmo: content/graphs/flood-fill/index.md
+    - GCD (Euclid) — Algoritmo: content/arithmetics/gcd/index.md
+    - Lambda — Técnica: content/fundamentals/lambda/index.md
+    - Merge sort — Algoritmo: content/search/merge-sort/index.md
+    - Palindrome checker — Algoritmo: content/strings/palindrome-checker/index.md
+    - Prefix sums — Técnica: content/data-structures/prefix-sums/index.md
+    - Priority queue (heap) — Estructura: content/data-structures/priority-queue/index.md
+    - Punctuation checker — Algoritmo: content/strings/punctuation-checker/index.md
+    - Quicksort — Algoritmo: content/search/quick-sort/index.md
+    - Recursión — Técnica: content/fundamentals/recursion/index.md
+    - Sieve of Eratosthenes — Algoritmo: content/arithmetics/sieve/index.md
+    - Trial division — Técnica: content/arithmetics/trial-division/index.md
+  - Intermedio:
+    - content/levels/intermediate/index.md
+    - Grafos — Estructura: content/graphs/graphs/index.md
+    - Binary exponentiation — Algoritmo: content/arithmetics/binary-exponentiation/index.md
+    - Combinatoria — Técnica: content/combinatorics/combinatory/index.md
+    - Dijkstra — Algoritmo: content/graphs/dijkstra/index.md
+    - Floyd-Warshall — Algoritmo: content/graphs/floyd-warshall/index.md
+    - KMP — Algoritmo: content/strings/kmp/index.md
+    - Knapsack — Algoritmo: content/dynamic-programming/knapsack/index.md
+    - Kruskal (MST) — Algoritmo: content/graphs/kruskal/index.md
+    - Longest increasing subsequence — Algoritmo: content/dynamic-programming/lis/index.md
+    - Modular inverse — Técnica: content/arithmetics/modular-inverse/index.md
+    - Multiplicación de matrices — Algoritmo: content/arithmetics/matrix-multiplication/index.md
+    - Newtons binomial — Técnica: content/combinatorics/newton-binomial/index.md
+    - Prim (MST) — Algoritmo: content/graphs/prim/index.md
+    - Segment tree — Estructura: content/data-structures/segment-tree/index.md
+    - Topological sort — Algoritmo: content/graphs/topological-sort/index.md
+    - Union-Find (DSU) — Estructura: content/data-structures/union-find/index.md
+    - Dynamic programming — Técnica: content/dynamic-programming/dynamic-programming/index.md
+  - Avanzado:
+    - content/levels/advanced/index.md
+    - Bellman-Ford — Algoritmo: content/graphs/bellman-ford/index.md
+    - Fenwick Tree (BIT) — Estructura: content/data-structures/fenwick-tree/index.md
+    - A* — Algoritmo: content/graphs/a-star/index.md
+    - Graph coloring — Algoritmo: content/graphs/graph-coloring/index.md
+    - Heap sort — Algoritmo: content/search/heap-sort/index.md
+    - Lowest common ancestor — Algoritmo: content/graphs/lca/index.md
+    - Matrix exponentiation — Algoritmo: content/arithmetics/matrix-exponentiation/index.md
+    - Max flow — Algoritmo: content/graphs/max-flow/index.md
+    - Strongly connected components — Algoritmo: content/graphs/scc/index.md
+    - Travelling salesman problem — Algoritmo: content/graphs/tsp/index.md
+    - Bitmask DP — TSP — Algoritmo: content/dynamic-programming/bitmask-tsp/index.md
+  - Experto:
+    - content/levels/expert/index.md
+    - Convex hull — Algoritmo: content/geometry/convex-hull/index.md
+    - Bogosort — Algoritmo: content/search/bogosort/index.md
+- Ranking: ranklist/index.md
+- Chuletario: cheatsheet/index.md
+- Contribuir:
+  - Cómo contribuir: contributing/index.md
+  - ToDo: contributing/todo.md
+  - Sugerencias e incidencias: contributing/issues.md
+  - Git y GitHub: contributing/git-github.md
+  - Añadir un algoritmo: contributing/add-algorithm.md
+  - Scripts del proyecto: contributing/scripts.md
+  - Autores: contributing/authors.md

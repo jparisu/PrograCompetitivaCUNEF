@@ -132,7 +132,7 @@
       key: "languages", label: "Lenguajes",
       sortValue: function (r) { return (r.languages || []).join(", "); },
       render: function (r) {
-        var labels = (r.languages || []).map(function (l) { return l === "cpp" ? "C++" : l === "py" ? "Python" : l; });
+        var labels = (r.languages || []).map(function (l) { return Catalog.langLabel(l); });
         return chips(labels, "ov-lang");
       },
     },

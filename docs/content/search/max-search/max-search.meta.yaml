@@ -1,0 +1,14 @@
+id: max-search
+type: algorithm
+topic: search
+name:
+  es: "Búsqueda del máximo"
+  en: "Max search"
+level: base
+difficulty: 1.0
+techniques: []
+tags: []
+prerequisites: [loops]
+related: [linear-search]
+current_version: v1
+wip: true

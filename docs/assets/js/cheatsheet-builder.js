@@ -1,9 +1,9 @@
 /*
  * cheatsheet-builder.js — visual builder for the LaTeX cheatsheet.
  *
- * Vanilla JS, no dependencies. On load, if #cheatsheet-builder exists it fetches
- * the generated data file (page-relative: ../assets/data/algorithms.json, which
- * resolves to /assets/data/algorithms.json and also works under /pr-preview/...).
+ * Vanilla JS, no dependencies. On load, if #cheatsheet-builder exists it loads
+ * the catalogue via the shared Catalog.load() (which caches the fetch and works
+ * under /pr-preview/... paths), reusing Catalog's levels/labels/name helpers.
  *
  * The page does NOT compile LaTeX (GitHub Pages is static). It lets the student
  * tick algorithms and pick a title, language, style, columns and stats toggle,
@@ -16,25 +16,11 @@
 (function () {
   "use strict";
 
-  var LEVEL_ORDER = ["base", "beginner", "intermediate", "advanced", "expert"];
-  var LEVEL_LABELS = {
-    base: "Base",
-    beginner: "Principiante",
-    intermediate: "Intermedio",
-    advanced: "Avanzado",
-    expert: "Experto",
-  };
-
+  // Levels, labels and the display-name resolver come from the shared Catalog
+  // (fed by window.Taxonomy); catalog.js is loaded before this file. No local
+  // duplication of the taxonomy here.
   var container = null;
   var els = {}; // named controls
-
-  function nameOf(a) {
-    if (a && a.name) {
-      if (typeof a.name === "string") return a.name;
-      return a.name.es || a.name.en || a.id || "";
-    }
-    return (a && a.id) || "";
-  }
 
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
@@ -182,7 +168,7 @@
     });
 
     var wrap = el("div", { class: "csb-algos" });
-    var levels = LEVEL_ORDER.filter(function (lv) { return groups[lv]; });
+    var levels = Catalog.LEVELS.filter(function (lv) { return groups[lv]; });
     Object.keys(groups).forEach(function (lv) {
       if (levels.indexOf(lv) === -1) levels.push(lv);
     });
@@ -191,17 +177,17 @@
       var group = el("fieldset", { class: "csb-group" });
       group.appendChild(el("legend", {
         class: "csb-group-legend",
-        text: LEVEL_LABELS[lv] || lv,
+        text: Catalog.LEVEL_LABELS[lv] || lv,
       }));
       groups[lv]
-        .sort(function (x, y) { return nameOf(x).localeCompare(nameOf(y)); })
+        .sort(function (x, y) { return Catalog.name(x).localeCompare(Catalog.name(y), "es"); })
         .forEach(function (a) {
           var cb = el("input", {
             class: "csb-algo", type: "checkbox", value: a.id,
           });
           var row = el("label", { class: "csb-algo-row" }, [
             cb,
-            el("span", { class: "csb-algo-name", text: nameOf(a) }),
+            el("span", { class: "csb-algo-name", text: Catalog.name(a) }),
             el("code", { class: "csb-algo-id", text: a.id }),
           ]);
           group.appendChild(row);
@@ -256,11 +242,7 @@
     container = document.getElementById("cheatsheet-builder");
     if (!container) return;
 
-    fetch("../assets/data/algorithms.json", { cache: "no-cache" })
-      .then(function (resp) {
-        if (!resp.ok) throw new Error("HTTP " + resp.status);
-        return resp.json();
-      })
+    Catalog.load()
       .then(function (data) {
         if (!Array.isArray(data)) throw new Error("formato inesperado");
         render(data);

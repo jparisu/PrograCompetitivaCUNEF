@@ -1,0 +1,13 @@
+id: lca
+type: algorithm
+topic: graphs
+name:
+  es: "Lowest common ancestor"
+  en: "Lowest common ancestor"
+level: advanced
+difficulty: 5.0
+techniques: []
+tags: []
+prerequisites: [graphs, dfs]
+current_version: v1
+wip: true

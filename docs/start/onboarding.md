@@ -21,24 +21,25 @@ Leer y escribir rápido evita muchos *Time Limit Exceeded*:
 
 === "C++"
     ```cpp
-    #include <bits/stdc++.h>
+    #include <iostream>
     using namespace std;
 
     int main() {
-        ios::sync_with_stdio(false);
-        cin.tie(nullptr);
+        int input, output;
+        cin >> input;
         // tu solución aquí
+        cout << output << endl;
         return 0;
     }
     ```
 === "Python"
     ```python
-    import sys
-    input = sys.stdin.readline
+    input_value = int(input())
     # tu solución aquí
+    print(output_value)
     ```
 
 ## 4. Sigue la escalera
 
 Empieza por el nivel **Base** y ve subiendo. Consulta el
-[grafo de dependencias](graph.md) para ver qué necesitas antes de cada tema.
+[grafo de dependencias](../content/graph.md) para ver qué necesitas antes de cada tema.
