@@ -13,6 +13,9 @@
 (function () {
   "use strict";
 
+  // Mermaid classDef styles can't read CSS variables, so the level colours are
+  // repeated here. Keep the stroke hexes in sync with the canonical --level-*
+  // tokens in assets/css/theme.css (base/beginner/intermediate/advanced/expert).
   var LEVEL_STYLE = {
     base: "fill:#2e7d3226,stroke:#2e7d32,stroke-width:1.5px",
     beginner: "fill:#1e88e526,stroke:#1e88e5,stroke-width:1.5px",
@@ -42,10 +45,23 @@
     var lines = ["graph LR"];
     items.forEach(function (it) { lines.push("  " + nodeDecl(it)); });
 
-    // real prerequisite edges (only between visible nodes)
+    // real prerequisite edges: an ARROW prereq --> item (only between visible nodes)
     items.forEach(function (it) {
       (it.prereq || []).forEach(function (p) {
         if (shown.has(p)) lines.push("  " + nid(p) + " --> " + nid(it.id));
+      });
+    });
+
+    // "related" connectors: a plain DOTTED line (no arrow) between concepts that
+    // are linked but are NOT prerequisites. Undirected, so draw each pair once.
+    var relDrawn = {};
+    items.forEach(function (it) {
+      (it.related || []).forEach(function (r) {
+        if (!shown.has(r)) return;
+        var key = [it.id, r].sort().join("|");
+        if (relDrawn[key]) return;
+        relDrawn[key] = true;
+        lines.push("  " + nid(it.id) + " -.- " + nid(r));
       });
     });
 

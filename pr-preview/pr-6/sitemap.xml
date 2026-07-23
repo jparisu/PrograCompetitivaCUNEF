@@ -8,361 +8,557 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/"/>
     </url>
     <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bellman-ford/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bellman-ford/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bellman-ford/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bfs/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bfs/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bfs/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/binary-exponentiation/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/binary-exponentiation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/binary-exponentiation/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bogosort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bogosort/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bogosort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/data-structures/fenwick-tree/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/data-structures/fenwick-tree/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/data-structures/fenwick-tree/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/dfs/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/dfs/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/dfs/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/dynamic-programming/bitmask-tsp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/dynamic-programming/bitmask-tsp/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/dynamic-programming/bitmask-tsp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fibonacci/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fibonacci/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fibonacci/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/flood-fill/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/flood-fill/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/flood-fill/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/floyd-warshall/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/floyd-warshall/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/floyd-warshall/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/cpp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/cpp/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/cpp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/python/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/python/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/python/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/cpp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/cpp/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/cpp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/python/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/python/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/python/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/gcd/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/gcd/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/gcd/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/geometry/convex-hull/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/geometry/convex-hull/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/geometry/convex-hull/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graph-coloring/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graph-coloring/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graph-coloring/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graphs/a-star/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graphs/a-star/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graphs/a-star/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graphs/dijkstra/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graphs/dijkstra/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graphs/dijkstra/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/heap-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/heap-sort/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/heap-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/io/fast-io/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/io/fast-io/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/io/fast-io/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/kmp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/kmp/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/kmp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/knapsack/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/knapsack/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/knapsack/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/kruskal/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/kruskal/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/kruskal/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/lca/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/lca/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/lca/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/advanced/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/advanced/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/advanced/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/base/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/base/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/base/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/beginner/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/beginner/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/beginner/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/expert/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/expert/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/expert/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/intermediate/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/intermediate/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/intermediate/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/linear-search/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/linear-search/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/linear-search/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/lis/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/lis/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/lis/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/matrix-exponentiation/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/matrix-exponentiation/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/matrix-exponentiation/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/matrix-multiplication/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/matrix-multiplication/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/matrix-multiplication/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/max-flow/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/max-flow/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/max-flow/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/max-search/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/max-search/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/max-search/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/merge-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/merge-sort/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/merge-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/palindrome-checker/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/palindrome-checker/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/palindrome-checker/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/prim/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/prim/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/prim/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/punctuation-checker/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/punctuation-checker/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/punctuation-checker/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/quick-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/quick-sort/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/quick-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/scc/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/scc/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/scc/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/searching/binary-search-array/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/searching/binary-search-array/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/searching/binary-search-array/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/sieve/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/sieve/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/sieve/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/sum-all/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/sum-all/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/sum-all/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/topological-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/topological-sort/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/topological-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/tsp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/tsp/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/tsp/"/>
-    </url>
-    <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/</loc>
         <lastmod>2026-07-23</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/cheatsheet/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graph/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graph/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graph/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/matrix/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/matrix/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/matrix/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/binary-exponentiation/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/binary-exponentiation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/binary-exponentiation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/euler-factorization/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/euler-factorization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/euler-factorization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/factorization/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/factorization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/factorization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/float-treatment/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/float-treatment/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/float-treatment/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/gcd/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/gcd/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/gcd/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/matrix-exponentiation/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/matrix-exponentiation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/matrix-exponentiation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/matrix-multiplication/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/matrix-multiplication/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/matrix-multiplication/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/modular-inverse/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/modular-inverse/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/modular-inverse/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/sieve/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/sieve/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/sieve/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/trial-division/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/trial-division/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/trial-division/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/combinatorics/combinatory/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/combinatorics/combinatory/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/combinatorics/combinatory/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/combinatorics/newton-binomial/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/combinatorics/newton-binomial/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/combinatorics/newton-binomial/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/dictionaries/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/dictionaries/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/dictionaries/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/fenwick-tree/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/fenwick-tree/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/fenwick-tree/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/lists/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/lists/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/lists/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/prefix-sums/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/prefix-sums/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/prefix-sums/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/priority-queue/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/priority-queue/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/priority-queue/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/segment-tree/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/segment-tree/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/segment-tree/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/stack-queue/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/stack-queue/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/stack-queue/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/union-find/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/union-find/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/union-find/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/bitmask-tsp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/bitmask-tsp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/bitmask-tsp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/dynamic-programming/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/dynamic-programming/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/dynamic-programming/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/fibonacci/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/fibonacci/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/fibonacci/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/knapsack/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/knapsack/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/knapsack/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/lis/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/lis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/lis/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/comparisons/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/comparisons/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/comparisons/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/complexity/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/complexity/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/complexity/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/cpp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/cpp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/cpp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/python/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/python/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/decimal-precision/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/decimal-precision/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/decimal-precision/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/fast-io/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/fast-io/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/fast-io/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/io/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/io/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/io/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/iterators/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/iterators/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/iterators/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/lambda/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/lambda/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/lambda/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/cpp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/cpp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/cpp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/python/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/python/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/native-types/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/native-types/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/native-types/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/overflow/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/overflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/overflow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/recursion/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/recursion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/recursion/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/sum-all/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/sum-all/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/sum-all/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/geometry/convex-hull/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/geometry/convex-hull/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/geometry/convex-hull/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/a-star/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/a-star/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/a-star/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/bellman-ford/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/bellman-ford/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/bellman-ford/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/bfs/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/bfs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/bfs/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/dfs/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/dfs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/dfs/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/dijkstra/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/dijkstra/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/dijkstra/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/flood-fill/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/flood-fill/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/flood-fill/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/floyd-warshall/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/floyd-warshall/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/floyd-warshall/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/graph-coloring/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/graph-coloring/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/graph-coloring/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/graphs/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/graphs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/graphs/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/kruskal/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/kruskal/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/kruskal/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/lca/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/lca/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/lca/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/max-flow/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/max-flow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/max-flow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/prim/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/prim/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/prim/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/scc/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/scc/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/scc/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/topological-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/topological-sort/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/topological-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/tsp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/tsp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/tsp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/advanced/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/advanced/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/base/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/base/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/base/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/beginner/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/beginner/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/beginner/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/expert/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/expert/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/expert/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/intermediate/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/intermediate/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/intermediate/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/binary-search-array/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/binary-search-array/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/binary-search-array/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/bogosort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/bogosort/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/bogosort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/heap-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/heap-sort/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/heap-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/linear-search/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/linear-search/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/linear-search/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/max-search/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/max-search/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/max-search/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/merge-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/merge-sort/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/merge-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/quick-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/quick-sort/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/quick-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/kmp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/kmp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/kmp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/palindrome-checker/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/palindrome-checker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/palindrome-checker/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/punctuation-checker/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/punctuation-checker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/punctuation-checker/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/content/topics/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/topics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/topics/"/>
     </url>
     <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/contributing/</loc>
@@ -421,179 +617,11 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/ranklist/"/>
     </url>
     <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/start/graph/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/start/graph/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/graph/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/start/matrix/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/start/matrix/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/matrix/"/>
-    </url>
-    <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/start/onboarding/</loc>
         <lastmod>2026-07-23</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/start/onboarding/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/onboarding/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/dictionaries/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/dictionaries/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/dictionaries/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/graphs/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/graphs/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/graphs/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/lists/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/lists/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/lists/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/priority-queue/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/priority-queue/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/priority-queue/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/segment-tree/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/segment-tree/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/segment-tree/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/stack-queue/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/stack-queue/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/stack-queue/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/structures/union-find/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/union-find/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/union-find/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/combinatory/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/combinatory/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/combinatory/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/comparisons/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/comparisons/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/comparisons/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/complexity/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/complexity/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/complexity/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/decimal-precision/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/decimal-precision/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/decimal-precision/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/dynamic-programming/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/dynamic-programming/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/dynamic-programming/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/euler-factorization/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/euler-factorization/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/euler-factorization/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/factorization/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/factorization/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/factorization/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/io/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/io/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/io/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/lambda/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/lambda/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/lambda/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/modular-inverse/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/modular-inverse/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/modular-inverse/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/newton-binomial/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/newton-binomial/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/newton-binomial/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/prefix-sums/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/prefix-sums/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/prefix-sums/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/recursion/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/recursion/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/recursion/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/trial-division/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/trial-division/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/trial-division/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/topics/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/topics/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/topics/"/>
     </url>
     <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/</loc>
@@ -603,361 +631,557 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/"/>
     </url>
     <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bellman-ford/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bellman-ford/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bellman-ford/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bfs/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bfs/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bfs/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/binary-exponentiation/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/binary-exponentiation/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/binary-exponentiation/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bogosort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/bogosort/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/bogosort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/data-structures/fenwick-tree/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/data-structures/fenwick-tree/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/data-structures/fenwick-tree/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/dfs/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/dfs/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/dfs/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/dynamic-programming/bitmask-tsp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/dynamic-programming/bitmask-tsp/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/dynamic-programming/bitmask-tsp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fibonacci/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fibonacci/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fibonacci/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/flood-fill/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/flood-fill/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/flood-fill/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/floyd-warshall/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/floyd-warshall/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/floyd-warshall/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/cpp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/cpp/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/cpp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/python/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/conditionals/python/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/conditionals/python/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/cpp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/cpp/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/cpp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/python/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/fundamentals/loops/python/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/fundamentals/loops/python/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/gcd/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/gcd/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/gcd/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/geometry/convex-hull/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/geometry/convex-hull/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/geometry/convex-hull/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graph-coloring/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graph-coloring/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graph-coloring/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graphs/a-star/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graphs/a-star/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graphs/a-star/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graphs/dijkstra/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/graphs/dijkstra/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/graphs/dijkstra/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/heap-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/heap-sort/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/heap-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/io/fast-io/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/io/fast-io/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/io/fast-io/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/kmp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/kmp/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/kmp/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/knapsack/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/knapsack/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/knapsack/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/kruskal/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/kruskal/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/kruskal/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/lca/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/lca/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/lca/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/advanced/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/advanced/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/advanced/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/base/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/base/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/base/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/beginner/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/beginner/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/beginner/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/expert/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/expert/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/expert/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/intermediate/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/levels/intermediate/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/levels/intermediate/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/linear-search/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/linear-search/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/linear-search/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/lis/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/lis/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/lis/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/matrix-exponentiation/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/matrix-exponentiation/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/matrix-exponentiation/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/matrix-multiplication/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/matrix-multiplication/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/matrix-multiplication/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/max-flow/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/max-flow/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/max-flow/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/max-search/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/max-search/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/max-search/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/merge-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/merge-sort/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/merge-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/palindrome-checker/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/palindrome-checker/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/palindrome-checker/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/prim/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/prim/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/prim/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/punctuation-checker/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/punctuation-checker/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/punctuation-checker/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/quick-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/quick-sort/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/quick-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/scc/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/scc/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/scc/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/searching/binary-search-array/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/searching/binary-search-array/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/searching/binary-search-array/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/sieve/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/sieve/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/sieve/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/sum-all/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/sum-all/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/sum-all/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/topological-sort/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/topological-sort/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/topological-sort/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/tsp/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/algorithms/tsp/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/algorithms/tsp/"/>
-    </url>
-    <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/cheatsheet/</loc>
         <lastmod>2026-07-23</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/cheatsheet/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/cheatsheet/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graph/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graph/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graph/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/matrix/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/matrix/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/matrix/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/binary-exponentiation/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/binary-exponentiation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/binary-exponentiation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/euler-factorization/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/euler-factorization/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/euler-factorization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/factorization/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/factorization/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/factorization/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/float-treatment/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/float-treatment/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/float-treatment/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/gcd/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/gcd/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/gcd/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/matrix-exponentiation/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/matrix-exponentiation/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/matrix-exponentiation/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/matrix-multiplication/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/matrix-multiplication/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/matrix-multiplication/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/modular-inverse/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/modular-inverse/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/modular-inverse/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/sieve/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/sieve/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/sieve/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/trial-division/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/arithmetics/trial-division/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/arithmetics/trial-division/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/combinatorics/combinatory/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/combinatorics/combinatory/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/combinatorics/combinatory/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/combinatorics/newton-binomial/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/combinatorics/newton-binomial/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/combinatorics/newton-binomial/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/dictionaries/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/dictionaries/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/dictionaries/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/fenwick-tree/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/fenwick-tree/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/fenwick-tree/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/lists/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/lists/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/lists/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/prefix-sums/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/prefix-sums/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/prefix-sums/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/priority-queue/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/priority-queue/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/priority-queue/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/segment-tree/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/segment-tree/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/segment-tree/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/stack-queue/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/stack-queue/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/stack-queue/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/union-find/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/data-structures/union-find/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/data-structures/union-find/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/bitmask-tsp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/bitmask-tsp/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/bitmask-tsp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/dynamic-programming/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/dynamic-programming/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/dynamic-programming/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/fibonacci/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/fibonacci/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/fibonacci/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/knapsack/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/knapsack/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/knapsack/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/lis/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/dynamic-programming/lis/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/dynamic-programming/lis/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/comparisons/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/comparisons/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/comparisons/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/complexity/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/complexity/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/complexity/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/cpp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/cpp/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/cpp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/python/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/conditionals/python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/conditionals/python/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/decimal-precision/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/decimal-precision/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/decimal-precision/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/fast-io/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/fast-io/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/fast-io/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/io/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/io/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/io/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/iterators/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/iterators/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/iterators/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/lambda/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/lambda/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/lambda/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/cpp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/cpp/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/cpp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/python/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/loops/python/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/loops/python/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/native-types/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/native-types/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/native-types/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/overflow/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/overflow/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/overflow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/recursion/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/recursion/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/recursion/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/sum-all/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/fundamentals/sum-all/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/fundamentals/sum-all/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/geometry/convex-hull/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/geometry/convex-hull/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/geometry/convex-hull/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/a-star/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/a-star/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/a-star/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/bellman-ford/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/bellman-ford/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/bellman-ford/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/bfs/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/bfs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/bfs/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/dfs/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/dfs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/dfs/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/dijkstra/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/dijkstra/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/dijkstra/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/flood-fill/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/flood-fill/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/flood-fill/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/floyd-warshall/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/floyd-warshall/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/floyd-warshall/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/graph-coloring/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/graph-coloring/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/graph-coloring/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/graphs/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/graphs/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/graphs/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/kruskal/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/kruskal/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/kruskal/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/lca/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/lca/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/lca/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/max-flow/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/max-flow/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/max-flow/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/prim/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/prim/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/prim/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/scc/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/scc/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/scc/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/topological-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/topological-sort/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/topological-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/tsp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/graphs/tsp/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/graphs/tsp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/advanced/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/advanced/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/advanced/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/base/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/base/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/base/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/beginner/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/beginner/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/beginner/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/expert/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/expert/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/expert/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/intermediate/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/levels/intermediate/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/levels/intermediate/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/binary-search-array/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/binary-search-array/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/binary-search-array/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/bogosort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/bogosort/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/bogosort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/heap-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/heap-sort/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/heap-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/linear-search/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/linear-search/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/linear-search/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/max-search/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/max-search/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/max-search/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/merge-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/merge-sort/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/merge-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/quick-sort/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/search/quick-sort/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/search/quick-sort/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/kmp/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/kmp/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/kmp/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/palindrome-checker/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/palindrome-checker/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/palindrome-checker/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/punctuation-checker/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/strings/punctuation-checker/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/strings/punctuation-checker/"/>
+    </url>
+    <url>
+        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/topics/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/content/topics/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/content/topics/"/>
     </url>
     <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/contributing/</loc>
@@ -1016,178 +1240,10 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/ranklist/"/>
     </url>
     <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/graph/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/graph/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/start/graph/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/matrix/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/matrix/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/start/matrix/"/>
-    </url>
-    <url>
         <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/onboarding/</loc>
         <lastmod>2026-07-23</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/start/onboarding/"/>
         <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/start/onboarding/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/dictionaries/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/dictionaries/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/dictionaries/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/graphs/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/graphs/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/graphs/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/lists/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/lists/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/lists/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/priority-queue/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/priority-queue/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/priority-queue/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/segment-tree/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/segment-tree/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/segment-tree/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/stack-queue/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/stack-queue/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/stack-queue/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/union-find/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/structures/union-find/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/structures/union-find/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/combinatory/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/combinatory/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/combinatory/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/comparisons/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/comparisons/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/comparisons/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/complexity/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/complexity/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/complexity/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/decimal-precision/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/decimal-precision/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/decimal-precision/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/dynamic-programming/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/dynamic-programming/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/dynamic-programming/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/euler-factorization/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/euler-factorization/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/euler-factorization/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/factorization/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/factorization/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/factorization/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/io/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/io/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/io/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/lambda/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/lambda/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/lambda/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/modular-inverse/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/modular-inverse/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/modular-inverse/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/newton-binomial/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/newton-binomial/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/newton-binomial/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/prefix-sums/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/prefix-sums/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/prefix-sums/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/recursion/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/recursion/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/recursion/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/trial-division/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/techniques/trial-division/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/techniques/trial-division/"/>
-    </url>
-    <url>
-        <loc>https://jparisu.github.io/PrograCompetitivaCUNEF/en/topics/</loc>
-        <lastmod>2026-07-23</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jparisu.github.io/PrograCompetitivaCUNEF/en/topics/"/>
-        <xhtml:link rel="alternate" hreflang="es" href="https://jparisu.github.io/PrograCompetitivaCUNEF/topics/"/>
     </url>
 </urlset>

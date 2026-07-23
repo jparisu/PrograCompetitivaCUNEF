@@ -54,8 +54,7 @@
         li.appendChild(a);
         var meta = document.createElement("span");
         meta.className = "todo-meta";
-        meta.textContent = " — " + (Catalog.TYPE_LABELS[it.type] || it.type) +
-          " · dif. " + (it.difficulty != null ? it.difficulty : "—");
+        meta.textContent = " — " + (Catalog.TYPE_LABELS[it.type] || it.type);
         li.appendChild(meta);
         ul.appendChild(li);
       });
