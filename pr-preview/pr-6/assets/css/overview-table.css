@@ -237,3 +237,10 @@
 @media (max-width: 45rem) {
   .ov-input { min-width: 100%; }
 }
+
+/* Resizable / wrapping columns (widths set inline via colgroup by the JS). */
+.ov-table th, .ov-table td { overflow: hidden; white-space: normal; word-break: break-word; vertical-align: top; }
+.ov-th { position: relative; }
+.ov-resizer { position: absolute; top: 0; right: 0; width: 6px; height: 100%; cursor: col-resize; user-select: none; }
+.ov-resizer:hover { background: var(--md-primary-fg-color); opacity: 0.35; }
+.ov-req-missing { opacity: 0.6; }
