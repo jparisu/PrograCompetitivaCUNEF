@@ -388,6 +388,8 @@
                       
                         <li><a class="cunef-menu__link" href="../../content/arithmetics/trial-division/">Trial division — Técnica</a></li>
                       
+                        <li><a class="cunef-menu__link" href="../../content/search/backtracking/">Backtracking — Técnica</a></li>
+                      
                     </ul>
                   </li>
                 
@@ -398,6 +400,8 @@
                     <ul class="cunef-submenu">
                       
                         <li><a class="cunef-menu__link" href="../../content/levels/intermediate/">Contenidos · Intermedio</a></li>
+                      
+                        <li><a class="cunef-menu__link" href="../../content/game-theory/minimax/">MiniMax — Algoritmo</a></li>
                       
                         <li><a class="cunef-menu__link" href="../../content/graphs/graphs/">Grafos — Estructura</a></li>
                       
@@ -1577,6 +1581,8 @@
       
         
       
+        
+      
     
     
     
@@ -2273,6 +2279,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/search/backtracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backtracking — Técnica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2292,6 +2326,8 @@
       
         
           
+        
+      
         
       
         
@@ -2378,6 +2414,34 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../content/game-theory/minimax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MiniMax — Algoritmo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -3809,6 +3873,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir un tema (topic)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4023,6 +4098,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-topic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir un tema (topic)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4067,8 +4153,9 @@ buscar. La página se llama <code>index.md</code> (así la URL queda limpia: <co
 </div>
 <p><code>&lt;tema&gt;</code> es uno de los <strong>temas</strong> existentes (mira la carpeta <code>docs/content/</code>): <code>fundamentals</code>,
 <code>strings</code>, <code>search</code>, <code>data-structures</code>, <code>graphs</code>, <code>dynamic-programming</code>, <code>greedy</code>,
-<code>arithmetics</code>, <code>combinatorics</code>, <code>geometry</code>. La lista canónica vive en <code>tools/common.py</code>
-(<code>TOPICS</code>); si necesitas un tema nuevo, añádelo ahí (un solo sitio).</p>
+<code>arithmetics</code>, <code>combinatorics</code>, <code>geometry</code>, <code>game-theory</code>. La lista canónica vive en
+<code>docs/content/topics/topics.json</code>; si necesitas un tema nuevo, mira
+<a href="#add-topic">Añadir un tema</a>.</p>
 <p>Lo más rápido es <strong>copiar una carpeta ya hecha</strong> como plantilla, por ejemplo
 <code>docs/content/data-structures/fenwick-tree/</code>.</p>
 <h2 id="2-escribe-el-idmetayaml">2. Escribe el <code>&lt;id&gt;.meta.yaml</code><a class="headerlink" href="#2-escribe-el-idmetayaml" title="Permanent link">#</a></h2>
@@ -4182,6 +4269,30 @@ capturas, <strong>GIF</strong> para animaciones. Si usas imágenes de Wikimedia 
 versión nueva: <code>&lt;id&gt;.v2.full.cpp</code>, y actualiza <code>current_version: v2</code> en el <code>meta.yaml</code>.
 La <code>v1</code> sigue disponible.</p>
 </div>
+<h2 id="add-topic">Añadir un tema (topic)<a class="headerlink" href="#add-topic" title="Permanent link">#</a></h2>
+<p>Los <strong>temas</strong> son una taxonomía plana y son lo único que no vive dentro de la carpeta de un
+elemento. Añade un tema nuevo <strong>solo</strong> si ninguno de los existentes encaja. Son <strong>dos
+ficheros</strong>, ambos en <code>docs/content/topics/</code>:</p>
+<p><strong>1. Regístralo</strong> en <code>docs/content/topics/topics.json</code> — la <strong>fuente de la verdad</strong> (la leen
+las herramientas de Python y, de ahí, el front-end). Añade una entrada <code>id → {label, icon,
+desc}</code>, con el <code>id</code> en kebab-case. El <strong>orden</strong> de las claves es el orden en que el tema
+aparece en todas partes (filtro de <em>Temas</em>, tabla, iconos):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&quot;game-theory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Teoría de juegos&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;icon&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;♟️&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;desc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Juegos de dos jugadores de suma cero.&quot;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><strong>2. Descríbelo</strong> en <code>docs/content/topics/index.md</code>: añade una sección cuyo <strong>ancla sea el
+<code>id</code></strong> del tema y cuyo emoji coincida con el <code>icon</code>. Es obligatorio: los iconos de tema de
+todo el sitio enlazan a <code>#&lt;id&gt;</code> de esta página, así que sin la sección el enlace se rompe.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gu">## ♟️ Teoría de juegos {#game-theory}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Un párrafo explicando el tema…
+</code></pre></div>
+<p><strong>3. Regenera</strong> lo derivado (nunca lo edites a mano):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>tools/gen.py<span class="w"> </span>generate<span class="w">   </span><span class="c1"># actualiza taxonomy.js, algorithms.json y el nav</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>python<span class="w"> </span>tools/gen.py<span class="w"> </span>status<span class="w">     </span><span class="c1"># debe decir &quot;up to date&quot;</span>
+</code></pre></div>
+<p><code>taxonomy.js</code> (para el front-end) y la tabla de <em>Temas</em> se generan a partir del JSON, así que
+no tocas nada más. <code>python tools/gen.py status</code> <strong>falla</strong> si un elemento declara un <code>topic</code>
+que no está en <code>topics.json</code>.</p>
 
 
 

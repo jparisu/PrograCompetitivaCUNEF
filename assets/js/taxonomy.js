@@ -77,6 +77,11 @@ window.Taxonomy = {
       "label": "Geometría",
       "icon": "📐",
       "desc": "Puntos, rectas, polígonos y envolventes."
+    },
+    "game-theory": {
+      "label": "Teoría de juegos",
+      "icon": "♟️",
+      "desc": "Juegos de dos jugadores de suma cero con información perfecta."
     }
   },
   "TOPIC_IDS": [
@@ -89,7 +94,8 @@ window.Taxonomy = {
     "greedy",
     "arithmetics",
     "combinatorics",
-    "geometry"
+    "geometry",
+    "game-theory"
   ],
   "LANG_LABELS": {
     "cpp": "C++",
