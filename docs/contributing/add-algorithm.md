@@ -26,8 +26,9 @@ docs/content/<tema>/<id>/
 
 `<tema>` es uno de los **temas** existentes (mira la carpeta `docs/content/`): `fundamentals`,
 `strings`, `search`, `data-structures`, `graphs`, `dynamic-programming`, `greedy`,
-`arithmetics`, `combinatorics`, `geometry`. La lista canónica vive en `tools/common.py`
-(`TOPICS`); si necesitas un tema nuevo, añádelo ahí (un solo sitio).
+`arithmetics`, `combinatorics`, `geometry`, `game-theory`. La lista canónica vive en
+`docs/content/topics/topics.json`; si necesitas un tema nuevo, mira
+[Añadir un tema](#add-topic).
 
 Lo más rápido es **copiar una carpeta ya hecha** como plantilla, por ejemplo
 `docs/content/data-structures/fenwick-tree/`.
@@ -169,3 +170,39 @@ Sigue [Git y GitHub](git-github.md). El robot te dará un enlace de vista previa
     Si mejoras un elemento existente sin querer romper la versión anterior, crea una
     versión nueva: `<id>.v2.full.cpp`, y actualiza `current_version: v2` en el `meta.yaml`.
     La `v1` sigue disponible.
+
+## Añadir un tema (topic) {#add-topic}
+
+Los **temas** son una taxonomía plana y son lo único que no vive dentro de la carpeta de un
+elemento. Añade un tema nuevo **solo** si ninguno de los existentes encaja. Son **dos
+ficheros**, ambos en `docs/content/topics/`:
+
+**1. Regístralo** en `docs/content/topics/topics.json` — la **fuente de la verdad** (la leen
+las herramientas de Python y, de ahí, el front-end). Añade una entrada `id → {label, icon,
+desc}`, con el `id` en kebab-case. El **orden** de las claves es el orden en que el tema
+aparece en todas partes (filtro de *Temas*, tabla, iconos):
+
+```json
+"game-theory": { "label": "Teoría de juegos", "icon": "♟️", "desc": "Juegos de dos jugadores de suma cero." }
+```
+
+**2. Descríbelo** en `docs/content/topics/index.md`: añade una sección cuyo **ancla sea el
+`id`** del tema y cuyo emoji coincida con el `icon`. Es obligatorio: los iconos de tema de
+todo el sitio enlazan a `#<id>` de esta página, así que sin la sección el enlace se rompe.
+
+```markdown
+## ♟️ Teoría de juegos {#game-theory}
+
+Un párrafo explicando el tema…
+```
+
+**3. Regenera** lo derivado (nunca lo edites a mano):
+
+```bash
+python tools/gen.py generate   # actualiza taxonomy.js, algorithms.json y el nav
+python tools/gen.py status     # debe decir "up to date"
+```
+
+`taxonomy.js` (para el front-end) y la tabla de *Temas* se generan a partir del JSON, así que
+no tocas nada más. `python tools/gen.py status` **falla** si un elemento declara un `topic`
+que no está en `topics.json`.

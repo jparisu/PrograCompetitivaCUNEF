@@ -298,6 +298,28 @@
     "url": "content/fundamentals/sum-all/"
   },
   {
+    "id": "backtracking",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Backtracking",
+      "en": "Backtracking"
+    },
+    "level": "beginner",
+    "difficulty": 2.4,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/backtracking/"
+  },
+  {
     "id": "bfs",
     "type": "algorithm",
     "format": "snippet",
@@ -1133,6 +1155,37 @@
     "complexity": "",
     "languages": [],
     "url": "content/arithmetics/matrix-multiplication/"
+  },
+  {
+    "id": "minimax",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "game-theory",
+    "wip": false,
+    "name": {
+      "es": "MiniMax",
+      "en": "MiniMax"
+    },
+    "level": "intermediate",
+    "difficulty": 2.5,
+    "techniques": [
+      "backtracking"
+    ],
+    "tags": [
+      "game-theory",
+      "minimax",
+      "decision-making"
+    ],
+    "prereq": [
+      "backtracking"
+    ],
+    "related": [],
+    "complexity": "O(n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/game-theory/minimax/"
   },
   {
     "id": "modular-inverse",

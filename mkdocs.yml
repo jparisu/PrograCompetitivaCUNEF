@@ -168,8 +168,10 @@ nav:
     - Recursión — Técnica: content/fundamentals/recursion/index.md
     - Sieve of Eratosthenes — Algoritmo: content/arithmetics/sieve/index.md
     - Trial division — Técnica: content/arithmetics/trial-division/index.md
+    - Backtracking — Técnica: content/search/backtracking/index.md
   - Intermedio:
     - content/levels/intermediate/index.md
+    - MiniMax — Algoritmo: content/game-theory/minimax/index.md
     - Grafos — Estructura: content/graphs/graphs/index.md
     - Binary exponentiation — Algoritmo: content/arithmetics/binary-exponentiation/index.md
     - Combinatoria — Técnica: content/combinatorics/combinatory/index.md

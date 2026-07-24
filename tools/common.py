@@ -16,6 +16,7 @@ This module is the single contract the other scripts build on:
 """
 from __future__ import annotations
 
+import json
 import sys
 from dataclasses import dataclass
 from pathlib import Path
@@ -41,6 +42,10 @@ CONTENT_DIR = DOCS_DIR / "content"
 # All roots that hold content items (each item = a folder with a <id>.meta.yaml).
 CONTENT_DIRS = [CONTENT_DIR]
 
+# The topic taxonomy lives as data (not code) in this JSON file, so it can be
+# edited without touching Python. Loaded into TOPICS below.
+TOPICS_FILE = CONTENT_DIR / "topics" / "topics.json"
+
 # Difficulty levels, in order.
 LEVELS = ["base", "beginner", "intermediate", "advanced", "expert"]
 
@@ -61,23 +66,25 @@ TYPE_LABELS = {
     "structure": "Estructura",
 }
 
-# Flat topic taxonomy — the SINGLE source of truth for topics, shared by the
-# Python tools and (via tools/gentaxonomy.py -> assets/js/taxonomy.js) the
-# front-end. id -> {label, icon (emoji), desc (short, for the Temas table)}.
-# Insertion order = display order. Add a new topic here (one place) and it is
-# available everywhere: the Temas filter, the topics table, the icon links.
-TOPICS = {
-    "fundamentals":        {"label": "Fundamentos",           "icon": "🧱", "desc": "Fundamentos de programación y conceptos."},
-    "strings":             {"label": "Strings",               "icon": "🔤", "desc": "Procesamiento de texto y búsqueda de patrones."},
-    "search":              {"label": "Ordenación y búsqueda", "icon": "🔎", "desc": "Ordenar y localizar datos rápidamente."},
-    "data-structures":     {"label": "Estructuras de datos",  "icon": "🗃️", "desc": "Guardar y organizar datos para consultarlos rápido."},
-    "graphs":              {"label": "Grafos",                "icon": "🕸️", "desc": "Nodos y aristas: recorridos, caminos, flujos."},
-    "dynamic-programming": {"label": "Programación dinámica", "icon": "🧩", "desc": "Combinar soluciones de subproblemas solapados."},
-    "greedy":              {"label": "Voraz (greedy)",        "icon": "🪙", "desc": "Elegir la mejor opción local en cada paso."},
-    "arithmetics":         {"label": "Aritmética",            "icon": "➗", "desc": "Aritmética modular, primos, teoría de números."},
-    "combinatorics":       {"label": "Combinatoria",          "icon": "🎲", "desc": "Contar combinaciones, permutaciones y casos."},
-    "geometry":            {"label": "Geometría",             "icon": "📐", "desc": "Puntos, rectas, polígonos y envolventes."},
-}
+# Flat topic taxonomy — the SINGLE source of truth for topics. It lives as data
+# in ``docs/content/topics/topics.json`` (edit it there, no code change needed)
+# and is loaded here; from here it is shared by the Python tools and (via
+# tools/gentaxonomy.py -> assets/js/taxonomy.js) the front-end.
+# id -> {label, icon (emoji), desc (short, for the Temas table)}. Key order in
+# the JSON = display order everywhere: the Temas filter, the topics table, the
+# icon links. To add a topic see docs/contributing/add-algorithm.md ("Añadir un tema").
+def _load_topics() -> dict:
+    try:
+        with open(TOPICS_FILE, "r", encoding="utf-8") as fh:
+            return json.load(fh)
+    except FileNotFoundError:  # pragma: no cover
+        sys.exit(
+            f"Missing topic taxonomy file: {TOPICS_FILE}.\n"
+            "It defines the content topics; see docs/contributing/add-algorithm.md."
+        )
+
+
+TOPICS = _load_topics()
 TOPIC_IDS = list(TOPICS)
 
 # Code styles, in generation order (each is derived from the previous one).

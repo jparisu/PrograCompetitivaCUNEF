@@ -86,3 +86,10 @@ Problemas con **puntos, rectas, segmentos y polígonos** en el plano: producto v
 orientación, intersecciones, cálculo de áreas y algoritmos como la **envolvente convexa**.
 Exige especial cuidado con la **precisión numérica** y con los casos degenerados (puntos
 colineales o coincidentes, divisiones por cero).
+
+## ♟️ Teoría de juegos {#game-theory}
+
+Problemas de búsqueda donde se añade incertidumbre debido a la **interacción con un adversario**.
+El objetivo será maximizar la puntuación propia, teniendo en cuenta que el rival intentará maximizar su propia puntuación.
+Los problemas más comunes suponen **juegos de dos jugadores** de **suma cero** con **información perfecta**, como el ajedrez, el tres en raya o el NIM.
+Incluye algoritmos como **Minimax** y sus variantes.
