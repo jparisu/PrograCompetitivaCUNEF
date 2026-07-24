@@ -1,0 +1,1661 @@
+[
+  {
+    "id": "comparisons",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Comparaciones",
+      "en": "Comparisons"
+    },
+    "level": "base",
+    "difficulty": 0.3,
+    "techniques": [],
+    "tags": [
+      "operators",
+      "comparison",
+      "basics"
+    ],
+    "prereq": [
+      "native-types"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/comparisons/"
+  },
+  {
+    "id": "complexity",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Complejidad (Big-O)",
+      "en": "Complexity (Big-O)"
+    },
+    "level": "base",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/complexity/"
+  },
+  {
+    "id": "conditionals",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": false,
+    "name": {
+      "es": "Condicionales",
+      "en": "Conditionals"
+    },
+    "level": "base",
+    "difficulty": 0.5,
+    "techniques": [],
+    "tags": [
+      "if",
+      "else",
+      "basics"
+    ],
+    "prereq": [
+      "comparisons"
+    ],
+    "related": [],
+    "complexity": "O(1)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/fundamentals/conditionals/"
+  },
+  {
+    "id": "io",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Input/Output",
+      "en": "Input/Output"
+    },
+    "level": "base",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "native-types"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/io/"
+  },
+  {
+    "id": "linear-search",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Búsqueda lineal",
+      "en": "Linear search"
+    },
+    "level": "base",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/linear-search/"
+  },
+  {
+    "id": "lists",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Arrays",
+      "en": "Arrays"
+    },
+    "level": "base",
+    "difficulty": 0.8,
+    "techniques": [],
+    "tags": [
+      "array",
+      "vector",
+      "list",
+      "sequence"
+    ],
+    "prereq": [
+      "native-types"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/lists/"
+  },
+  {
+    "id": "loops",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": false,
+    "name": {
+      "es": "Bucles",
+      "en": "Loops"
+    },
+    "level": "base",
+    "difficulty": 0.7,
+    "techniques": [],
+    "tags": [
+      "for",
+      "while",
+      "basics"
+    ],
+    "prereq": [
+      "conditionals"
+    ],
+    "related": [],
+    "complexity": "O(n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/fundamentals/loops/"
+  },
+  {
+    "id": "max-search",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Búsqueda del máximo",
+      "en": "Max search"
+    },
+    "level": "base",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [
+      "linear-search"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/max-search/"
+  },
+  {
+    "id": "native-types",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Tipos nativos",
+      "en": "Native types"
+    },
+    "level": "base",
+    "difficulty": 0.3,
+    "techniques": [],
+    "tags": [
+      "int",
+      "float",
+      "bool",
+      "char",
+      "types"
+    ],
+    "prereq": [],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/native-types/"
+  },
+  {
+    "id": "overflow",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Desbordamiento (overflow)",
+      "en": "Overflow"
+    },
+    "level": "base",
+    "difficulty": 0.9,
+    "techniques": [],
+    "tags": [
+      "overflow",
+      "int",
+      "long-long",
+      "limits"
+    ],
+    "prereq": [
+      "native-types"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/overflow/"
+  },
+  {
+    "id": "stack-queue",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Stack & queue",
+      "en": "Stack & queue"
+    },
+    "level": "base",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "lists"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/stack-queue/"
+  },
+  {
+    "id": "sum-all",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Sum all",
+      "en": "Sum all"
+    },
+    "level": "base",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/sum-all/"
+  },
+  {
+    "id": "backtracking",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Backtracking",
+      "en": "Backtracking"
+    },
+    "level": "beginner",
+    "difficulty": 2.4,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/backtracking/"
+  },
+  {
+    "id": "bfs",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Breadth-first search (BFS)",
+      "en": "Breadth-first search (BFS)"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "stack-queue"
+    ],
+    "related": [
+      "graphs",
+      "dfs"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/bfs/"
+  },
+  {
+    "id": "binary-search-array",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": false,
+    "name": {
+      "es": "Binary search",
+      "en": "Binary search"
+    },
+    "level": "beginner",
+    "difficulty": 1.5,
+    "techniques": [],
+    "tags": [
+      "search",
+      "sorted",
+      "logn"
+    ],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "O(log n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/search/binary-search-array/"
+  },
+  {
+    "id": "decimal-precision",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Decimal precision",
+      "en": "Decimal precision"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "native-types"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/decimal-precision/"
+  },
+  {
+    "id": "dfs",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Depth-first search (DFS)",
+      "en": "Depth-first search (DFS)"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [
+      "graphs"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/dfs/"
+  },
+  {
+    "id": "dictionaries",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Dictionaries / maps",
+      "en": "Dictionaries / maps"
+    },
+    "level": "beginner",
+    "difficulty": 1.5,
+    "techniques": [],
+    "tags": [
+      "map",
+      "dict",
+      "hash",
+      "key-value"
+    ],
+    "prereq": [
+      "lists"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/dictionaries/"
+  },
+  {
+    "id": "euler-factorization",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Euler factorization",
+      "en": "Euler factorization"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "sieve"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/euler-factorization/"
+  },
+  {
+    "id": "factorization",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Factorización",
+      "en": "Factorization"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "trial-division"
+    ],
+    "related": [
+      "euler-factorization"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/factorization/"
+  },
+  {
+    "id": "fast-io",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": false,
+    "name": {
+      "es": "E/S rápida",
+      "en": "Fast I/O"
+    },
+    "level": "beginner",
+    "difficulty": 1.0,
+    "techniques": [],
+    "tags": [
+      "io",
+      "performance",
+      "tle"
+    ],
+    "prereq": [
+      "io"
+    ],
+    "related": [
+      "loops"
+    ],
+    "complexity": "",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/fundamentals/fast-io/"
+  },
+  {
+    "id": "fibonacci",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "dynamic-programming",
+    "wip": true,
+    "name": {
+      "es": "Fibonacci",
+      "en": "Fibonacci"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [
+      "dynamic-programming"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/dynamic-programming/fibonacci/"
+  },
+  {
+    "id": "float-treatment",
+    "type": "technique",
+    "format": "article",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Coma flotante",
+      "en": "Floating point"
+    },
+    "level": "beginner",
+    "difficulty": 1.8,
+    "techniques": [],
+    "tags": [
+      "float",
+      "double",
+      "precision",
+      "epsilon"
+    ],
+    "prereq": [
+      "native-types"
+    ],
+    "related": [
+      "decimal-precision"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/float-treatment/"
+  },
+  {
+    "id": "flood-fill",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Flood fill",
+      "en": "Flood fill"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "dfs"
+    ],
+    "related": [
+      "bfs"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/flood-fill/"
+  },
+  {
+    "id": "gcd",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "GCD (Euclid)",
+      "en": "GCD (Euclid)"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/gcd/"
+  },
+  {
+    "id": "iterators",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Iteradores",
+      "en": "Iterators"
+    },
+    "level": "beginner",
+    "difficulty": 1.8,
+    "techniques": [],
+    "tags": [
+      "iterator",
+      "range",
+      "container"
+    ],
+    "prereq": [],
+    "related": [
+      "loops"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/iterators/"
+  },
+  {
+    "id": "lambda",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Lambda",
+      "en": "Lambda"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [
+      "lambda",
+      "functional",
+      "comparator"
+    ],
+    "prereq": [],
+    "related": [
+      "comparisons"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/lambda/"
+  },
+  {
+    "id": "merge-sort",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Merge sort",
+      "en": "Merge sort"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [
+      "quick-sort"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/merge-sort/"
+  },
+  {
+    "id": "palindrome-checker",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "strings",
+    "wip": true,
+    "name": {
+      "es": "Palindrome checker",
+      "en": "Palindrome checker"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [
+      "punctuation-checker"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/strings/palindrome-checker/"
+  },
+  {
+    "id": "prefix-sums",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Prefix sums",
+      "en": "Prefix sums"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "lists"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/prefix-sums/"
+  },
+  {
+    "id": "priority-queue",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Priority queue (heap)",
+      "en": "Priority queue (heap)"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "lists"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/priority-queue/"
+  },
+  {
+    "id": "punctuation-checker",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "strings",
+    "wip": true,
+    "name": {
+      "es": "Punctuation checker",
+      "en": "Punctuation checker"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/strings/punctuation-checker/"
+  },
+  {
+    "id": "quick-sort",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Quicksort",
+      "en": "Quicksort"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/quick-sort/"
+  },
+  {
+    "id": "recursion",
+    "type": "technique",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": true,
+    "name": {
+      "es": "Recursión",
+      "en": "Recursion"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "conditionals",
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/recursion/"
+  },
+  {
+    "id": "sieve",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Sieve of Eratosthenes",
+      "en": "Sieve of Eratosthenes"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [
+      "trial-division"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/sieve/"
+  },
+  {
+    "id": "trial-division",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Trial division",
+      "en": "Trial division"
+    },
+    "level": "beginner",
+    "difficulty": 2.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/trial-division/"
+  },
+  {
+    "id": "binary-exponentiation",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Binary exponentiation",
+      "en": "Binary exponentiation"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "overflow"
+    ],
+    "related": [
+      "matrix-exponentiation"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/binary-exponentiation/"
+  },
+  {
+    "id": "combinatory",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "combinatorics",
+    "wip": true,
+    "name": {
+      "es": "Combinatoria",
+      "en": "Combinatorics"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "modular-inverse"
+    ],
+    "related": [
+      "newton-binomial"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/combinatorics/combinatory/"
+  },
+  {
+    "id": "dijkstra",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": false,
+    "name": {
+      "es": "Dijkstra",
+      "en": "Dijkstra"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [
+      "graph-traversal"
+    ],
+    "tags": [
+      "shortest-path",
+      "greedy",
+      "priority-queue"
+    ],
+    "prereq": [
+      "graphs",
+      "priority-queue"
+    ],
+    "related": [
+      "bfs"
+    ],
+    "complexity": "O((V+E) log V)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/graphs/dijkstra/"
+  },
+  {
+    "id": "dynamic-programming",
+    "type": "technique",
+    "format": "article",
+    "topic": "dynamic-programming",
+    "wip": true,
+    "name": {
+      "es": "Dynamic programming",
+      "en": "Dynamic programming"
+    },
+    "level": "intermediate",
+    "difficulty": 4.0,
+    "techniques": [],
+    "tags": [
+      "dp",
+      "memoization",
+      "subproblems"
+    ],
+    "prereq": [
+      "recursion"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/dynamic-programming/dynamic-programming/"
+  },
+  {
+    "id": "floyd-warshall",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Floyd-Warshall",
+      "en": "Floyd-Warshall"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs"
+    ],
+    "related": [
+      "dijkstra"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/floyd-warshall/"
+  },
+  {
+    "id": "graphs",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Grafos",
+      "en": "Graphs"
+    },
+    "level": "intermediate",
+    "difficulty": 3.0,
+    "techniques": [],
+    "tags": [
+      "graph",
+      "adjacency",
+      "nodes",
+      "edges"
+    ],
+    "prereq": [
+      "lists",
+      "dictionaries"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/graphs/"
+  },
+  {
+    "id": "kmp",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "strings",
+    "wip": true,
+    "name": {
+      "es": "KMP",
+      "en": "KMP"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/strings/kmp/"
+  },
+  {
+    "id": "knapsack",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "dynamic-programming",
+    "wip": true,
+    "name": {
+      "es": "Knapsack",
+      "en": "Knapsack"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "dynamic-programming"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/dynamic-programming/knapsack/"
+  },
+  {
+    "id": "kruskal",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Kruskal (MST)",
+      "en": "Kruskal (MST)"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs",
+      "union-find"
+    ],
+    "related": [
+      "prim"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/kruskal/"
+  },
+  {
+    "id": "lis",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "dynamic-programming",
+    "wip": true,
+    "name": {
+      "es": "Longest increasing subsequence",
+      "en": "Longest increasing subsequence"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "dynamic-programming"
+    ],
+    "related": [
+      "binary-search-array"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/dynamic-programming/lis/"
+  },
+  {
+    "id": "matrix-multiplication",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Multiplicación de matrices",
+      "en": "Matrix multiplication"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "lists"
+    ],
+    "related": [
+      "matrix-exponentiation"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/matrix-multiplication/"
+  },
+  {
+    "id": "minimax",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "game-theory",
+    "wip": false,
+    "name": {
+      "es": "MiniMax",
+      "en": "MiniMax"
+    },
+    "level": "intermediate",
+    "difficulty": 2.5,
+    "techniques": [
+      "backtracking"
+    ],
+    "tags": [
+      "game-theory",
+      "minimax",
+      "decision-making"
+    ],
+    "prereq": [
+      "backtracking"
+    ],
+    "related": [],
+    "complexity": "O(n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/game-theory/minimax/"
+  },
+  {
+    "id": "modular-inverse",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Modular inverse",
+      "en": "Modular inverse"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "binary-exponentiation",
+      "gcd"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/modular-inverse/"
+  },
+  {
+    "id": "newton-binomial",
+    "type": "technique",
+    "format": "snippet",
+    "topic": "combinatorics",
+    "wip": true,
+    "name": {
+      "es": "Newtons binomial",
+      "en": "Newtons binomial"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "combinatory"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/combinatorics/newton-binomial/"
+  },
+  {
+    "id": "prim",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Prim (MST)",
+      "en": "Prim (MST)"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs",
+      "priority-queue"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/prim/"
+  },
+  {
+    "id": "segment-tree",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Segment tree",
+      "en": "Segment tree"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "lists",
+      "recursion"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/segment-tree/"
+  },
+  {
+    "id": "topological-sort",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Topological sort",
+      "en": "Topological sort"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs",
+      "dfs"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/topological-sort/"
+  },
+  {
+    "id": "union-find",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": true,
+    "name": {
+      "es": "Union-Find (DSU)",
+      "en": "Union-Find (DSU)"
+    },
+    "level": "intermediate",
+    "difficulty": 3.5,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "lists"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/data-structures/union-find/"
+  },
+  {
+    "id": "a-star",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "A*",
+      "en": "A*"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [
+      "graph-traversal"
+    ],
+    "tags": [
+      "shortest-path",
+      "heuristic",
+      "pathfinding"
+    ],
+    "prereq": [
+      "dijkstra"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/a-star/"
+  },
+  {
+    "id": "bellman-ford",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Bellman-Ford",
+      "en": "Bellman-Ford"
+    },
+    "level": "advanced",
+    "difficulty": 4.0,
+    "techniques": [],
+    "tags": [
+      "shortest-path",
+      "negative-weights"
+    ],
+    "prereq": [
+      "graphs"
+    ],
+    "related": [
+      "dijkstra"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/bellman-ford/"
+  },
+  {
+    "id": "bitmask-tsp",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "dynamic-programming",
+    "wip": true,
+    "name": {
+      "es": "Bitmask DP — TSP",
+      "en": "Bitmask DP — TSP"
+    },
+    "level": "advanced",
+    "difficulty": 6.0,
+    "techniques": [
+      "dynamic-programming",
+      "bitmask"
+    ],
+    "tags": [
+      "tsp",
+      "held-karp",
+      "hamiltonian"
+    ],
+    "prereq": [
+      "dynamic-programming"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/dynamic-programming/bitmask-tsp/"
+  },
+  {
+    "id": "fenwick-tree",
+    "type": "structure",
+    "format": "snippet",
+    "topic": "data-structures",
+    "wip": false,
+    "name": {
+      "es": "Fenwick Tree (BIT)",
+      "en": "Fenwick Tree (BIT)"
+    },
+    "level": "advanced",
+    "difficulty": 4.0,
+    "techniques": [
+      "amortized"
+    ],
+    "tags": [
+      "range-query",
+      "point-update",
+      "logn"
+    ],
+    "prereq": [
+      "lists",
+      "prefix-sums"
+    ],
+    "related": [
+      "segment-tree"
+    ],
+    "complexity": "O(n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/data-structures/fenwick-tree/"
+  },
+  {
+    "id": "graph-coloring",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Graph coloring",
+      "en": "Graph coloring"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/graph-coloring/"
+  },
+  {
+    "id": "heap-sort",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Heap sort",
+      "en": "Heap sort"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "priority-queue"
+    ],
+    "related": [
+      "merge-sort"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/heap-sort/"
+  },
+  {
+    "id": "lca",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Lowest common ancestor",
+      "en": "Lowest common ancestor"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs",
+      "dfs"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/lca/"
+  },
+  {
+    "id": "matrix-exponentiation",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "arithmetics",
+    "wip": true,
+    "name": {
+      "es": "Matrix exponentiation",
+      "en": "Matrix exponentiation"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "matrix-multiplication",
+      "binary-exponentiation"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/arithmetics/matrix-exponentiation/"
+  },
+  {
+    "id": "max-flow",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Max flow",
+      "en": "Max flow"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs",
+      "bfs"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/max-flow/"
+  },
+  {
+    "id": "scc",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Strongly connected components",
+      "en": "Strongly connected components"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs",
+      "dfs"
+    ],
+    "related": [
+      "topological-sort"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/scc/"
+  },
+  {
+    "id": "tsp",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "graphs",
+    "wip": true,
+    "name": {
+      "es": "Travelling salesman problem",
+      "en": "Travelling salesman problem"
+    },
+    "level": "advanced",
+    "difficulty": 5.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "graphs"
+    ],
+    "related": [
+      "bitmask-tsp"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/graphs/tsp/"
+  },
+  {
+    "id": "bogosort",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "search",
+    "wip": true,
+    "name": {
+      "es": "Bogosort",
+      "en": "Bogosort"
+    },
+    "level": "expert",
+    "difficulty": 10.0,
+    "techniques": [],
+    "tags": [],
+    "prereq": [
+      "loops"
+    ],
+    "related": [],
+    "complexity": "",
+    "languages": [],
+    "url": "content/search/bogosort/"
+  },
+  {
+    "id": "convex-hull",
+    "type": "algorithm",
+    "format": "snippet",
+    "topic": "geometry",
+    "wip": false,
+    "name": {
+      "es": "Convex hull",
+      "en": "Convex hull"
+    },
+    "level": "expert",
+    "difficulty": 5.5,
+    "techniques": [
+      "geometry"
+    ],
+    "tags": [
+      "monotone-chain",
+      "andrew",
+      "geometry"
+    ],
+    "prereq": [
+      "comparisons"
+    ],
+    "related": [],
+    "complexity": "O(n log n)",
+    "languages": [
+      "cpp",
+      "py"
+    ],
+    "url": "content/geometry/convex-hull/"
+  }
+]
