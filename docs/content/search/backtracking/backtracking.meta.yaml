@@ -1,0 +1,13 @@
+id: backtracking
+type: technique
+topic: search
+name:
+  es: "Backtracking"
+  en: "Backtracking"
+level: beginner
+difficulty: 2.4
+techniques: []
+tags: []
+prerequisites: [recursion]
+current_version: v1
+wip: true

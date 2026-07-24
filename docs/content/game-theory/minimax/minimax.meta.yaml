@@ -1,0 +1,31 @@
+id: minimax
+type: algorithm
+topic: game-theory
+name:
+  es: MiniMax
+  en: MiniMax
+level: intermediate
+difficulty: 2.5
+techniques: [backtracking]
+tags: [game-theory, minimax, decision-making]
+prerequisites: [backtracking]
+current_version: v1
+signature:
+  es: "minimax(current_state, maximizing_player, possible_moves_funct, score_funct) -> best_value, best_move"
+  en: "minimax(current_state, maximizing_player, possible_moves_funct, score_funct) -> best_value, best_move"
+stats:
+  complexity:
+    time: "O(n)"
+    space: "O(n)"
+  use_case:
+    es: "Encontrar el mejor movimiento en un juego de dos jugadores."
+    en: "Find the best move in a two-player game."
+references:
+  - title: "Minimax Algorithm"
+    url: "https://en.wikipedia.org/wiki/Minimax"
+examples:
+  - input: |
+      2 3 5 8
+      1
+    expected_output: |
+      10 0
