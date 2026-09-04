@@ -1,0 +1,363 @@
+/* =========================================================================
+   CUNEF brand theme for Material for MkDocs.
+   Primary/accent = CUNEF orange, tuned for both light and dark schemes.
+   ========================================================================= */
+
+:root {
+  --cunef-orange: #ec6607;        /* CUNEF orange */
+  --cunef-orange-dark: #c4530a;
+  --cunef-orange-light: #ff8a3d;
+  --cunef-ink: #1b2733;
+
+  /* Canonical difficulty-level palette — the SINGLE source of truth for level
+     colours across the site (chips, matrix, overview badges, dependency graph).
+     Do not hard-code these hexes elsewhere; reference the token instead.
+     `--level-intermediate-ink` is a darker gold used only where the yellow
+     appears as TEXT/border (the fill yellow is illegible as small text). */
+  --level-base: #2e7d32;
+  --level-beginner: #1e88e5;
+  --level-intermediate: #f9a825;
+  --level-intermediate-ink: #8a6d00;
+  --level-advanced: #e53935;
+  --level-expert: #6a1b9a;
+}
+
+/* ---- Light scheme ---- */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--cunef-orange);
+  --md-primary-fg-color--light: var(--cunef-orange-light);
+  --md-primary-fg-color--dark: var(--cunef-orange-dark);
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--cunef-orange-dark);
+  --md-typeset-a-color: var(--cunef-orange-dark);
+}
+
+/* ---- Dark scheme ---- */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--cunef-orange);
+  --md-primary-fg-color--light: var(--cunef-orange-light);
+  --md-primary-fg-color--dark: var(--cunef-orange-dark);
+  --md-accent-fg-color: var(--cunef-orange-light);
+  --md-typeset-a-color: var(--cunef-orange-light);
+}
+
+/* =========================================================================
+   Layout: wider main content, slimmer side columns (nav + table of contents)
+   ========================================================================= */
+.md-grid { max-width: 74rem; }              /* Material default is 61rem */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { width: 11rem; }    /* left nav   (default 12.1rem) */
+  .md-sidebar--secondary { width: 9rem; }   /* right ToC  (default 12.1rem) */
+}
+
+/* Sticky tabs a touch bolder */
+.md-tabs__link { font-weight: 600; opacity: 0.9; }
+.md-tabs__link--active { opacity: 1; }
+
+/* =========================================================================
+   Header hover dropdowns (overrides/partials/tabs.html)
+   TODO(nav-dropdown): hover reveal is unreliable live; click-to-open is parked
+   (see assets/js/nav-dropdown.js). Tabs navigate to their index page meanwhile.
+   ========================================================================= */
+/* Let the menus escape the tab bar (Material clips these by default) */
+.md-header,
+.md-header__inner,
+.md-tabs,
+.md-tabs .md-grid,
+.md-tabs__list,
+.md-tabs__item { overflow: visible !important; }
+/* Keep the tab bar BELOW the header (z-index 4) so the language selector
+   dropdown, which lives in the header, is not covered by the tabs. */
+.md-tabs { position: relative; z-index: 3; }
+.md-tabs__item.cunef-has-menu { position: relative; }
+
+/* caret on items that have a menu */
+.cunef-has-menu > .md-tabs__link::after {
+  content: "▾";
+  display: inline-block;
+  font-size: 0.6rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+  transition: transform 0.15s ease;
+}
+.cunef-has-menu.cunef-open > .md-tabs__link::after { transform: rotate(180deg); }
+
+/* first-level menu */
+.cunef-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.3rem 0;
+  list-style: none;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  border-radius: 0.3rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  z-index: 100;
+}
+/* Opened by click (see assets/js/nav-dropdown.js). Hover kept as a bonus. */
+.cunef-has-menu.cunef-open > .cunef-menu,
+.cunef-has-menu:hover > .cunef-menu,
+.cunef-has-menu:focus-within > .cunef-menu { display: block; }
+.cunef-menu__index { font-weight: 700; }
+
+.cunef-menu li { position: relative; margin: 0; }
+.cunef-menu__link,
+.cunef-menu__label {
+  display: block;
+  padding: 0.42rem 0.9rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+}
+.cunef-menu__link:hover,
+.cunef-menu__group:hover > .cunef-menu__label {
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-primary-fg-color);
+}
+/* level rows get a right-caret to signal the fly-out */
+.cunef-menu__group > .cunef-menu__label::after {
+  content: "▸";
+  float: right;
+  opacity: 0.7;
+  margin-left: 0.6rem;
+}
+
+/* second-level fly-out */
+.cunef-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -0.3rem;
+  min-width: 15rem;
+  margin: 0;
+  padding: 0.3rem 0;
+  list-style: none;
+  background: var(--md-default-bg-color);
+  border-radius: 0.3rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+}
+.cunef-menu__group.cunef-subopen > .cunef-submenu,
+.cunef-menu__group:hover > .cunef-submenu { display: block; }
+
+/* Hover menus are a desktop affordance; on small screens Material uses the
+   drawer, where the tab bar isn't shown anyway. */
+@media screen and (max-width: 76.1875em) {
+  .cunef-menu, .cunef-submenu { display: none !important; }
+}
+
+/* =========================================================================
+   Home hero
+   ========================================================================= */
+.hero {
+  text-align: center;
+  padding: 2.2rem 1rem 1rem;
+}
+.hero img.hero-logo {
+  max-width: 340px;
+  width: 70%;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+.hero h1 {
+  font-weight: 800;
+  margin: 0.2rem 0 0.4rem;
+  border-bottom: none;        /* the hero title is centred; no section rule */
+  padding-bottom: 0;
+}
+.hero .hero-tagline {
+  font-size: 1.05rem;
+  max-width: 40rem;
+  margin: 0 auto 1.4rem;
+  color: var(--md-default-fg-color--light);
+}
+.hero .md-button { margin: 0.2rem 0.3rem; }
+
+/* =========================================================================
+   Page headings: bold titles, with a horizontal rule under the page title (h1)
+   and under each section heading (h2) so sections read as clearly separated.
+   ========================================================================= */
+.md-typeset h1 {
+  font-weight: 700;
+  color: var(--md-default-fg-color);          /* Material dims h1 by default */
+  border-bottom: 2px solid var(--md-primary-fg-color);   /* CUNEF orange accent */
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+.md-typeset h2 {
+  font-weight: 700;
+  border-bottom: 1px solid var(--md-default-fg-color--lighter);
+  padding-bottom: 0.25rem;
+  margin-top: 2.2rem;
+}
+.md-typeset h3 { font-weight: 700; }
+
+/* =========================================================================
+   Grid cards: level accent stripe + hover lift
+   ========================================================================= */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border-radius: 0.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  border-top: 3px solid var(--cunef-orange);
+}
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  border-top-color: var(--cunef-orange-dark);
+}
+
+/* =========================================================================
+   Contest cards (home)
+   ========================================================================= */
+.md-typeset .contest-grid > ul > li { text-align: center; }
+.md-typeset img.contest-logo {
+  background: #ffffff;                 /* keep transparent logos visible in dark mode */
+  border-radius: 0.5rem;
+  padding: 0.7rem 0.9rem;
+  height: 96px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0.2rem auto 0.9rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+.md-typeset .contest-grid .md-button { margin-top: 0.4rem; }
+
+/* Authors */
+.md-typeset .authors { list-style: none; padding-left: 0; }
+.md-typeset .authors li { margin: 0.2rem 0; }
+
+/* =========================================================================
+   Shared filter chips (catalog.js) — used by the graph and the tables
+   ========================================================================= */
+.md-typeset .cat-filters { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; align-items: center; margin: 0.5rem 0; }
+.cat-fgroup { display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+.cat-fgroup__title { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.6; margin-right: 0.15rem; }
+.cat-chip {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  border-radius: 1rem; padding: 0.12rem 0.6rem;
+  font-size: 0.72rem; line-height: 1.4; cursor: pointer; opacity: 0.5;
+  transition: opacity 0.12s ease, background 0.12s ease;
+}
+.cat-chip:hover { opacity: 0.85; }
+.cat-chip.is-active { opacity: 1; font-weight: 700; }
+/* "Todos / Ninguno" bulk buttons: distinct, no active state */
+.cat-chip--bulk { opacity: 0.9; font-size: 0.66rem; border-style: dashed; }
+.cat-chip--bulk:hover { opacity: 1; background: var(--md-default-fg-color--lightest); }
+/* "En construcción" toggle */
+.cat-chip--wip.is-active { background: #9e9e9e33; border-color: #757575; }
+
+/* =========================================================================
+   Work-in-progress (wip) elements: dashed shape borders + crane marker
+   ========================================================================= */
+.md-typeset .cat-badge.cat-badge--wip { border: 1.5px dashed currentColor; }
+.md-typeset .ov-row--wip .ov-type,
+.md-typeset .ov-row--wip .ov-badge { border: 1.5px dashed currentColor; }
+.md-typeset .ov-row--wip { opacity: 0.85; }
+.wip-crane { margin-left: 0.15rem; }
+
+/* WIP (not-yet-implemented) entries in the left sidebar: grayed out.
+   The current page still highlights normally (exclude the active link). */
+.md-nav__link--wip:not(.md-nav__link--active) { color: var(--md-default-fg-color--light); }
+
+/* ToDo page */
+.todo-count { opacity: 0.7; font-size: 0.85rem; }
+.md-typeset .todo-level { margin: 0.8rem 0 0.2rem; }
+.md-typeset .todo-ul { margin-top: 0.2rem; }
+.todo-meta { opacity: 0.65; font-size: 0.85em; }
+.cat-chip--level-base.is-active         { background: #2e7d3226; border-color: var(--level-base); }
+.cat-chip--level-beginner.is-active     { background: #1e88e526; border-color: var(--level-beginner); }
+.cat-chip--level-intermediate.is-active { background: #f9a82533; border-color: var(--level-intermediate); }
+.cat-chip--level-advanced.is-active     { background: #e5393526; border-color: var(--level-advanced); }
+.cat-chip--level-expert.is-active       { background: #6a1b9a26; border-color: var(--level-expert); }
+/* Type chips share ONE neutral colour: type is not a colour dimension here
+   (elements are coloured by level), so per-type colours would be misleading. */
+.cat-chip--type-technique.is-active,
+.cat-chip--type-algorithm.is-active,
+.cat-chip--type-structure.is-active     { background: #455a6422; border-color: #455a64; color: inherit; }
+
+/* =========================================================================
+   Content badges (matrix) + matrix table
+   ========================================================================= */
+.md-typeset .cat-badge {
+  display: inline-block; margin: 0.12rem 0.18rem; padding: 0.1rem 0.5rem;
+  border-radius: 0.5rem; font-size: 0.72rem; font-weight: 600; text-decoration: none;
+  border: 1px solid currentColor;   /* all entries have a defined edge (WIP = dashed) */
+}
+.md-typeset .cat-badge:hover { filter: brightness(0.95); }
+
+.matrix__scroll { overflow-x: auto; }
+.md-typeset table.matrix { width: 100%; border-collapse: collapse; display: table; }
+.md-typeset .matrix th, .md-typeset .matrix td {
+  border: 1px solid var(--md-default-fg-color--lightest); padding: 0.5rem 0.6rem;
+  vertical-align: top; text-align: left;
+}
+.md-typeset .matrix thead th { font-weight: 700; }
+.matrix__level { font-weight: 700; white-space: nowrap; }
+.matrix__empty { opacity: 0.4; }
+.matrix__row--base .matrix__level         { color: var(--level-base); }
+.matrix__row--beginner .matrix__level     { color: var(--level-beginner); }
+.matrix__row--intermediate .matrix__level { color: var(--level-intermediate-ink); }
+.matrix__row--advanced .matrix__level     { color: var(--level-advanced); }
+.matrix__row--expert .matrix__level       { color: var(--level-expert); }
+.matrix__row--base         { background: #2e7d3212; }
+.matrix__row--beginner     { background: #1e88e512; }
+.matrix__row--intermediate { background: #f9a82519; }
+.matrix__row--advanced     { background: #e5393512; }
+.matrix__row--expert       { background: #6a1b9a12; }
+
+/* =========================================================================
+   Dependency graph container (graph.js)
+   ========================================================================= */
+.depgraph { min-height: 220px; overflow-x: auto; margin-top: 0.5rem; }
+.depgraph svg { max-width: 100%; height: auto; }
+.depgraph-loading, .depgraph-empty, .depgraph-fallback-msg { opacity: 0.7; font-size: 0.85rem; }
+
+/* Topic icons (next to titles, table names, graph/matrix nodes) */
+.topic-icon { font-style: normal; line-height: 1; }
+.topic-icon--title { font-size: 0.75em; margin-left: 0.45rem; opacity: 0.85; vertical-align: middle; }
+.md-typeset .ov-td--name .topic-icon { margin-right: 0.1rem; }
+.md-typeset a.topic-icon--link { text-decoration: none; cursor: pointer; }
+.md-typeset a.topic-icon--link:hover { filter: brightness(1.15); }
+
+/* Topic filter chips: single accent (CUNEF orange) when active */
+.cat-chip[class*="cat-chip--topic-"].is-active { background: #ec660722; border-color: #ec6607; color: inherit; }
+
+/* Level-coloured badges (Temas page) */
+.md-typeset .cat-lvl--base         { background: #e6f4ea; color: #1b5e20; }
+.md-typeset .cat-lvl--beginner     { background: #e3f0fd; color: #0d47a1; }
+.md-typeset .cat-lvl--intermediate { background: #fdf3d7; color: #7a5b00; }
+.md-typeset .cat-lvl--advanced     { background: #fde3e1; color: #b71c1c; }
+.md-typeset .cat-lvl--expert       { background: #efe4f7; color: #4a148c; }
+
+/* Content-type badges (overview table) */
+.md-typeset .ov-type {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.6rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  border: 1px solid currentColor;   /* solid edge for all rows; WIP rows override to dashed */
+}
+.ov-type--technique { background: #d7f0ea; color: #00695c; }
+.ov-type--algorithm { background: #dbeafe; color: #1565c0; }
+.ov-type--structure { background: #f0e0f7; color: #6a1b9a; }
+
+/* Figures with captions */
+.md-typeset figure.algo-figure { margin: 1.2rem auto; text-align: center; }
+.md-typeset figure.algo-figure img,
+.md-typeset figure.algo-figure svg { max-width: min(100%, 460px); height: auto; }
+.md-typeset figure.algo-figure figcaption {
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  margin-top: 0.4rem;
+}

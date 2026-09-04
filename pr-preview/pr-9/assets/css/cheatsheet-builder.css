@@ -1,0 +1,204 @@
+/*
+ * cheatsheet-builder.css — styling for the visual cheatsheet builder
+ * (#cheatsheet-builder), rendered by cheatsheet-builder.js.
+ *
+ * Colours are derived from Material theme variables so the builder works in
+ * both light and dark; the dark scheme is refined under the
+ * [data-md-color-scheme="slate"] selector. Nothing hardcodes a single mode.
+ */
+#cheatsheet-builder {
+  --csb-border: var(--md-default-fg-color--lighter, rgba(0, 0, 0, 0.12));
+  --csb-bg: var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.03));
+  --csb-control-bg: var(--md-default-bg-color, #fff);
+  --csb-accent: var(--md-accent-fg-color, #536dfe);
+  --csb-primary: var(--md-primary-fg-color, #3f51b5);
+  --csb-primary-fg: var(--md-primary-bg-color, #fff);
+
+  margin: 1rem 0;
+}
+
+[data-md-color-scheme="slate"] #cheatsheet-builder {
+  --csb-border: var(--md-default-fg-color--lighter, rgba(255, 255, 255, 0.15));
+  --csb-bg: var(--md-default-fg-color--lightest, rgba(255, 255, 255, 0.05));
+}
+
+/* ---- Controls ---------------------------------------------------------- */
+.csb-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  align-items: flex-end;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--csb-border);
+  border-radius: 0.4rem;
+  background: var(--csb-bg);
+}
+
+.csb-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+}
+
+.csb-field--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.csb-field-label {
+  color: var(--md-default-fg-color--light);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.csb-input,
+.csb-select {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.4rem;
+  color: var(--md-default-fg-color);
+  background: var(--csb-control-bg);
+  border: 1px solid var(--csb-border);
+  border-radius: 0.25rem;
+}
+
+.csb-input:focus,
+.csb-select:focus {
+  outline: 2px solid var(--csb-accent);
+  outline-offset: 1px;
+}
+
+.csb-check {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--csb-primary);
+}
+
+/* ---- Algorithm groups -------------------------------------------------- */
+.csb-algos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.csb-group {
+  margin: 0;
+  padding: 0.4rem 0.7rem 0.7rem;
+  border: 1px solid var(--csb-border);
+  border-radius: 0.4rem;
+}
+
+.csb-group-legend {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--csb-accent);
+  padding: 0 0.35rem;
+}
+
+.csb-algo-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.2rem 0;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.csb-algo-row:hover {
+  color: var(--csb-accent);
+}
+
+.csb-algo {
+  accent-color: var(--csb-primary);
+}
+
+.csb-algo-name {
+  flex: 1;
+}
+
+.csb-algo-id {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+  background: var(--csb-bg);
+  padding: 0.05rem 0.3rem;
+  border-radius: 0.2rem;
+}
+
+/* ---- Actions + output -------------------------------------------------- */
+.csb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.csb-btn {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  color: var(--md-default-fg-color);
+  background: var(--csb-control-bg);
+  border: 1px solid var(--csb-border);
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.csb-btn:hover {
+  border-color: var(--csb-accent);
+  color: var(--csb-accent);
+}
+
+.csb-btn:focus-visible {
+  outline: 2px solid var(--csb-accent);
+  outline-offset: 1px;
+}
+
+.csb-btn--primary {
+  background: var(--csb-primary);
+  color: var(--csb-primary-fg);
+  border-color: var(--csb-primary);
+}
+
+.csb-btn--primary:hover {
+  color: var(--csb-primary-fg);
+  filter: brightness(1.1);
+}
+
+.csb-result-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.csb-download {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.csb-output {
+  max-height: 24rem;
+  overflow: auto;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--csb-border);
+  border-radius: 0.4rem;
+  background: var(--csb-bg);
+  white-space: pre;
+}
+
+.csb-message {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--csb-border);
+  border-left: 3px solid var(--csb-accent);
+  border-radius: 0.3rem;
+  background: var(--csb-bg);
+  font-size: 0.9rem;
+}
