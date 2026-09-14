@@ -1,46 +1,63 @@
 name: Kattis standings
 
-# Weekly job: scrape the CUNEF Kattis affiliation ranking and update the standings
-# JSON on a rolling pull request (branch `bot/standings`) — it NEVER commits to
-# main. Each run appends a dated snapshot (history is preserved: a new date is
-# appended, a same-date entry is refreshed), and the maintainer reviews & merges
-# the single open PR whenever ready. Runs every Monday morning and on manual
-# dispatch; if a PR is already open it just adds a commit to it, otherwise it
-# opens one.
+# Weekly job: scrape the CUNEF Kattis affiliation ranking, update the standings
+# JSON, and commit it straight to `main`. Fully automatic — no pull request, no
+# approval. Runs every Monday morning and on manual dispatch (Actions tab -> Run
+# workflow), which does exactly the same thing.
+#
+# Each run appends a dated snapshot (history is preserved: a new date is appended,
+# a same-date entry is refreshed), because scrape_kattis.py loads the current JSON
+# and upserts today's entry.
 #
 # It uses a headless browser (--browser) because Kattis returns 403 to plain HTTP
 # scripts. If Kattis blocks the CI runner the job does NOT fail; it just keeps the
-# previous data. The reliable manual fallback is to save the page in a browser and
-# run:  python tools/scrape_kattis.py --html-file page.html
+# previous data and skips the deploy. The reliable manual fallback is to save the
+# page in a browser and run:  python tools/scrape_kattis.py --html-file page.html
 #
-# Note: because the PR is opened with GITHUB_TOKEN, GitHub does not trigger the
-# other on:pull_request workflows for it (anti-recursion) — that is fine for a
-# data-only change; review the diff and merge.
+# Two notes on why the `deploy` job exists:
+#  - The ranklist page fetches assets/data/standings.json from the DEPLOYED site,
+#    so the commit alone changes nothing until gh-pages is refreshed.
+#  - A push made with GITHUB_TOKEN does not trigger other workflows (GitHub's
+#    anti-recursion rule), so docs.yml will NOT run on the bot commit. We call it
+#    explicitly instead, pinned to the commit we just made.
+#
+# The bot may ONLY ever change $DATA_FILE. GitHub cannot scope a branch bypass to
+# a single path, so the restriction is enforced here, in the `Commit to main`
+# step: the run aborts unless the delta it is about to push is exactly one commit
+# changing exactly that one file. See the guards on that step.
+#
+# Repo settings this needs: `main` must accept a push from github-actions[bot]
+# (either unprotected, or the bot listed as a bypass actor in the branch ruleset).
 
 on:
   schedule:
     - cron: "0 6 * * 1"   # every Monday at 06:00 UTC
-  workflow_dispatch:       # allow manual runs from the Actions tab
+  workflow_dispatch:       # manual runs from the Actions tab
 
 permissions:
-  contents: write        # push the bot/standings branch (not main)
-  pull-requests: write   # open / update the rolling PR
+  contents: write          # commit standings.json to main
 
 concurrency:
   group: kattis-standings
   cancel-in-progress: false
 
 env:
-  BRANCH: bot/standings
   DATA_FILE: docs/assets/data/standings.json
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
     steps:
+      # Always scrape and commit on top of `main`, whatever ref the run was
+      # dispatched from — the job's whole purpose is to update main.
+      # Full history so the pre-push rebase below has something to rebase onto.
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # full history: needed to reset/rebase the rolling branch
+          ref: main
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -52,59 +69,94 @@ jobs:
       - name: Install Chromium for Playwright
         run: python -m playwright install --with-deps chromium
 
-      # Roll onto bot/standings: if a PR is already open, reuse that branch so its
-      # accumulated snapshots are the base the scraper appends to; otherwise start
-      # the branch fresh from main (whatever history was last merged). THIS is what
-      # makes the scrape append to the series instead of resetting it.
-      - name: Prepare rolling branch
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch --no-tags origin main
-          git fetch --no-tags origin "$BRANCH" || true
-          PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // ""')
-          echo "PR_NUMBER=$PR" >> "$GITHUB_ENV"
-          if [ -n "$PR" ] && git show-ref --verify --quiet "refs/remotes/origin/$BRANCH"; then
-            echo "Open PR #$PR found — reusing $BRANCH (keeps its snapshot history)."
-            git checkout -B "$BRANCH" "origin/$BRANCH"
-          else
-            echo "No open PR — starting $BRANCH fresh from origin/main."
-            git checkout -B "$BRANCH" origin/main
-          fi
-
       # Best-effort: don't fail the job if Kattis blocks the runner; just keep the
-      # existing data. scrape_kattis.py loads the current JSON and upserts today's
-      # snapshot (same date -> replaced; new date -> appended), preserving history.
+      # existing data (the file stays unchanged, so nothing is committed below).
       - name: Scrape standings (headless browser)
         run: |
           python tools/scrape_kattis.py --browser -v \
             || echo "::warning::Kattis scrape failed (likely bot protection); keeping previous standings."
 
-      # Commit only if standings.json actually changed, push to the rolling branch
-      # (never main), and open the PR the first time.
-      - name: Commit, push, and open PR if needed
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # This job may ONLY ever change $DATA_FILE. Three guards enforce it; each
+      # one aborts the run rather than committing something unexpected, because a
+      # scrape that rewrites other files is a bug (or tampering), not a new state
+      # worth publishing. Guard 3 is the decisive one: it inspects the complete
+      # delta the push would introduce, after the rebase.
+      - name: Commit to main
+        id: commit
         run: |
           set -euo pipefail
+
+          # --- Guard 1: nothing outside the data file may have been touched.
+          # Covers modified, deleted and newly untracked paths alike (files that
+          # .gitignore already excludes, such as __pycache__/, are not reported).
+          UNEXPECTED=$(git status --porcelain --untracked-files=all \
+                         -- . ":(exclude)$DATA_FILE")
+          if [ -n "$UNEXPECTED" ]; then
+            echo "::error::Scrape touched files other than $DATA_FILE — refusing to commit."
+            echo "$UNEXPECTED"
+            exit 1
+          fi
+
           if git diff --quiet -- "$DATA_FILE"; then
-            echo "No change in $DATA_FILE — nothing to push."
+            echo "No change in $DATA_FILE — nothing to commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git add "$DATA_FILE"
+
+          # --- Guard 2: never publish a standings file we cannot parse, or whose
+          # newest snapshot is empty (a scrape that silently found nobody).
+          python - <<'PY'
+          import json, os, sys
+          path = os.environ["DATA_FILE"]
+          try:
+              data = json.load(open(path, encoding="utf-8"))
+          except (OSError, ValueError) as exc:
+              sys.exit(f"::error::{path} is not valid JSON: {exc}")
+          snapshots = data.get("snapshots") or []
+          if not snapshots:
+              sys.exit(f"::error::{path} has no snapshots")
+          newest = max(snapshots, key=lambda s: s.get("date", ""))
+          if not (newest.get("members") or []):
+              sys.exit(f"::error::newest snapshot ({newest.get('date')}) has no members")
+          print(f"{path} OK: {len(snapshots)} snapshots, newest {newest['date']} "
+                f"with {len(newest['members'])} members")
+          PY
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$DATA_FILE"
           git commit -m "data: update Kattis standings [bot]"
-          # Normal push handles a new branch and the fast-forward "reuse open PR"
-          # case; the force-with-lease fallback handles the "reset fresh from main
-          # over a stale merged/closed branch" case without clobbering surprises.
-          git push origin "$BRANCH" || git push --force-with-lease origin "$BRANCH"
-          if [ -z "${PR_NUMBER:-}" ]; then
-            gh pr create --base main --head "$BRANCH" \
-              --title "data: update Kattis standings" \
-              --body "Automated Kattis standings update on a rolling branch. Each run appends a **dated snapshot** (history preserved: a new date is appended, a same-date entry refreshed). Review the diff and merge (rebase) when ready; close the PR to discard the pending snapshots."
-            echo "Opened a new standings PR."
-          else
-            echo "Added a commit to existing PR #${PR_NUMBER}."
+
+          # Replay onto whatever landed on main while we were scraping, so the
+          # push below is a plain fast-forward and never needs --force.
+          git fetch --no-tags origin main
+          git rebase origin/main
+
+          # --- Guard 3: the push must add exactly one commit touching exactly one
+          # file. Checking the whole origin/main..HEAD range means nothing can ride
+          # along on the bot's push, whatever the rebase pulled in.
+          COMMITS=$(git rev-list --count origin/main..HEAD)
+          FILES=$(git diff --name-only origin/main..HEAD)
+          if [ "$COMMITS" != "1" ] || [ "$FILES" != "$DATA_FILE" ]; then
+            echo "::error::Refusing to push: expected 1 commit changing only $DATA_FILE."
+            echo "commits: $COMMITS"
+            echo "files:"
+            echo "$FILES"
+            exit 1
           fi
+
+          git push origin HEAD:main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  # Rebuild and publish the site at the commit we just pushed, so the ranklist
+  # page actually serves the new JSON. Reuses docs.yml — no duplicated build.
+  deploy:
+    needs: scrape
+    if: needs.scrape.outputs.changed == 'true'
+    permissions:
+      contents: write        # push the built site to gh-pages
+      pull-requests: write   # docs.yml declares it; a caller must grant at least as much
+    uses: ./.github/workflows/docs.yml
+    with:
+      ref: ${{ needs.scrape.outputs.sha }}

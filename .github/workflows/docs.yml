@@ -7,6 +7,16 @@ on:
     branches: [main]
     types: [opened, reopened, synchronize, closed]
   workflow_dispatch:
+  # Callable by other workflows (kattis.yml) so a bot commit to main can be
+  # published: a GITHUB_TOKEN push does not trigger on:push, so the updater
+  # invokes this workflow itself, pinned to the commit it just pushed.
+  workflow_call:
+    inputs:
+      ref:
+        description: "Commit/ref to build. Empty = the commit that triggered the run."
+        type: string
+        required: false
+        default: ""
 
 permissions:
   contents: write        # push the built site to the gh-pages branch
@@ -21,6 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
       - uses: actions/setup-python@v5
         with:
@@ -61,7 +73,7 @@ jobs:
       # Production: pushes to main publish to the root of gh-pages.
       # keep_files preserves the pr-preview/ subdirectories of open PRs.
       - name: Deploy production (main)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -11,12 +11,27 @@ han cambiado las posiciones a lo largo del tiempo. ¡Que empiece la sana competi
     ejecuta el *scraper* periódicamente). Si el sitio se abre sin conexión, se
     mostrarán datos de ejemplo.
 
+Elige el **intervalo** que quieres mirar: un atajo (día, semana, mes, año) o un
+rango de fechas a medida. Los cambios de posición y de puntos que aparecen a la
+derecha son siempre los ocurridos dentro de ese intervalo. Pulsa cualquier
+cabecera de la tabla para **ordenar** por esa columna.
+
 <div class="ranklist-controls" markdown="0">
-  <span class="ranklist-controls__label">Comparar con:</span>
-  <div class="ranklist-controls__buttons" role="group" aria-label="Ventana de comparación">
-    <button type="button" class="ranklist-btn" data-window="day">Día</button>
-    <button type="button" class="ranklist-btn is-active" data-window="week">Semana</button>
-    <button type="button" class="ranklist-btn" data-window="year">Año</button>
+  <div class="ranklist-controls__group">
+    <span class="ranklist-controls__label" id="ranklist-window-label">Comparar con:</span>
+    <div class="ranklist-controls__buttons" role="group" aria-labelledby="ranklist-window-label">
+      <button type="button" class="ranklist-btn" data-window="day">Día</button>
+      <button type="button" class="ranklist-btn is-active" data-window="week">Semana</button>
+      <button type="button" class="ranklist-btn" data-window="month">Mes</button>
+      <button type="button" class="ranklist-btn" data-window="year">Año</button>
+    </div>
+  </div>
+  <div class="ranklist-controls__group">
+    <label class="ranklist-controls__label" for="ranklist-from">Desde</label>
+    <input type="date" id="ranklist-from" class="ranklist-date">
+    <label class="ranklist-controls__label" for="ranklist-to">Hasta</label>
+    <input type="date" id="ranklist-to" class="ranklist-date">
+    <button type="button" class="ranklist-reset" id="ranklist-reset">Limpiar</button>
   </div>
 </div>
 
