@@ -4176,7 +4176,7 @@ conviene evitar los bucles anidados innecesarios.</p>
 <h2 id="patron-acumulador">Patrón acumulador<a class="headerlink" href="#patron-acumulador" title="Permanent link">#</a></h2>
 <p>Una variable <em>fuera</em> del bucle que se actualiza en cada vuelta (suma, máximo, contador…):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>                    <span class="c1"># acumulador de suma</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">maximo</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;-inf&quot;</span><span class="p">)</span>      <span class="c1"># &quot;peor caso&quot; inicial para un máximo</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">maximo</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"-inf"</span><span class="p">)</span>      <span class="c1"># "peor caso" inicial para un máximo</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">pares</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># contador</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">v</span><span class="p">:</span>
@@ -4207,7 +4207,7 @@ más cómodo es leerlo todo de golpe y trocearlo:</p>
 </code></pre></div>
 <h2 id="ejemplo-completo">Ejemplo completo<a class="headerlink" href="#ejemplo-completo" title="Permanent link">#</a></h2>
 <p>Lee <code>n</code> números y muestra su suma:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="sd">&quot;&quot;&quot;Loops demo — read n numbers and print their sum.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="sd">"""Loops demo — read n numbers and print their sum.</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="sd">Illustrates a ``for`` loop with the accumulator pattern: a variable declared</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="sd">outside the loop (``total``) is updated on every iteration. This is the building</span>
@@ -4217,7 +4217,7 @@ más cómodo es leerlo todo de golpe y trocearlo:</p>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="sd">    An integer ``n``, then ``n`` integers (whitespace-separated).</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="sd">Output:</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="sd">    A single line with the sum of the ``n`` integers.</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="sd">"""</span>
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
 <a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>

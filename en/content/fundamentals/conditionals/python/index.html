@@ -4041,11 +4041,11 @@ suele ser una <a href="../../comparisons/">comparación</a> (<code>a &gt; b</cod
 se comprueban en orden: la primera condición verdadera ejecuta su bloque y <strong>se salta
 el resto</strong>; un <code>elif</code> sólo se mira cuando todos los anteriores fallaron.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a es mayor&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"a es mayor"</span><span class="p">)</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">elif</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">:</span>          <span class="c1"># sólo se comprueba si `a &gt; b` fue falso</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b es mayor&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"b es mayor"</span><span class="p">)</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">else</span><span class="p">:</span>                <span class="c1"># ni mayor ni menor =&gt; iguales</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;son iguales&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"son iguales"</span><span class="p">)</span>
 </code></pre></div>
 <figure class="algo-figure">
   <img src="../media/if-else-flow.svg"
@@ -4075,12 +4075,12 @@ más larga, un <code>if</code> normal se lee mejor.</p>
 <p>Compara un valor contra varios <strong>patrones</strong> de arriba abajo y ejecuta el primero que
 encaje. <code>_</code> es el caso por defecto y <code>|</code> agrupa varios patrones:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">match</span> <span class="n">comando</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">case</span> <span class="s2">&quot;salir&quot;</span><span class="p">:</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;adiós&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">case</span> <span class="s2">&quot;hola&quot;</span> <span class="o">|</span> <span class="s2">&quot;hey&quot;</span><span class="p">:</span>    <span class="c1"># varios patrones en un mismo case</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡hola!&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">case</span> <span class="s2">"salir"</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"adiós"</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">case</span> <span class="s2">"hola"</span> <span class="o">|</span> <span class="s2">"hey"</span><span class="p">:</span>    <span class="c1"># varios patrones en un mismo case</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"¡hola!"</span><span class="p">)</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>                 <span class="c1"># cualquier otro valor</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;no entiendo&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"no entiendo"</span><span class="p">)</span>
 </code></pre></div>
 <p>Para dos o tres opciones simples, una cadena de <code>if</code> / <code>elif</code> es igual de clara.</p>
 <h2 id="veracidad-de-un-valor">Veracidad de un valor<a class="headerlink" href="#veracidad-de-un-valor" title="Permanent link">#</a></h2>
@@ -4107,13 +4107,13 @@ Así se comprueba "hay datos" de forma idiomática:</p>
 </ul>
 <h2 id="ejemplo-completo">Ejemplo completo<a class="headerlink" href="#ejemplo-completo" title="Permanent link">#</a></h2>
 <p>Muestra el mayor de dos números:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="sd">&quot;&quot;&quot;Conditionals demo — print the larger of two numbers.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="sd">"""Conditionals demo — print the larger of two numbers.</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">Shows `if` / `else`: choosing what to do based on a condition.</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">Input:  two integers a and b (separated by whitespace).</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">Output: the larger of the two (or either one when they are equal).</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sd">"""</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
