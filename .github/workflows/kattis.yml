@@ -1,33 +1,40 @@
 name: Kattis standings
 
-# Weekly job: scrape the CUNEF Kattis affiliation ranking, update the standings
-# JSON, and commit it straight to `main`. Fully automatic — no pull request, no
-# approval. Runs every Monday morning and on manual dispatch (Actions tab -> Run
-# workflow), which does exactly the same thing.
+# Weekly job: scrape the CUNEF Kattis affiliation ranking and commit the updated
+# standings JSON to the `standing-data` branch. Fully automatic — no pull
+# request, no approval. Runs every Monday morning and on manual dispatch
+# (Actions tab -> Run workflow), which does exactly the same thing.
 #
-# Each run appends a dated snapshot (history is preserved: a new date is appended,
-# a same-date entry is refreshed), because scrape_kattis.py loads the current JSON
-# and upserts today's entry.
+# Why a separate branch:
+#  - `main` is protected by a repository ruleset and may be written by other
+#    actors, so the bot must not push there.
+#  - `standing-data` is an ORPHAN branch holding a single file, standings.json,
+#    at its root. It shares no history with `main` and contains no workflows and
+#    no code, so the bot's write access cannot reach `.github/` or `tools/` even
+#    in principle — the branch topology enforces what guards alone used to.
+#
+# Why there is no deploy step: the ranking page fetches standings.json straight
+# from this branch over raw.githubusercontent.com at page load (see DATA_URL in
+# docs/assets/js/ranklist.js), so a push here is immediately live. The site never
+# needs rebuilding for a data update, and `main`'s copy of standings.json is read
+# by nothing.
+#
+# TODO (trabajo futuro): Make an automation to update the main branch standing
+# with the data in the data branch. `main`'s docs/assets/data/standings.json is
+# the seed this branch was created from and is now read by nothing, so it drifts
+# further out of date with every run here. It still needs a way onto `main` that
+# does not require the bot to push there (the ruleset forbids it) — most likely a
+# periodic job that opens a PR with the refreshed file for review, which is fine
+# for a copy nothing serves.
+#
+# Each run appends a dated snapshot (history is preserved: a new date is
+# appended, a same-date entry is refreshed), because scrape_kattis.py loads the
+# JSON at --output and upserts today's entry into it.
 #
 # It uses a headless browser (--browser) because Kattis returns 403 to plain HTTP
 # scripts. If Kattis blocks the CI runner the job does NOT fail; it just keeps the
-# previous data and skips the deploy. The reliable manual fallback is to save the
-# page in a browser and run:  python tools/scrape_kattis.py --html-file page.html
-#
-# Two notes on why the `deploy` job exists:
-#  - The ranklist page fetches assets/data/standings.json from the DEPLOYED site,
-#    so the commit alone changes nothing until gh-pages is refreshed.
-#  - A push made with GITHUB_TOKEN does not trigger other workflows (GitHub's
-#    anti-recursion rule), so docs.yml will NOT run on the bot commit. We call it
-#    explicitly instead, pinned to the commit we just made.
-#
-# The bot may ONLY ever change $DATA_FILE. GitHub cannot scope a branch bypass to
-# a single path, so the restriction is enforced here, in the `Commit to main`
-# step: the run aborts unless the delta it is about to push is exactly one commit
-# changing exactly that one file. See the guards on that step.
-#
-# Repo settings this needs: `main` must accept a push from github-actions[bot]
-# (either unprotected, or the bot listed as a bypass actor in the branch ruleset).
+# previous data. The reliable manual fallback is to save the page in a browser and
+# run:  python tools/scrape_kattis.py --html-file page.html
 
 on:
   schedule:
@@ -35,28 +42,35 @@ on:
   workflow_dispatch:       # manual runs from the Actions tab
 
 permissions:
-  contents: write          # commit standings.json to main
+  contents: write          # commit standings.json to the standing-data branch
 
 concurrency:
   group: kattis-standings
   cancel-in-progress: false
 
 env:
-  DATA_FILE: docs/assets/data/standings.json
+  BRANCH: standing-data
+  # Where the standing-data checkout lives inside the workspace, and the single
+  # file it holds. The scraper reads AND writes this path, so it appends to the
+  # branch's own history rather than to main's stale seed copy.
+  DATA_DIR: .standings
+  DATA_FILE: standings.json
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    outputs:
-      changed: ${{ steps.commit.outputs.changed }}
-      sha: ${{ steps.commit.outputs.sha }}
     steps:
-      # Always scrape and commit on top of `main`, whatever ref the run was
-      # dispatched from — the job's whole purpose is to update main.
-      # Full history so the pre-push rebase below has something to rebase onto.
+      # The code (tools/scrape_kattis.py) lives on main...
       - uses: actions/checkout@v4
         with:
           ref: main
+
+      # ...and the data lives on standing-data. Full history so the pre-push
+      # rebase below has something to rebase onto.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BRANCH }}
+          path: ${{ env.DATA_DIR }}
           fetch-depth: 0
 
       - uses: actions/setup-python@v5
@@ -74,21 +88,28 @@ jobs:
       - name: Scrape standings (headless browser)
         run: |
           python tools/scrape_kattis.py --browser -v \
+            --output "$DATA_DIR/$DATA_FILE" \
             || echo "::warning::Kattis scrape failed (likely bot protection); keeping previous standings."
 
-      # This job may ONLY ever change $DATA_FILE. Three guards enforce it; each
-      # one aborts the run rather than committing something unexpected, because a
-      # scrape that rewrites other files is a bug (or tampering), not a new state
-      # worth publishing. Guard 3 is the decisive one: it inspects the complete
-      # delta the push would introduce, after the rebase.
-      - name: Commit to main
+      # This job may ONLY ever change $DATA_FILE on $BRANCH. The branch holding
+      # nothing else makes that almost automatic, but the guards stay: each one
+      # aborts the run rather than committing something unexpected, because a
+      # scrape that writes anything else — or unparseable JSON — is a bug, not a
+      # new state worth publishing to a live page.
+      - name: Commit to the data branch
         id: commit
+        working-directory: ${{ env.DATA_DIR }}
         run: |
           set -euo pipefail
 
+          # The commit our scrape was based on. standings.json is a full document
+          # (previous history + today's snapshot upserted into it), so if the
+          # branch moves under us our file is derived from stale input and must
+          # not be pushed — see the staleness check before the push.
+          BASE=$(git rev-parse HEAD)
+
           # --- Guard 1: nothing outside the data file may have been touched.
-          # Covers modified, deleted and newly untracked paths alike (files that
-          # .gitignore already excludes, such as __pycache__/, are not reported).
+          # Covers modified, deleted and newly untracked paths alike.
           UNEXPECTED=$(git status --porcelain --untracked-files=all \
                          -- . ":(exclude)$DATA_FILE")
           if [ -n "$UNEXPECTED" ]; then
@@ -99,12 +120,12 @@ jobs:
 
           if git diff --quiet -- "$DATA_FILE"; then
             echo "No change in $DATA_FILE — nothing to commit."
-            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
           # --- Guard 2: never publish a standings file we cannot parse, or whose
-          # newest snapshot is empty (a scrape that silently found nobody).
+          # newest snapshot is empty (a scrape that silently found nobody). The
+          # page reads this branch directly, so a bad file breaks it immediately.
           python - <<'PY'
           import json, os, sys
           path = os.environ["DATA_FILE"]
@@ -127,16 +148,24 @@ jobs:
           git add -- "$DATA_FILE"
           git commit -m "data: update Kattis standings [bot]"
 
-          # Replay onto whatever landed on main while we were scraping, so the
-          # push below is a plain fast-forward and never needs --force.
-          git fetch --no-tags origin main
-          git rebase origin/main
+          # --- Guard 3: the branch must not have moved while we were scraping.
+          # Our standings.json was built from $BASE, so if someone else pushed
+          # meanwhile (a manual fix, say) merging the two would risk dropping
+          # their edit. Abort instead: the next run re-scrapes on top of their
+          # commit and succeeds. This also makes the push below a guaranteed
+          # fast-forward, so it never needs --force.
+          git fetch --no-tags origin "$BRANCH"
+          REMOTE=$(git rev-parse "origin/$BRANCH")
+          if [ "$REMOTE" != "$BASE" ]; then
+            echo "::error::$BRANCH moved while we were scraping (based on ${BASE:0:7}, remote is now ${REMOTE:0:7}). Nothing pushed — re-run the job to scrape on top of the new data."
+            exit 1
+          fi
 
-          # --- Guard 3: the push must add exactly one commit touching exactly one
-          # file. Checking the whole origin/main..HEAD range means nothing can ride
-          # along on the bot's push, whatever the rebase pulled in.
-          COMMITS=$(git rev-list --count origin/main..HEAD)
-          FILES=$(git diff --name-only origin/main..HEAD)
+          # --- Guard 4: the push must add exactly one commit touching exactly one
+          # file. Checking the whole origin/$BRANCH..HEAD range is the last word
+          # on what this job is allowed to publish.
+          COMMITS=$(git rev-list --count "origin/$BRANCH..HEAD")
+          FILES=$(git diff --name-only "origin/$BRANCH..HEAD")
           if [ "$COMMITS" != "1" ] || [ "$FILES" != "$DATA_FILE" ]; then
             echo "::error::Refusing to push: expected 1 commit changing only $DATA_FILE."
             echo "commits: $COMMITS"
@@ -145,18 +174,5 @@ jobs:
             exit 1
           fi
 
-          git push origin HEAD:main
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-
-  # Rebuild and publish the site at the commit we just pushed, so the ranklist
-  # page actually serves the new JSON. Reuses docs.yml — no duplicated build.
-  deploy:
-    needs: scrape
-    if: needs.scrape.outputs.changed == 'true'
-    permissions:
-      contents: write        # push the built site to gh-pages
-      pull-requests: write   # docs.yml declares it; a caller must grant at least as much
-    uses: ./.github/workflows/docs.yml
-    with:
-      ref: ${{ needs.scrape.outputs.sha }}
+          git push origin "HEAD:$BRANCH"
+          echo "Pushed $(git rev-parse --short HEAD) to $BRANCH — the ranking page serves it directly."

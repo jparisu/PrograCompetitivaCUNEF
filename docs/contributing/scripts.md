@@ -112,7 +112,7 @@ python tools/gennav.py
 Descarga la clasificación de la afiliación de CUNEF en Kattis y guarda el histórico.
 
 ```bash
-python tools/scrape_kattis.py                # actualiza docs/assets/data/standings.json
+python tools/scrape_kattis.py                # escribe docs/assets/data/standings.json (solo local)
 python tools/scrape_kattis.py --dry-run -v   # solo muestra lo que ha leído
 python tools/scrape_kattis.py --anonymize    # oculta nombres (privacidad)
 ```

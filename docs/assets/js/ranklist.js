@@ -1,9 +1,9 @@
 /*
  * Ranking page (docs/ranklist/) — vanilla JS, no external libraries.
  *
- * Loads docs/assets/data/standings.json (a history of dated snapshots) and
- * renders one snapshot as a list of rows, annotating each member with the change
- * in position and points relative to an earlier snapshot.
+ * Loads standings.json (a history of dated snapshots) from the standing-data
+ * branch and renders one snapshot as a list of rows, annotating each member with
+ * the change in position and points relative to an earlier snapshot.
  *
  * Which two snapshots are compared depends on the active range mode:
  *   - "preset" (default): current = the newest snapshot; baseline = the newest
@@ -18,14 +18,23 @@
  * the "#" each member shows is always their real rank by score in the displayed
  * snapshot, never the row index, so sorting by name does not renumber anyone.
  *
- * The fetch path is page-relative ("../assets/data/standings.json"): the page
- * lives at /ranklist/, so it resolves to /assets/data/standings.json and keeps
- * working under a preview prefix such as /pr-preview/pr-N/ranklist/.
+ * The data is fetched from the `standing-data` branch of the repository, NOT
+ * from the built site. That branch is an orphan holding a single standings.json,
+ * written weekly by .github/workflows/kattis.yml; `main` is protected, so the
+ * bot cannot commit there. Reading the branch directly means a scrape is live as
+ * soon as it is pushed — the site never has to be rebuilt for new standings.
+ *
+ * There is deliberately NO fallback to a copy inside the site. A stale but
+ * plausible-looking table would hide a broken pipeline; a visible error does not.
+ * So if the fetch fails, the page says so (see renderError).
  */
 (function () {
   "use strict";
 
-  var DATA_URL = "../assets/data/standings.json";
+  // Raw file on the standing-data branch. `refs/heads/` is spelled out so a tag
+  // or another ref of the same name could never resolve here instead.
+  var DATA_URL = "https://raw.githubusercontent.com/jparisu/PrograCompetitivaCUNEF" +
+                 "/refs/heads/standing-data/standings.json";
 
   // Days subtracted from the current snapshot date for each preset window.
   var WINDOW_DAYS = { day: 1, week: 7, month: 30, year: 365 };

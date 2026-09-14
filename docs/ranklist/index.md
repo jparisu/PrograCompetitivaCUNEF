@@ -8,8 +8,12 @@ han cambiado las posiciones a lo largo del tiempo. ¡Que empiece la sana competi
     Los datos provienen de la
     [página pública de la afiliación en Kattis](https://open.kattis.com/affiliations/cunef.edu)
     y se actualizan mediante una tarea programada (un *job* de GitHub Actions que
-    ejecuta el *scraper* periódicamente). Si el sitio se abre sin conexión, se
-    mostrarán datos de ejemplo.
+    ejecuta el *scraper* cada lunes). La tabla se carga al abrir la página desde
+    la rama
+    [`standing-data`](https://github.com/jparisu/PrograCompetitivaCUNEF/tree/standing-data)
+    del repositorio, así que cada actualización se ve al instante, sin necesidad
+    de volver a publicar el sitio. Eso sí: hace falta conexión: si la descarga
+    falla, la página lo indica en lugar de mostrar datos antiguos.
 
 Elige el **intervalo** que quieres mirar: un atajo (día, semana, mes, año) o un
 rango de fechas a medida. Los cambios de posición y de puntos que aparecen a la
