@@ -1,0 +1,48 @@
+name: PR preview cleanup
+
+# Deletes a closed PR's preview from the gh-pages branch: the
+# gh-pages/pr-preview/pr-<N>/ directory that Documentation (docs.yml) published
+# while the PR was open, plus the preview comment on the PR itself. Without it
+# gh-pages keeps a dead copy of the site for every PR ever merged.
+#
+# Why this is its own workflow: removing that directory is the ONLY thing that
+# has to happen when a PR closes. docs.yml builds and deploys the site and needs
+# none of it, so hosting the cleanup there made every close drag a full
+# build-and-deploy run along behind a row of `github.event.action != 'closed'`
+# guards on steps it had to skip.
+#
+# Why the concurrency group is spelled the same as docs.yml's: groups are shared
+# across the whole repository, so reusing the name puts this job in the same
+# queue as every run that writes to gh-pages. That is load-bearing. Closing a PR
+# by MERGING it fires this workflow and docs.yml's push-to-main run at the same
+# moment, and both clone gh-pages, edit it and push. Overlapped, the second push
+# was built on a tree from before the first one and either fails or reverts it —
+# which is how merging a PR used to republish the previous site.
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]
+
+permissions:
+  contents: write        # push the preview removal to the gh-pages branch
+  pull-requests: write   # update the preview comment on the PR
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+  remove-preview:
+    runs-on: ubuntu-latest
+    steps:
+      # The action drives git directly, so it needs a checkout to work in. No
+      # Python, no LaTeX, no build: this job only deletes a directory, which is
+      # what keeps its hold on the shared gh-pages queue down to seconds.
+      - uses: actions/checkout@v4
+
+      # `action: remove` instead of the action's `auto` default: this workflow
+      # runs on exactly one event and must never deploy anything.
+      - uses: rossjrw/pr-preview-action@v1
+        with:
+          action: remove

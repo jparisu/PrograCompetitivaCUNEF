@@ -5,7 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
-    types: [opened, reopened, synchronize, closed]
+    types: [opened, reopened, synchronize]
   workflow_dispatch:
 
 permissions:
@@ -13,8 +13,22 @@ permissions:
   pull-requests: write   # comment the preview URL on the PR
 
 concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  # Every run here pushes to the gh-pages branch — the site root on main,
+  # pr-preview/pr-<N>/ on a pull request — and so does pr-preview-cleanup.yml.
+  # Each of them clones gh-pages, edits it and pushes, so two overlapping runs
+  # race: whichever pushes second built on a tree from BEFORE the other's
+  # commit, and it either fails to push or reverts it. Merging a PR fires this
+  # workflow (push to main) and the cleanup at the same moment, so that race is
+  # the normal case, and it is how a merge used to republish the previous site.
+  #
+  # Groups are repository-wide, so this one name puts every gh-pages writer in
+  # a single queue: each run starts from a branch that already has the previous
+  # run's commit. cancel-in-progress must stay false — a run cancelled
+  # mid-deploy leaves exactly the half-written branch this is protecting. The
+  # cost is that consecutive pushes to one PR queue instead of cancelling the
+  # older preview build. Keep this string in sync with pr-preview-cleanup.yml.
+  group: gh-pages
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -37,7 +51,6 @@ jobs:
       # PR gate: compile & run every code variant against the meta.yaml examples,
       # so the documented examples really are passing tests (g++ ships on the runner).
       - name: Run example tests
-        if: github.event.action != 'closed'
         run: python tools/runtests.py
 
       # The cheatsheet PDF is a publish artifact, NOT committed to the repo: build
@@ -46,16 +59,13 @@ jobs:
       # `--site` rebuilds the exact .tex that generated.yml gates, then compiles the
       # PDF. LaTeX lives only here, so the generation check stays LaTeX-free.
       - name: Build cheatsheet PDF
-        if: github.event.action != 'closed'
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends texlive-latex-recommended texlive-latex-extra
           python tools/cheatsheet.py --site --pdf
 
       # Build (also the PR gate: --strict fails on broken links / missing nav).
-      # Skipped when a PR is closed — nothing to build, we only clean up below.
       - name: Build site
-        if: github.event.action != 'closed'
         run: mkdocs build --strict
 
       # Production: pushes to main publish to the root of gh-pages.
@@ -69,9 +79,12 @@ jobs:
           keep_files: true
 
       # Preview: any branch's PR to main publishes to gh-pages/pr-preview/pr-<N>/
-      # and comments the URL on the PR. Auto-removed when the PR is closed.
+      # and comments the URL on the PR. pr-preview-cleanup.yml removes it again
+      # when the PR closes — hence `action: deploy` rather than the action's
+      # `auto` default, which is only needed when one workflow does both.
       - name: Deploy preview (pull request)
         if: github.event_name == 'pull_request'
         uses: rossjrw/pr-preview-action@v1
         with:
+          action: deploy
           source-dir: ./site
