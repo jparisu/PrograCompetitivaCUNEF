@@ -1,0 +1,26 @@
+id: cpp
+type: chapter
+format: article
+topic: languages
+name:
+  es: "C++ de cero a concurso"
+  en: "C++ from zero to contest"
+level: base
+difficulty: 0.1
+techniques: []
+tags: [cpp, lenguaje, sintaxis, stl, compilar]
+prerequisites: [introduction]
+related: [python, native-types, io, fast-io]
+current_version: v1
+stats:
+  use_case:
+    es: "Aprender C++ desde cero: escribir, compilar y ejecutar, hasta la STL y los punteros."
+    en: "Learn C++ from scratch: write, compile and run, up to the STL and pointers."
+references:
+  - title: "cppreference"
+    url: "https://en.cppreference.com/"
+  - title: "learncpp.com"
+    url: "https://www.learncpp.com/"
+  - title: "GCC — Options Summary"
+    url: "https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html"
+

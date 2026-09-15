@@ -4,8 +4,9 @@
  * Builds a Mermaid flowchart from the shared catalogue data and re-renders it as
  * the user toggles type/level filters (Catalog.makeFilters). Nodes are ordered
  * left→right by difficulty (an invisible spine chains one node per level),
- * shaped by type (technique = hexagon, algorithm = rectangle, structure = oval)
- * and coloured by level. Clicking a node opens its page.
+ * shaped by type (chapter = double rectangle, technique = hexagon, algorithm =
+ * rectangle, structure = oval) and coloured by level. Clicking a node opens its
+ * page.
  *
  * Mermaid is loaded on demand (ESM) only on this page; if it can't load, a
  * grouped list of links is shown instead so navigation still works.
@@ -34,6 +35,7 @@
     var n = nid(item.id);
     if (item.type === "technique") return n + '{{"' + label + '"}}';
     if (item.type === "structure") return n + '(["' + label + '"])';  // oval
+    if (item.type === "chapter") return n + '[["' + label + '"]]';    // double rectangle
     return n + '["' + label + '"]';                                    // rectangle
   }
 

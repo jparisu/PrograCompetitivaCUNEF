@@ -1,6 +1,7 @@
 # Contenidos
 
-Todo el contenido en una tabla: **técnicas**, **algoritmos** y **estructuras**. Puedes
+Todo el contenido en una tabla: **capítulos**, **técnicas**, **algoritmos** y
+**estructuras**. Puedes
 **buscar**, **filtrar por nivel, tipo, tema o estado** (incluir los elementos *en
 construcción*), **ordenar** pulsando en las cabeceras y **mostrar u ocultar columnas**.
 Usa el menú lateral para navegar por nivel.

@@ -58,9 +58,13 @@ LEVEL_LABELS = {
     "expert": "Experto",
 }
 
-# Content types and their display labels (Spanish).
-TYPES = ["technique", "algorithm", "structure"]
+# Content types and their display labels (Spanish). Order = display order in
+# the type filters and the matrix columns. ``chapter`` is a multi-page guide
+# (see the ``pages:`` key in meta.yaml, rendered by gennav.py); the other three
+# are single-page elements.
+TYPES = ["chapter", "technique", "algorithm", "structure"]
 TYPE_LABELS = {
+    "chapter": "Capítulo",
     "technique": "Técnica",
     "algorithm": "Algoritmo",
     "structure": "Estructura",

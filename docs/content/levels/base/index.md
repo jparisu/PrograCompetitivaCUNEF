@@ -1,6 +1,6 @@
 # Contenidos · Base
 
-Técnicas, algoritmos y estructuras de nivel **Base**. Los fundamentos de programación. Da tus primeros pasos programando y resolviendo problemas.
+Capítulos, técnicas, algoritmos y estructuras de nivel **Base**. Los fundamentos de programación. Da tus primeros pasos programando y resolviendo problemas.
 
 <div class="ov-wrap" markdown="0">
 

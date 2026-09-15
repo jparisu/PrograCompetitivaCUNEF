@@ -4,7 +4,8 @@ Explora las relaciones entre **técnicas**, **algoritmos** y **estructuras**. Fi
 tipo y nivel de forma independiente, y sigue las flechas: los prerrequisitos van de
 **izquierda (más básico) a derecha (más avanzado)**. Pulsa un nodo para abrir su página.
 
-**Formas:** hexágono = técnica · rectángulo = algoritmo · óvalo = estructura.
+**Formas:** rectángulo doble = capítulo · hexágono = técnica · rectángulo = algoritmo ·
+óvalo = estructura.
 
 **Líneas:** una **flecha** (→) marca un *prerrequisito* (apréndelo antes); una **línea
 punteada** conecta *conceptos relacionados* que conviene ver juntos, sin ser requisito.

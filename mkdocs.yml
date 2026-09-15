@@ -125,6 +125,9 @@ nav:
     - Grafo de dependencias: content/graph.md
   - Base:
     - content/levels/base/index.md
+    - Introducción a la programación competitiva — Capítulo: content/fundamentals/introduction/index.md
+    - C++ de cero a concurso — Capítulo: content/languages/cpp/index.md
+    - Python de cero a concurso — Capítulo: content/languages/python/index.md
     - Comparaciones — Técnica: content/fundamentals/comparisons/index.md
     - Tipos nativos — Técnica: content/fundamentals/native-types/index.md
     - Condicionales — Técnica:

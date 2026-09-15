@@ -5,7 +5,7 @@ Cada elemento del catálogo pertenece a un **tema**, y lleva su icono en todas p
 página.
 
 La tabla resume los temas: el nombre enlaza a su explicación, la columna *Descripción* da
-una idea rápida, y las tres últimas columnas listan sus elementos por tipo, **coloreados
+una idea rápida, y las últimas columnas listan sus elementos por tipo, **coloreados
 según la dificultad**.
 
 <div id="topics-table"><p>Cargando la tabla…</p></div>
@@ -17,6 +17,15 @@ escribirla, y hacerlo *rápido* para no exceder el tiempo límite), las **estruc
 control** (condicionales y bucles) y la capacidad de **estimar el coste** de una solución
 con la notación Big-O. Son los cimientos: sin ellos ningún algoritmo más avanzado se
 sostiene, y muchos problemas sencillos se resuelven únicamente con esto.
+
+## 💻 Lenguajes {#languages}
+
+Los **lenguajes** con los que se compite en este curso: **C++** y **Python**. Aquí no se
+explica *qué* algoritmo usar, sino *cómo escribirlo*: preparar el entorno, compilar o
+ejecutar un programa, la sintaxis, los tipos nativos, las funciones y clases, la librería
+estándar de cada uno y sus partes más avanzadas (punteros, plantillas, lambdas,
+generadores). Son capítulos de **referencia y consulta**: se leen de principio a fin la
+primera vez y luego se vuelve a ellos cuando hace falta recordar una sintaxis concreta.
 
 ## 🔤 Strings {#strings}
 
