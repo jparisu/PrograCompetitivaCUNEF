@@ -22,6 +22,17 @@ Solo necesitas una cuenta en [Kattis](https://open.kattis.com/) y un lenguaje in
 Si no tienes ninguno, los capítulos de [C++](../../languages/cpp/index.md) y
 [Python](../../languages/python/index.md) empiezan por ahí.
 
+## Índice
+
+1. [¿Qué es la programación competitiva?](#que-es-la-programacion-competitiva)
+2. [¿Qué es un algoritmo?](#que-es-un-algoritmo)
+3. [Tu primer problema](#tu-primer-problema)
+4. [La entrada y la salida](#la-entrada-y-la-salida)
+5. [Enviar la solución](#enviar-la-solucion)
+6. [Veredictos y errores](#veredictos-y-errores)
+7. [Cómo es un concurso](#como-es-un-concurso)
+8. [Siguientes pasos](#siguientes-pasos)
+
 ## ¿Qué es la programación competitiva?
 
 **Resolver problemas escribiendo un programa, contra reloj, y que una máquina decida si

@@ -29,6 +29,55 @@ Si te falta el contexto de cómo funcionan los jueces, empieza por
 [Introducción a la programación competitiva](../../fundamentals/introduction/index.md).
 Y el otro camino es el capítulo de [C++](../cpp/index.md).
 
+## Índice
+
+**Primeros pasos**
+
+1. [Instalar y preparar el entorno](#instalar-y-preparar-el-entorno)
+2. [Tu primer programa](#tu-primer-programa)
+3. [Ejecutar un programa](#ejecutar-un-programa)
+
+**Lo básico**
+
+4. [Sintaxis e indentación](#sintaxis-e-indentacion)
+5. [Tipos nativos y variables](#tipos-nativos-y-variables)
+6. [Operadores y expresiones](#operadores-y-expresiones)
+7. [Entrada y salida](#entrada-y-salida)
+8. [Condicionales](#condicionales)
+9. [Bucles](#bucles)
+10. [Cadenas de texto](#cadenas-de-texto)
+
+**Colecciones**
+
+11. [Listas y tuplas](#listas-y-tuplas)
+12. [Diccionarios y conjuntos](#diccionarios-y-conjuntos)
+13. [Comprensiones](#comprensiones)
+
+**Funciones y objetos**
+
+14. [Funciones](#funciones)
+15. [Ámbito y mutabilidad](#ambito-y-mutabilidad)
+16. [Clases y objetos](#clases-y-objetos)
+17. [Módulos e importaciones](#modulos-e-importaciones)
+
+**La librería estándar**
+
+18. [Módulos imprescindibles](#modulos-imprescindibles)
+19. [Lambdas y funciones de orden superior](#lambdas-y-funciones-de-orden-superior)
+20. [Iteradores y generadores](#iteradores-y-generadores)
+
+**Temas avanzados**
+
+21. [Recursión y su límite](#recursion-y-su-limite)
+22. [Rincones del lenguaje](#rincones-del-lenguaje)
+23. [Rendimiento en concurso](#rendimiento-en-concurso)
+
+**Cierre**
+
+24. [Qué se puede usar en un concurso](#que-se-puede-usar-en-un-concurso)
+25. [Errores frecuentes](#errores-frecuentes)
+26. [Plantilla de concurso](#plantilla-de-concurso)
+
 ## Instalar y preparar el entorno
 
 Necesitas Python 3.8 o superior, un editor y una terminal. No hace falta compilador ni

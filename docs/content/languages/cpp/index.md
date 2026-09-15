@@ -25,6 +25,52 @@ Si te falta el contexto de cómo funcionan los jueces, empieza por
 Y si dudas entre los dos lenguajes, el capítulo de
 [Python](../python/index.md) es el otro camino.
 
+## Índice
+
+**Primeros pasos**
+
+1. [Instalar y preparar el entorno](#instalar-y-preparar-el-entorno)
+2. [Tu primer programa](#tu-primer-programa)
+3. [Compilar y ejecutar](#compilar-y-ejecutar)
+
+**Lo básico**
+
+4. [Sintaxis básica](#sintaxis-basica)
+5. [Tipos nativos y variables](#tipos-nativos-y-variables)
+6. [Operadores y expresiones](#operadores-y-expresiones)
+7. [Entrada y salida](#entrada-y-salida)
+8. [Condicionales](#condicionales)
+9. [Bucles](#bucles)
+10. [Arrays, vector y string](#arrays-vector-y-string)
+
+**Funciones y tipos propios**
+
+11. [Funciones](#funciones)
+12. [Valor, referencia y const](#valor-referencia-y-const)
+13. [struct y class](#struct-y-class)
+14. [Organizar el código](#organizar-el-codigo)
+
+**La librería estándar (STL)**
+
+15. [Contenedores](#contenedores-stl)
+16. [Iteradores](#iteradores)
+17. [`<algorithm>`](#algorithm)
+18. [Otras utilidades](#otras-utilidades)
+
+**Temas avanzados**
+
+19. [Punteros y memoria](#punteros-y-memoria)
+20. [Lambdas y objetos función](#lambdas-y-objetos-funcion)
+21. [Plantillas (templates)](#plantillas-templates)
+22. [Recursión y pila de llamadas](#recursion-y-pila-de-llamadas)
+23. [Rendimiento en concurso](#rendimiento-en-concurso)
+
+**Cierre**
+
+24. [Qué se puede usar en un concurso](#que-se-puede-usar-en-un-concurso)
+25. [Errores frecuentes](#errores-frecuentes)
+26. [Plantilla de concurso](#plantilla-de-concurso)
+
 ## Instalar y preparar el entorno
 
 Necesitas un compilador (`g++`, el mismo que usa Kattis), un editor y una terminal.
