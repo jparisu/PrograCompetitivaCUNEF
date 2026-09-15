@@ -18,11 +18,13 @@ window.Taxonomy = {
     "expert": "Experto"
   },
   "TYPES": [
+    "chapter",
     "technique",
     "algorithm",
     "structure"
   ],
   "TYPE_LABELS": {
+    "chapter": "Capítulo",
     "technique": "Técnica",
     "algorithm": "Algoritmo",
     "structure": "Estructura"
@@ -32,6 +34,11 @@ window.Taxonomy = {
       "label": "Fundamentos",
       "icon": "🧱",
       "desc": "Fundamentos de programación y conceptos."
+    },
+    "languages": {
+      "label": "Lenguajes",
+      "icon": "💻",
+      "desc": "Escribir, compilar y ejecutar en C++ y Python."
     },
     "strings": {
       "label": "Strings",
@@ -86,6 +93,7 @@ window.Taxonomy = {
   },
   "TOPIC_IDS": [
     "fundamentals",
+    "languages",
     "strings",
     "search",
     "data-structures",

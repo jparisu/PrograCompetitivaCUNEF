@@ -1,5 +1,6 @@
 {
   "fundamentals":        { "label": "Fundamentos",           "icon": "🧱", "desc": "Fundamentos de programación y conceptos." },
+  "languages":           { "label": "Lenguajes",             "icon": "💻", "desc": "Escribir, compilar y ejecutar en C++ y Python." },
   "strings":             { "label": "Strings",               "icon": "🔤", "desc": "Procesamiento de texto y búsqueda de patrones." },
   "search":              { "label": "Ordenación y búsqueda", "icon": "🔎", "desc": "Ordenar y localizar datos rápidamente." },
   "data-structures":     { "label": "Estructuras de datos",  "icon": "🗃️", "desc": "Guardar y organizar datos para consultarlos rápido." },
