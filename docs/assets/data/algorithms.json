@@ -77,6 +77,68 @@
     "url": "content/fundamentals/conditionals/"
   },
   {
+    "id": "cpp",
+    "type": "chapter",
+    "format": "article",
+    "topic": "languages",
+    "wip": false,
+    "name": {
+      "es": "C++ de cero a concurso",
+      "en": "C++ from zero to contest"
+    },
+    "level": "base",
+    "difficulty": 0.1,
+    "techniques": [],
+    "tags": [
+      "cpp",
+      "lenguaje",
+      "sintaxis",
+      "stl",
+      "compilar"
+    ],
+    "prereq": [
+      "introduction"
+    ],
+    "related": [
+      "python",
+      "native-types",
+      "io",
+      "fast-io"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/languages/cpp/"
+  },
+  {
+    "id": "introduction",
+    "type": "chapter",
+    "format": "article",
+    "topic": "fundamentals",
+    "wip": false,
+    "name": {
+      "es": "Introducción a la programación competitiva",
+      "en": "Introduction to competitive programming"
+    },
+    "level": "base",
+    "difficulty": 0.0,
+    "techniques": [],
+    "tags": [
+      "introduccion",
+      "kattis",
+      "juez-online",
+      "veredictos",
+      "entrada-salida"
+    ],
+    "prereq": [],
+    "related": [
+      "io",
+      "complexity"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/fundamentals/introduction/"
+  },
+  {
     "id": "io",
     "type": "technique",
     "format": "snippet",
@@ -252,6 +314,39 @@
     "complexity": "",
     "languages": [],
     "url": "content/fundamentals/overflow/"
+  },
+  {
+    "id": "python",
+    "type": "chapter",
+    "format": "article",
+    "topic": "languages",
+    "wip": false,
+    "name": {
+      "es": "Python de cero a concurso",
+      "en": "Python from zero to contest"
+    },
+    "level": "base",
+    "difficulty": 0.1,
+    "techniques": [],
+    "tags": [
+      "python",
+      "lenguaje",
+      "sintaxis",
+      "stdlib",
+      "ejecutar"
+    ],
+    "prereq": [
+      "introduction"
+    ],
+    "related": [
+      "cpp",
+      "native-types",
+      "io",
+      "fast-io"
+    ],
+    "complexity": "",
+    "languages": [],
+    "url": "content/languages/python/"
   },
   {
     "id": "stack-queue",

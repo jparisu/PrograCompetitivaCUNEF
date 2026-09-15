@@ -1,6 +1,6 @@
 # Añadir un elemento
 
-Un elemento (algoritmo, técnica o estructura) es **una carpeta** dentro de
+Un elemento (algoritmo, técnica, estructura o capítulo) es **una carpeta** dentro de
 `docs/content/<tema>/<id>/`. Añadir esa carpeta es lo único que tienes que hacer: la
 **navegación, las tablas, el grafo y el chuletario se generan solos** a partir de tu
 `meta.yaml`. No tienes que editar `mkdocs.yml` ni ningún índice a mano.
@@ -25,8 +25,8 @@ docs/content/<tema>/<id>/
     buscar. La página se llama `index.md` (así la URL queda limpia: `.../<id>/`).
 
 `<tema>` es uno de los **temas** existentes (mira la carpeta `docs/content/`): `fundamentals`,
-`strings`, `search`, `data-structures`, `graphs`, `dynamic-programming`, `greedy`,
-`arithmetics`, `combinatorics`, `geometry`, `game-theory`. La lista canónica vive en
+`languages`, `strings`, `search`, `data-structures`, `graphs`, `dynamic-programming`,
+`greedy`, `arithmetics`, `combinatorics`, `geometry`, `game-theory`. La lista canónica vive en
 `docs/content/topics/topics.json`; si necesitas un tema nuevo, mira
 [Añadir un tema](#add-topic).
 
@@ -40,7 +40,7 @@ chuletario y los tests. Campos principales:
 
 ```yaml
 id: segment-tree                 # identificador único, en kebab-case (= nombre de la carpeta)
-type: structure                  # algorithm | technique | structure
+type: structure                  # algorithm | technique | structure | chapter
 topic: data-structures           # uno de los temas de tools/common.py (TOPICS)
 name: { es: "Árbol de segmentos", en: "Segment tree" }
 level: intermediate              # base | beginner | intermediate | advanced | expert
@@ -79,6 +79,14 @@ status` **falla** si el `topic` no es uno de los conocidos.
 
 Marca `wip: true` si el elemento existe pero aún no está implementado: queda exento de la
 validación y aparece atenuado en la navegación con el icono 🏗️.
+
+### Capítulos {#chapters}
+
+Un **capítulo** (`type: chapter`) es una guía larga y autocontenida, en **una sola
+página**: por ejemplo
+[Introducción a la programación competitiva](../content/fundamentals/introduction/index.md)
+o [C++ de cero a concurso](../content/languages/cpp/index.md). Es siempre
+`format: article`, y su `index.md` lleva todo el contenido, con un `##` por sección.
 
 ## 3. Escribe la página `index.md`
 

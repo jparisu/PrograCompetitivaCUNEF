@@ -281,6 +281,7 @@
 .cat-chip--level-expert.is-active       { background: #6a1b9a26; border-color: var(--level-expert); }
 /* Type chips share ONE neutral colour: type is not a colour dimension here
    (elements are coloured by level), so per-type colours would be misleading. */
+.cat-chip--type-chapter.is-active,
 .cat-chip--type-technique.is-active,
 .cat-chip--type-algorithm.is-active,
 .cat-chip--type-structure.is-active     { background: #455a6422; border-color: #455a64; color: inherit; }
@@ -348,6 +349,7 @@
   font-weight: 700;
   border: 1px solid currentColor;   /* solid edge for all rows; WIP rows override to dashed */
 }
+.ov-type--chapter   { background: #fbe4d0; color: #a14a00; }
 .ov-type--technique { background: #d7f0ea; color: #00695c; }
 .ov-type--algorithm { background: #dbeafe; color: #1565c0; }
 .ov-type--structure { background: #f0e0f7; color: #6a1b9a; }

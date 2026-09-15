@@ -1,0 +1,26 @@
+id: python
+type: chapter
+format: article
+topic: languages
+name:
+  es: "Python de cero a concurso"
+  en: "Python from zero to contest"
+level: base
+difficulty: 0.1
+techniques: []
+tags: [python, lenguaje, sintaxis, stdlib, ejecutar]
+prerequisites: [introduction]
+related: [cpp, native-types, io, fast-io]
+current_version: v1
+stats:
+  use_case:
+    es: "Aprender Python desde cero: escribir y ejecutar, hasta la librería estándar y los generadores."
+    en: "Learn Python from scratch: write and run, up to the standard library and generators."
+references:
+  - title: "Python — Documentación oficial"
+    url: "https://docs.python.org/3/"
+  - title: "Python — Tutorial oficial"
+    url: "https://docs.python.org/3/tutorial/"
+  - title: "Python — Librería estándar"
+    url: "https://docs.python.org/3/library/"
+

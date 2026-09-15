@@ -1,0 +1,28 @@
+id: introduction
+type: chapter
+format: article
+topic: fundamentals
+name:
+  es: Introducción a la programación competitiva
+  en: Introduction to competitive programming
+level: base
+difficulty: 0.0
+techniques: []
+tags: [introduccion, kattis, juez-online, veredictos, entrada-salida]
+prerequisites: []
+related: [io, complexity]
+current_version: v1
+stats:
+  use_case:
+    es: "Entender qué es un algoritmo, resolver tu primer problema y leer los veredictos del juez."
+    en: "Understand what an algorithm is, solve your first problem and read the judge's verdicts."
+references:
+  - title: "Kattis — Open Kattis"
+    url: "https://open.kattis.com/"
+  - title: "Kattis — A Shortcut to What? (shortcuttowhat)"
+    url: "https://open.kattis.com/problems/shortcuttowhat"
+  - title: "Kattis — Help (formato de entrada/salida)"
+    url: "https://open.kattis.com/help"
+  - title: "ICPC — International Collegiate Programming Contest"
+    url: "https://icpc.global/"
+
