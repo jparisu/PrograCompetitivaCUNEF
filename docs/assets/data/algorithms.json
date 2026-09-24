@@ -511,7 +511,10 @@
       "graphs"
     ],
     "complexity": "",
-    "languages": [],
+    "languages": [
+      "cpp",
+      "py"
+    ],
     "url": "content/graphs/dfs/"
   },
   {
