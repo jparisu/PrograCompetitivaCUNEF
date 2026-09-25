@@ -1,0 +1,7 @@
+# Who must approve a pull request into main.
+#
+# The main ruleset requires "review from Code Owners", so only the people listed
+# here count as an approval. Without this, any collaborator (every student has
+# write access) could approve another student's PR. Add other managers after
+# @jparisu on the same line, e.g. `* @jparisu @other-teacher`.
+*   @jparisu

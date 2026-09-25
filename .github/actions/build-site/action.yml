@@ -1,0 +1,45 @@
+name: Build and check the site
+description: >
+  Install the tooling, run the example tests, build the cheatsheet PDF and build
+  the site with --strict into ./site. Shared by docs.yml (which then deploys it)
+  and docs-fork.yml (which only checks it). Expects the repository checked out.
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: pip
+
+    - shell: bash
+      run: pip install -r requirements.txt
+    - shell: bash
+      run: pip install -r tools/requirements.txt
+
+    # NOTE: the "generated files are up to date" gate lives in its own workflow
+    # (.github/workflows/generated.yml) so it reports as a separate, LaTeX-free
+    # check. It is intentionally not duplicated here.
+
+    # PR gate: compile & run every code variant against the meta.yaml examples,
+    # so the documented examples really are passing tests (g++ ships on the runner).
+    - name: Run example tests
+      shell: bash
+      run: python tools/runtests.py
+
+    # The cheatsheet PDF is a publish artifact, NOT committed to the repo: build
+    # it from the gated docs/cheatsheet/cheatsheet.tex so the Cheatsheet page's
+    # PDF link resolves under --strict and it ships to gh-pages (prod + previews).
+    # `--site` rebuilds the exact .tex that generated.yml gates, then compiles the
+    # PDF. LaTeX lives only here, so the generation check stays LaTeX-free.
+    - name: Build cheatsheet PDF
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends texlive-latex-recommended texlive-latex-extra
+        python tools/cheatsheet.py --site --pdf
+
+    # Build (also the PR gate: --strict fails on broken links / missing nav).
+    - name: Build site
+      shell: bash
+      run: mkdocs build --strict

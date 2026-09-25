@@ -12,6 +12,16 @@ students and faculty are very welcome — code, fixes, explanations, or just ide
 - 💡 Suggest or discuss an idea → [Discussions](https://github.com/jparisu/PrograCompetitivaCUNEF/discussions)
 - 🔀 Open a pull request → [compare](https://github.com/jparisu/PrograCompetitivaCUNEF/compare)
 
+## Fork or collaborator?
+
+- **CUNEF students:** email [javier.paris@cunef.edu](mailto:javier.paris@cunef.edu)
+  with your GitHub username and you will be added as a collaborator. You then push
+  branches to this repository (never to `main`; everything goes through a reviewed PR)
+  and your PR gets a **preview link** of the site.
+- **Everyone else:** fork the repository. Fork PRs are fully checked (tests and site
+  build) but get **no preview** — GitHub does not let a fork publish here. Preview
+  locally with `mkdocs serve`.
+
 ## In short
 
 - Each element (algorithm / technique / structure) is **one folder** under

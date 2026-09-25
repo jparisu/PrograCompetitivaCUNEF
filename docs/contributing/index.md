@@ -21,16 +21,24 @@ profesores. Aquí encontrarás todo lo necesario, **desde cero**.
 
 ## Abrir un Pull Request
 
-Cuando tengas tus cambios en una rama de tu *fork*, abre el Pull Request desde aquí. Se
+Cuando tengas tus cambios en una rama (del repositorio, si eres colaborador, o de tu
+*fork*), abre el Pull Request desde aquí. Se
 rellenará automáticamente con la [plantilla de PR](https://github.com/jparisu/PrograCompetitivaCUNEF/blob/main/.github/PULL_REQUEST_TEMPLATE.md)
 (un checklist para que no se te olvide nada):
 
 [:material-source-pull: Abrir un Pull Request](https://github.com/jparisu/PrograCompetitivaCUNEF/compare){ .md-button .md-button--primary }
 
 !!! info "¿Cómo funciona?"
-    El enlace abre la vista de *comparar* de GitHub. Elige tu *fork* y tu rama como origen
-    y `main` como destino. Al crear el PR verás el checklist de la plantilla y, cuando la
-    CI termine, un comentario con el **enlace de vista previa** de la web.
+    El enlace abre la vista de *comparar* de GitHub. Elige tu rama (o tu *fork* y tu rama)
+    como origen y `main` como destino. Al crear el PR verás el checklist de la plantilla y,
+    cuando la CI termine, un comentario con el **enlace de vista previa** de la web.
+
+!!! warning "Los PR desde un *fork* no tienen vista previa"
+    Se comprueban igual (tests y compilación de la web), pero GitHub no deja que un *fork*
+    publique la vista previa. Si eres **estudiante de CUNEF**, envía un correo a
+    [javier.paris@cunef.edu](mailto:javier.paris@cunef.edu) con tu usuario de GitHub y te
+    añadiré como colaborador: así trabajas en ramas del propio repositorio y sí tendrás
+    vista previa. Más detalles en [Git y GitHub](git-github.md#3-consigue-una-copia-del-repositorio).
 
 ## Requisitos
 

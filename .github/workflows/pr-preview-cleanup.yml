@@ -28,13 +28,16 @@ permissions:
   contents: write        # push the preview removal to the gh-pages branch
   pull-requests: write   # update the preview comment on the PR
 
-concurrency:
-  group: gh-pages
-  cancel-in-progress: false
-
 jobs:
   remove-preview:
+    # A fork PR never got a preview (docs.yml skips forks) and its token is
+    # read-only, so there is nothing to remove and the push would 403.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    # Job-level (not workflow-level) so a skipped fork run never enters the queue.
+    concurrency:
+      group: gh-pages
+      cancel-in-progress: false
     steps:
       # The action drives git directly, so it needs a checkout to work in. No
       # Python, no LaTeX, no build: this job only deletes a directory, which is

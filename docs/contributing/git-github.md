@@ -21,15 +21,41 @@ git config --global user.name "Tu Nombre"
 git config --global user.email "tu-correo@cunef.edu"
 ```
 
-## 3. Haz un *fork* y clónalo
+## 3. Consigue una copia del repositorio
 
-1. En la página del repositorio, pulsa **Fork** (crea tu copia).
-2. Clona tu copia en tu ordenador:
+Hay dos formas. Elige la tuya:
 
-```bash
-git clone https://github.com/TU-USUARIO/PrograCompetitivaCUNEF.git
-cd PrograCompetitivaCUNEF
-```
+=== "Estudiante de CUNEF (recomendado)"
+
+    Pide acceso como **colaborador**: envía un correo a
+    [javier.paris@cunef.edu](mailto:javier.paris@cunef.edu) con tu **usuario de GitHub**.
+    Cuando te añada, recibirás una invitación por correo; acéptala.
+
+    Después, clona el repositorio original directamente (sin *fork*):
+
+    ```bash
+    git clone https://github.com/jparisu/PrograCompetitivaCUNEF.git
+    cd PrograCompetitivaCUNEF
+    ```
+
+    Como colaborador puedes subir tus propias ramas, pero **no** puedes escribir en
+    `main`: todo entra mediante un Pull Request que un profesor debe aprobar.
+
+=== "Con un *fork*"
+
+    1. En la página del repositorio, pulsa **Fork** (crea tu copia).
+    2. Clona tu copia en tu ordenador:
+
+    ```bash
+    git clone https://github.com/TU-USUARIO/PrograCompetitivaCUNEF.git
+    cd PrograCompetitivaCUNEF
+    ```
+
+    !!! warning "Sin vista previa"
+        Los PR que vienen de un *fork* se comprueban igual (tests y compilación de la
+        web), pero **no generan el enlace de vista previa**: GitHub no permite que un
+        *fork* publique en este repositorio. Para ver tus cambios, usa `mkdocs serve`
+        en local (ver [Requisitos](index.md#requisitos)).
 
 ## 4. Crea una rama
 
@@ -61,6 +87,7 @@ plantilla que aparece.
     Al abrir el PR, un robot publicará un comentario con un **enlace a una vista previa**
     de la web con tus cambios (`.../pr-preview/pr-N/`), para que puedas verlos antes de
     que se fusionen.
+    Solo ocurre si subiste la rama como colaborador; desde un *fork* no hay vista previa.
 
 ## 7. Revisión
 
