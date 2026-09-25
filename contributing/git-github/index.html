@@ -3848,10 +3848,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-haz-un-fork-y-clonalo" class="md-nav__link">
+  <a href="#3-consigue-una-copia-del-repositorio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Haz un fork y clónalo
+        3. Consigue una copia del repositorio
       
     </span>
   </a>
@@ -4051,10 +4051,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-haz-un-fork-y-clonalo" class="md-nav__link">
+  <a href="#3-consigue-una-copia-del-repositorio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Haz un fork y clónalo
+        3. Consigue una copia del repositorio
       
     </span>
   </a>
@@ -4141,25 +4141,50 @@ contribuciones mediante <em>Pull Requests</em> (PR).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">"Tu Nombre"</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span><span class="s2">"tu-correo@cunef.edu"</span>
 </code></pre></div>
-<h2 id="3-haz-un-fork-y-clonalo">3. Haz un <em>fork</em> y clónalo<a class="headerlink" href="#3-haz-un-fork-y-clonalo" title="Permanent link">#</a></h2>
+<h2 id="3-consigue-una-copia-del-repositorio">3. Consigue una copia del repositorio<a class="headerlink" href="#3-consigue-una-copia-del-repositorio" title="Permanent link">#</a></h2>
+<p>Hay dos formas. Elige la tuya:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Estudiante de CUNEF (recomendado)</label><label for="__tabbed_1_2">Con un <em>fork</em></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Pide acceso como <strong>colaborador</strong>: envía un correo a
+<a href="mailto:javier.paris@cunef.edu">javier.paris@cunef.edu</a> con tu <strong>usuario de GitHub</strong>.
+Cuando te añada, recibirás una invitación por correo; acéptala.</p>
+<p>Después, clona el repositorio original directamente (sin <em>fork</em>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jparisu/PrograCompetitivaCUNEF.git
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>PrograCompetitivaCUNEF
+</code></pre></div>
+<p>Como colaborador puedes subir tus propias ramas, pero <strong>no</strong> puedes escribir en
+<code>main</code>: todo entra mediante un Pull Request que un profesor debe aprobar.</p>
+</div>
+<div class="tabbed-block">
 <ol>
 <li>En la página del repositorio, pulsa <strong>Fork</strong> (crea tu copia).</li>
 <li>Clona tu copia en tu ordenador:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TU-USUARIO/PrograCompetitivaCUNEF.git
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">cd</span><span class="w"> </span>PrograCompetitivaCUNEF
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/TU-USUARIO/PrograCompetitivaCUNEF.git
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>PrograCompetitivaCUNEF
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Sin vista previa</p>
+<p>Los PR que vienen de un <em>fork</em> se comprueban igual (tests y compilación de la
+web), pero <strong>no generan el enlace de vista previa</strong>: GitHub no permite que un
+<em>fork</em> publique en este repositorio. Para ver tus cambios, usa <code>mkdocs serve</code>
+en local (ver <a href="../#requisitos">Requisitos</a>).</p>
+</div>
+</div>
+</div>
+</div>
 <h2 id="4-crea-una-rama">4. Crea una rama<a class="headerlink" href="#4-crea-una-rama" title="Permanent link">#</a></h2>
 <p>Nunca trabajes directamente en <code>main</code>. Crea una rama con un nombre descriptivo:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>anade-segment-tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>anade-segment-tree
 </code></pre></div>
 <h2 id="5-haz-tus-cambios-y-guardalos">5. Haz tus cambios y guárdalos<a class="headerlink" href="#5-haz-tus-cambios-y-guardalos" title="Permanent link">#</a></h2>
 <p>Edita los archivos, y luego:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añade Segment Tree con explicación y tests"</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">"Añade Segment Tree con explicación y tests"</span>
 </code></pre></div>
 <h2 id="6-subelos-y-abre-el-pull-request">6. Súbelos y abre el Pull Request<a class="headerlink" href="#6-subelos-y-abre-el-pull-request" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>anade-segment-tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>anade-segment-tree
 </code></pre></div>
 <p>GitHub te mostrará un botón para <strong>abrir un Pull Request</strong> hacia <code>main</code>. Rellena la
 plantilla que aparece.</p>
@@ -4167,7 +4192,8 @@ plantilla que aparece.</p>
 <p class="admonition-title">Previsualización automática</p>
 <p>Al abrir el PR, un robot publicará un comentario con un <strong>enlace a una vista previa</strong>
 de la web con tus cambios (<code>.../pr-preview/pr-N/</code>), para que puedas verlos antes de
-que se fusionen.</p>
+que se fusionen.
+Solo ocurre si subiste la rama como colaborador; desde un <em>fork</em> no hay vista previa.</p>
 </div>
 <h2 id="7-revision">7. Revisión<a class="headerlink" href="#7-revision" title="Permanent link">#</a></h2>
 <p>Alguien revisará tu PR y quizá te pida cambios. Para incorporarlos, repite el paso 5 y
