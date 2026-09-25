@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 216" role="img"
+     aria-label="Cada celda del árbol de Fenwick cubre un bloque cuyo tamaño es su bit menos significativo">
+  <style>
+    .box  { fill: none; stroke: currentColor; stroke-width: 1.5; }
+    .num  { font: 600 15px sans-serif; text-anchor: middle; fill: currentColor; }
+    .bar  { fill: rgba(236, 102, 7, 0.14); stroke: #ec6607; stroke-width: 1.5; }
+    .blbl { font: 600 13px sans-serif; text-anchor: middle; fill: #ec6607; }
+    .cap  { font: 12px sans-serif; text-anchor: middle; fill: currentColor; opacity: 0.6; }
+  </style>
+
+  <!-- title -->
+  <text class="cap" x="220" y="24">n = 8 &#183; la celda T[i] guarda la suma de (i &#8722; lowbit(i), i]</text>
+
+  <!-- level 3: T[8] covers (0,8] -->
+  <rect class="bar" x="20"  y="42" width="394" height="24" rx="4"/>
+  <text class="blbl" x="217" y="58">T[8]</text>
+
+  <!-- level 2: T[4] covers (0,4] -->
+  <rect class="bar" x="20"  y="72" width="194" height="24" rx="4"/>
+  <text class="blbl" x="117" y="88">T[4]</text>
+
+  <!-- level 1: T[2] covers (0,2] ; T[6] covers (4,6] -->
+  <rect class="bar" x="20"  y="102" width="94" height="24" rx="4"/>
+  <text class="blbl" x="67"  y="118">T[2]</text>
+  <rect class="bar" x="220" y="102" width="94" height="24" rx="4"/>
+  <text class="blbl" x="267" y="118">T[6]</text>
+
+  <!-- level 0: T[1] T[3] T[5] T[7] each cover a single position -->
+  <rect class="bar" x="20"  y="132" width="44" height="24" rx="4"/>
+  <text class="blbl" x="42"  y="148">T[1]</text>
+  <rect class="bar" x="120" y="132" width="44" height="24" rx="4"/>
+  <text class="blbl" x="142" y="148">T[3]</text>
+  <rect class="bar" x="220" y="132" width="44" height="24" rx="4"/>
+  <text class="blbl" x="242" y="148">T[5]</text>
+  <rect class="bar" x="320" y="132" width="44" height="24" rx="4"/>
+  <text class="blbl" x="342" y="148">T[7]</text>
+
+  <!-- leaves: 1-based positions 1..8 -->
+  <rect class="box" x="20"  y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="70"  y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="120" y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="170" y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="220" y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="270" y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="320" y="166" width="44" height="32" rx="4"/>
+  <rect class="box" x="370" y="166" width="44" height="32" rx="4"/>
+  <g class="num">
+    <text x="42"  y="188">1</text>
+    <text x="92"  y="188">2</text>
+    <text x="142" y="188">3</text>
+    <text x="192" y="188">4</text>
+    <text x="242" y="188">5</text>
+    <text x="292" y="188">6</text>
+    <text x="342" y="188">7</text>
+    <text x="392" y="188">8</text>
+  </g>
+</svg>
