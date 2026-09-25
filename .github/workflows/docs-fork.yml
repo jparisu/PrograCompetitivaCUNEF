@@ -1,0 +1,33 @@
+name: Documentation (fork)
+
+# Checks a pull request that comes from a FORK: example tests, cheatsheet PDF and
+# `mkdocs build --strict` — the same steps as docs.yml, via the shared
+# .github/actions/build-site action — but deploys NOTHING.
+#
+# Why this is its own workflow: GitHub gives a fork PR a read-only GITHUB_TOKEN
+# whatever `permissions:` asks for, so docs.yml's preview deploy to gh-pages fails
+# with a 403 there. docs.yml skips fork PRs and this workflow picks them up, so a
+# fork contribution is still fully checked, just without a preview link.
+#
+# Read-only on purpose, and no gh-pages concurrency group: it never writes
+# anything, so it must not queue behind (or cancel) the deploys. Never switch
+# this to `pull_request_target` to "get" write access — it would run the fork's
+# code (runtests.py, mkdocs_hooks.py) with a write token.
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # Same-repo PRs are built and previewed by docs.yml; a skipped job reports as
+    # passed, so it never blocks a required check.
+    if: github.event.pull_request.head.repo.full_name != github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/build-site
