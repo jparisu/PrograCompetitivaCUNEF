@@ -1,7 +1,7 @@
 {
   "affiliation": "cunef.edu",
   "url": "https://open.kattis.com/affiliations/cunef.edu",
-  "updated": "2026-11-09T15:30:34+00:00",
+  "updated": "2026-11-16T15:08:33+00:00",
   "snapshots": [
     {
       "date": "2026-07-22",
@@ -4259,6 +4259,361 @@
           "name": "Pablo",
           "handle": "pablomazzali",
           "score": 78.5,
+          "solved": null
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "members": [
+        {
+          "rank": 1,
+          "name": "Jesús Pacheco Alonso",
+          "handle": "jesus-pacheco-alonso",
+          "score": 3770.5,
+          "solved": null
+        },
+        {
+          "rank": 2,
+          "name": "Paco Criado",
+          "handle": "francisco-criado",
+          "score": 2643.8,
+          "solved": null
+        },
+        {
+          "rank": 3,
+          "name": "Javier París",
+          "handle": "jparisu",
+          "score": 630.5,
+          "solved": null
+        },
+        {
+          "rank": 4,
+          "name": "Mario Fernandez Fernandez",
+          "handle": "mario-fernandez-fernandez",
+          "score": 589.3,
+          "solved": null
+        },
+        {
+          "rank": 5,
+          "name": "Alejandro Romeo",
+          "handle": "aromeoss",
+          "score": 454.7,
+          "solved": null
+        },
+        {
+          "rank": 6,
+          "name": "Pepe Capapé",
+          "handle": "pepe-capape",
+          "score": 334.8,
+          "solved": null
+        },
+        {
+          "rank": 7,
+          "name": "Giner Pavía, Juan",
+          "handle": "giner-pavia--juan",
+          "score": 246.3,
+          "solved": null
+        },
+        {
+          "rank": 8,
+          "name": "Alvaro Arias Mateache",
+          "handle": "alvaro-arias-mateache",
+          "score": 232.9,
+          "solved": null
+        },
+        {
+          "rank": 9,
+          "name": "Jorge Martinez",
+          "handle": "jorge-martinez1",
+          "score": 227.2,
+          "solved": null
+        },
+        {
+          "rank": 10,
+          "name": "Gonzalo Agustí",
+          "handle": "gonzalo-agusti",
+          "score": 212.6,
+          "solved": null
+        },
+        {
+          "rank": 11,
+          "name": "David Ortega Lozano",
+          "handle": "david-ortega-lozano",
+          "score": 208.7,
+          "solved": null
+        },
+        {
+          "rank": 12,
+          "name": "Jacobo Bascón Montalvo",
+          "handle": "jacobo-bascon-montalvo",
+          "score": 193.4,
+          "solved": null
+        },
+        {
+          "rank": 13,
+          "name": "Luis",
+          "handle": "luis.fernandez",
+          "score": 176.3,
+          "solved": null
+        },
+        {
+          "rank": 14,
+          "name": "Maria Espinosa Ruiz",
+          "handle": "mser",
+          "score": 173.0,
+          "solved": null
+        },
+        {
+          "rank": 15,
+          "name": "Bosco",
+          "handle": "bosco1",
+          "score": 172.6,
+          "solved": null
+        },
+        {
+          "rank": 16,
+          "name": "Joaquin García San Miguel",
+          "handle": "joaquin-garcia-san-miguel",
+          "score": 160.4,
+          "solved": null
+        },
+        {
+          "rank": 17,
+          "name": "Fernando Rebollar Alcaide",
+          "handle": "fernando-rebollar",
+          "score": 155.3,
+          "solved": null
+        },
+        {
+          "rank": 18,
+          "name": "Antonio Sánchez",
+          "handle": "antonioo.sanchezz",
+          "score": 150.9,
+          "solved": null
+        },
+        {
+          "rank": 19,
+          "name": "Pilar Martínez Abad",
+          "handle": "pilar-martinez-abad",
+          "score": 148.3,
+          "solved": null
+        },
+        {
+          "rank": 20,
+          "name": "Alicia Diego Fuentes",
+          "handle": "alicia-diego-fuentes",
+          "score": 136.8,
+          "solved": null
+        },
+        {
+          "rank": 21,
+          "name": "Lola Navarro M",
+          "handle": "lola-navarro-m",
+          "score": 135.5,
+          "solved": null
+        },
+        {
+          "rank": 22,
+          "name": "Martina Coronado",
+          "handle": "martina-coronado",
+          "score": 132.7,
+          "solved": null
+        },
+        {
+          "rank": 23,
+          "name": "Miguel Chicot",
+          "handle": "miguel-chicot",
+          "score": 132.1,
+          "solved": null
+        },
+        {
+          "rank": 24,
+          "name": "Daniela",
+          "handle": "daniela-gonzalez-lucero",
+          "score": 131.9,
+          "solved": null
+        },
+        {
+          "rank": 25,
+          "name": "Gonzalo Delclaux",
+          "handle": "gonzalo-delclaux",
+          "score": 130.3,
+          "solved": null
+        },
+        {
+          "rank": 26,
+          "name": "Germán Garoz Tarjuelo",
+          "handle": "garozt",
+          "score": 128.5,
+          "solved": null
+        },
+        {
+          "rank": 27,
+          "name": "María Muñoz",
+          "handle": "maria-munoz",
+          "score": 126.9,
+          "solved": null
+        },
+        {
+          "rank": 28,
+          "name": "Inés Corchado Hornedo",
+          "handle": "ines-corchado",
+          "score": 125.7,
+          "solved": null
+        },
+        {
+          "rank": 29,
+          "name": "Sofia Aguado Perez",
+          "handle": "sofia-aguado-perez",
+          "score": 123.2,
+          "solved": null
+        },
+        {
+          "rank": 30,
+          "name": "Amelia Fernández Gómez",
+          "handle": "amelia-fernandez-gomez1",
+          "score": 119.1,
+          "solved": null
+        },
+        {
+          "rank": 31,
+          "name": "Pablo Valcarce",
+          "handle": "pablo-valcarce",
+          "score": 113.6,
+          "solved": null
+        },
+        {
+          "rank": 32,
+          "name": "Ana Lopez Saleta",
+          "handle": "ana-lopez-saleta",
+          "score": 109.9,
+          "solved": null
+        },
+        {
+          "rank": 33,
+          "name": "Escribano Rodríguez, Mateo",
+          "handle": "escribano-rodriguez--mateo",
+          "score": 103.1,
+          "solved": null
+        },
+        {
+          "rank": 34,
+          "name": "Angel Tuñon Velasco",
+          "handle": "angel7",
+          "score": 101.7,
+          "solved": null
+        },
+        {
+          "rank": 35,
+          "name": "Jorge Martinez Cercadillo",
+          "handle": "jorge3",
+          "score": 99.8,
+          "solved": null
+        },
+        {
+          "rank": 36,
+          "name": "Pedro Lozano González",
+          "handle": "lozano-gonzalez-pedro",
+          "score": 99.2,
+          "solved": null
+        },
+        {
+          "rank": 37,
+          "name": "David Méndez Martínez",
+          "handle": "david-mendez-martinez",
+          "score": 99.0,
+          "solved": null
+        },
+        {
+          "rank": 38,
+          "name": "Jaime Renilla",
+          "handle": "jaime-renilla",
+          "score": 98.2,
+          "solved": null
+        },
+        {
+          "rank": 39,
+          "name": "Michael Viertel",
+          "handle": "michael-viertel",
+          "score": 97.8,
+          "solved": null
+        },
+        {
+          "rank": 40,
+          "name": "Laura Travesí",
+          "handle": "laura-travesi",
+          "score": 97.1,
+          "solved": null
+        },
+        {
+          "rank": 41,
+          "name": "Marcos Gonzalez Combalia",
+          "handle": "marcos-gonzalez-combalia",
+          "score": 96.9,
+          "solved": null
+        },
+        {
+          "rank": 42,
+          "name": "Jorge Sol Arce",
+          "handle": "jorge-sol-arce",
+          "score": 89.2,
+          "solved": null
+        },
+        {
+          "rank": 43,
+          "name": "Victor Hugo Pareja Galvañ",
+          "handle": "victor-hugo-pareja-galvan1",
+          "score": 87.4,
+          "solved": null
+        },
+        {
+          "rank": 44,
+          "name": "María Eugenia Galdón",
+          "handle": "maria-eugenia-galdon",
+          "score": 85.5,
+          "solved": null
+        },
+        {
+          "rank": 45,
+          "name": "Natalia Santamaría",
+          "handle": "natalia-santamaria-",
+          "score": 82.2,
+          "solved": null
+        },
+        {
+          "rank": 46,
+          "name": "Eco Sala Riolobos",
+          "handle": "eco-sala",
+          "score": 81.9,
+          "solved": null
+        },
+        {
+          "rank": 47,
+          "name": "Pablo Diaz Benito",
+          "handle": "pablo-diaz-benito",
+          "score": 81.7,
+          "solved": null
+        },
+        {
+          "rank": 48,
+          "name": "Antonio Orteu Gil",
+          "handle": "antonio-orteu-gil-",
+          "score": 81.0,
+          "solved": null
+        },
+        {
+          "rank": 49,
+          "name": "Pablo",
+          "handle": "pablomazzali",
+          "score": 80.1,
+          "solved": null
+        },
+        {
+          "rank": 50,
+          "name": "Aroa Bocos Otero",
+          "handle": "aroa-bocos-otero",
+          "score": 79.7,
           "solved": null
         }
       ]
